@@ -1,0 +1,35 @@
+# Ambiente conda dos notebooks do Proj IV (série temporal).
+# Só o SQLite congelado. Sem pipeline Gas Flare.
+#
+# Criar:
+#   conda env create -f environment.yml
+#
+# Atualizar:
+#   conda env update -f environment.yml --prune
+#
+# Registrar o kernel:
+#   conda activate proj-iv
+#   python -m ipykernel install --user --name proj-iv --display-name "Python (proj_IV)"
+#
+name: proj-iv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  # Análise
+  - numpy
+  - pandas
+  - scipy
+  - statsmodels
+  # Gráficos
+  - matplotlib
+  - seaborn
+  # Acesso ao SQLite (SQLAlchemy)
+  - sqlalchemy>=2.0
+  # Jupyter
+  - jupyter
+  - jupyterlab
+  - ipykernel
+  - ipywidgets
