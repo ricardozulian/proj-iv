@@ -2,7 +2,7 @@
 
 Universidade Presbiteriana Mackenzie. Ciência de Dados EaD, 2026/02. Grupo 19.
 
-O grupo constrói um produto de série temporal. A fonte é o arquivo congelado `data/gas_flare.sqlite`. O projeto não usa Postgres, API ao vivo nem credencial.
+Desenvolvimento de aplicação de séries temporais.
 
 Documento oficial: [`notebooks/cd_projeto_aplicado_IV_doc.ipynb`](notebooks/cd_projeto_aplicado_IV_doc.ipynb).
 
@@ -12,7 +12,7 @@ Documento oficial: [`notebooks/cd_projeto_aplicado_IV_doc.ipynb`](notebooks/cd_p
 |---------|----------|
 | `data/gas_flare.sqlite` | Snapshot: PPI, preços, vendas, finanças, proxies, PETR4 e inflação (IPCA / IPCA-15 / IGP-M) |
 
-Trate o arquivo como imutável. Uma atualização exige novo export a partir da origem. Não há SQLite só de PETR4.
+Base coltedate a partir de diversas fontes com dados de inflação, atividade economica, preços/volumes de combustíveis e dados financeiros e de mercado da Petrobras.
 
 Dicionário das tabelas: [`docs/metadados_base.md`](docs/metadados_base.md).
 
