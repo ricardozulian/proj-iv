@@ -1,0 +1,89 @@
+<mxfile host="app.diagrams.net" agent="proj-iv">
+  <diagram id="diagrama-solucao-etapa2" name="Diagrama de solução">
+    <mxGraphModel dx="1114" dy="2916" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="2100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#1A1A1A;" value="Diagrama de solução — Etapa 2" vertex="1">
+          <mxGeometry height="36" width="1280" x="40" y="24" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#666666;" value="Cinco fases. Um corte temporal por vetor. O teste tem o tamanho do horizonte mais longo." vertex="1">
+          <mxGeometry height="24" width="1280" x="40" y="58" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=12;spacingRight=12;fillColor=#4A4A4A;fontColor=#F5F5F5;strokeColor=#333333;fontSize=13;" value="1. Coleta&lt;br&gt;&lt;b&gt;data/gas_flare.sqlite&lt;/b&gt; — base congelada&lt;br&gt;Âncora: PPI diário (ABICOM), 1.126 datas" vertex="1">
+          <mxGeometry height="78" width="620" x="370" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=12;spacingRight=12;fillColor=#F7F7F7;fontColor=#333333;strokeColor=#B5B5B5;fontSize=13;" value="2. Pré-processamento&lt;br&gt;Alinhamento ao calendário de dias úteis&lt;br&gt;Buraco de calendário → valor vizinho. Valor medido permanece.&lt;br&gt;Conferência da leitura OCR do PPI&lt;br&gt;Volume diário, mercado/preço/atividade: venda mensal ANP em m³ × 1.000 ÷ dias do mês&lt;br&gt;Volume diário, companhia: mil barris/dia da Petrobras × 159 L&lt;br&gt;Produto do dia = desvio em R$/L × volume diário&lt;br&gt;Normalização 0–1 só para a LSTM" vertex="1">
+          <mxGeometry height="150" width="620" x="370" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=12;spacingRight=12;fillColor=#F7F7F7;fontColor=#333333;strokeColor=#B5B5B5;fontSize=13;" value="3. Análise exploratória e visualização&lt;br&gt;Tendência, sazonalidade, ciclo e ruído&lt;br&gt;Estacionariedade e diferença&lt;br&gt;ACF e PACF&lt;br&gt;Correlação cruzada PPI × alvo → defasagem&lt;br&gt;Gráfico de linha, gráfico de caixa e mapa de calor" vertex="1">
+          <mxGeometry height="118" width="620" x="370" y="412" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#4A4A4A;fontColor=#F5F5F5;strokeColor=#333333;fontSize=14;fontStyle=1;" value="4. Modelagem — um corte temporal por vetor" vertex="1">
+          <mxGeometry height="40" width="620" x="370" y="572" as="geometry" />
+        </mxCell>
+        <mxCell id="v1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingRight=8;fillColor=#FFFFFF;fontColor=#333333;strokeColor=#4A4A4A;fontSize=12;" value="&lt;b&gt;Mercado&lt;/b&gt; — dia útil&lt;br&gt;Alvo: fechamento de PETR4&lt;br&gt;Entrada: PPI defasado e desvio × volume diário&lt;br&gt;Horizonte: 5 e 21 dias úteis&lt;br&gt;&lt;b&gt;SARIMAX, LSTM e TimesFM 3.0&lt;/b&gt;&lt;br&gt;Treino: 1º fev. 2022 a 16 jul. 2026&lt;br&gt;Teste: 17 jul. a 14 ago. 2026" vertex="1">
+          <mxGeometry height="168" width="310" x="40" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="v2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingRight=8;fillColor=#FFFFFF;fontColor=#333333;strokeColor=#4A4A4A;fontSize=12;" value="&lt;b&gt;Preço&lt;/b&gt; — semana&lt;br&gt;Alvo: preço ANP e preço Petrobras&lt;br&gt;Entrada: PPI da semana, defasado&lt;br&gt;Horizonte: 4 e 8 semanas&lt;br&gt;&lt;b&gt;SARIMAX sazonal&lt;/b&gt;&lt;br&gt;Treino: até a semana de 14 jun. 2026&lt;br&gt;Teste: 15 jun. a 9 ago. 2026" vertex="1">
+          <mxGeometry height="168" width="310" x="370" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="v3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingRight=8;fillColor=#FFFFFF;fontColor=#333333;strokeColor=#4A4A4A;fontSize=12;" value="&lt;b&gt;Atividade&lt;/b&gt; — mês&lt;br&gt;Alvo: tráfego pesado, indústria, varejo e desemprego&lt;br&gt;Entrada: desvio × volume diário, somado no mês&lt;br&gt;Horizonte: 1 e 3 meses&lt;br&gt;&lt;b&gt;SARIMAX sazonal&lt;/b&gt;&lt;br&gt;Treino: até mar. 2026&lt;br&gt;Teste: abr., mai. e jun. 2026" vertex="1">
+          <mxGeometry height="168" width="310" x="700" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="v4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=10;spacingRight=8;fillColor=#FFFFFF;fontColor=#333333;strokeColor=#4A4A4A;fontSize=12;" value="&lt;b&gt;Companhia&lt;/b&gt; — trimestre&lt;br&gt;Alvo: volume, receita RT&amp;M, lucro bruto e margem&lt;br&gt;Entrada: desvio × volume diário da Petrobras&lt;br&gt;Horizonte: 4º trimestre de 2025&lt;br&gt;&lt;b&gt;SARIMAX&lt;/b&gt;, conferido com o resultado publicado&lt;br&gt;Treino: 1º trim. 2022 ao 3º trim. 2025&lt;br&gt;Teste: 4º trim. 2025" vertex="1">
+          <mxGeometry height="168" width="320" x="1030" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=12;spacingRight=12;fillColor=#4A4A4A;fontColor=#F5F5F5;strokeColor=#333333;fontSize=13;" value="5. Avaliação e validação&lt;br&gt;Erro absoluto médio, erro quadrático médio e a raiz desse erro&lt;br&gt;Gráfico da série real contra a prevista&lt;br&gt;Horizonte curto medido dentro do teste longo: 5 dias nos 21, 4 semanas nas 8, 1 mês nos 3&lt;br&gt;O 4º trimestre de 2025 tem um ponto só. O erro desse vetor serve como indicação." vertex="1">
+          <mxGeometry height="110" width="620" x="370" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=12;spacingRight=12;fillColor=#EDEDED;fontColor=#333333;strokeColor=#B5B5B5;fontSize=12;" value="SARIMAX e TimesFM recebem os valores originais. A LSTM recebe séries entre 0 e 1.&lt;br&gt;LSTM e TimesFM 3.0 só no vetor diário. Séries mensal (~54 pontos) e trimestral (15) ficam no SARIMAX.&lt;br&gt;TimesFM: duas rodadas, sem treino — PETR4 sozinha; PETR4 com PPI da gasolina e do diesel. Pesos fora do repositório.&lt;br&gt;Se a instalação impedir o TimesFM, permanecem o SARIMAX e a LSTM." vertex="1">
+          <mxGeometry height="78" width="1310" x="40" y="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="c1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#4A4A4A;strokeWidth=1.5;" target="c2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="c2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#4A4A4A;strokeWidth=1.5;" target="c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="c3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#4A4A4A;strokeWidth=1.5;" target="c4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="c4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#4A4A4A;strokeWidth=1.5;" target="v1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="c4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#4A4A4A;strokeWidth=1.5;" target="v2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="c4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#4A4A4A;strokeWidth=1.5;" target="v3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="c4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#4A4A4A;strokeWidth=1.5;" target="v4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="v1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#4A4A4A;strokeWidth=1.5;" target="c5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="195" y="870" />
+              <mxPoint x="680" y="870" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="v2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#4A4A4A;strokeWidth=1.5;" target="c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="v3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#4A4A4A;strokeWidth=1.5;" target="c5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="v4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#4A4A4A;strokeWidth=1.5;" target="c5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1190" y="860" />
+              <mxPoint x="680" y="860" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

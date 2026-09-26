@@ -4,7 +4,9 @@ Universidade Presbiteriana Mackenzie. Ciência de Dados EaD, 2026/02. Grupo 19.
 
 Desenvolvimento de aplicação de séries temporais.
 
-Documento oficial: [`notebooks/proj-iv_grupo19_etapa1.ipynb`](proj-iv_grupo19_etapa1.ipynb)
+Documento da Etapa 1: [`notebooks/proj-iv_grupo19_etapa1.ipynb`](notebooks/proj-iv_grupo19_etapa1.ipynb).
+
+Documento da Etapa 2: [`notebooks/proj-iv_grupo19_etapa2.ipynb`](notebooks/proj-iv_grupo19_etapa2.ipynb).
 ## Base
 
 | Arquivo | Conteúdo |
