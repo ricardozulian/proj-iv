@@ -1,6 +1,6 @@
 # Metadados da base — Proj IV
 
-Documento de referência da base congelada em `data/`. O recorte analítico começa no PPI diário (5 jan. 2022). As demais famílias entram nesse calendário, com defasagem própria de cada fonte.
+Documento de referência da base congelada em `data/`. O recorte analítico começa no PPI diário (5 jan. 2022) e termina no corte de 21 set. 2026. As demais famílias entram nesse calendário, com defasagem própria de cada fonte.
 
 Este arquivo descreve as fontes, a forma e a periodicidade da coleta, e o dicionário das tabelas no snapshot. O projeto de curso não acessa Postgres, APIs ou credenciais.
 
@@ -8,9 +8,21 @@ Este arquivo descreve as fontes, a forma e a periodicidade da coleta, e o dicion
 
 | Arquivo | Função | Tabelas |
 |---|---|---|
-| `data/gas_flare.sqlite` | Base analítica completa | 14 tabelas (PPI, preços, vendas, finanças, proxies, equity, inflação) |
+| `data/gas_flare.sqlite` | Base analítica do curso. Export de 27 set. 2026, corte em 21 set. 2026. SHA-256 `155f53607aae0e92e66a588288ce309a8bce05678b77b67a0b56603713db3a6d`. | 14 tabelas de dados (PPI, preços, vendas, finanças, proxies, equity, inflação) e `export_changelog` |
+| `data/gas_flare_old.sqlite` | Export anterior, de ago. 2026, corte em 14 ago. 2026. Só para comparação. SHA-256 `61d1766c5055d8fb1f86de2e223aca0b46262bf266dca574e6deb4add85a921f`. | As mesmas 14 tabelas de dados |
 
 O arquivo é imutável para o trabalho de curso. Uma atualização exige novo export a partir do Gas Flare. Não há acesso a Postgres e não há SQLite só de PETR4.
+
+### 1.1 Atualização da base na Etapa 2
+
+A revisão da Etapa 2 conferiu a base contra as fontes e encontrou erros de origem. O pipeline Gas Flare corrigiu esses pontos, e o grupo trocou a base do curso pelo novo export. A tabela `export_changelog` registra cada correção.
+
+| Família | Erro no export anterior | Correção |
+|---|---|---|
+| PPI (`ppi_daily`) | Leituras de OCR erradas: −13,0 R$/L em 26 jan. 2023, valores em 5 set. 2024 e 18 mar. 2025, e percentuais de três dígitos sem o primeiro algarismo de 11 a 18 set. 2026. | Valores conferidos contra a imagem. Nova regra de validação (seção 2.1). |
+| Preço ANP semanal | O diesel era a média de toda linha com "diesel" no nome, com biodiesel B-100 e diesel marítimo. A gasolina incluía a gasolina Premium. A carga contava 22 cópias da linha Brasil, uma por download do arquivo. | Rótulos exatos: Óleo Diesel S-10 e Óleo Diesel S-500; Gasolina A Comum. Uma linha Brasil por produto e semana, do arquivo mais novo. |
+| Preço Petrobras semanal | Semanas montadas com o arquivo "Outros Diesel" ou com um token mal alinhado da gasolina Premium. Mistura de grades de diesel. | Diesel S10 e S500 juntos, preço de lista. Semanas sem vigência de S10/S500 saem. Três semanas só com S10 ficam registradas no changelog. |
+| Finanças Petrobras | 1T26 vazio; 2T26 só com volume. | Volumes, receitas e RT&M de 1T26 e 2T26, do Relatório de Produção e Vendas e do ITR. |
 
 O snapshot não inclui tabelas brutas de produção (`anp_fuel_price_station`, `anp_weekly_weighted_price`, `petrobras_fuel_price_record`, `fuel_price_source_files`). Essas tabelas alimentam as séries semanais agregadas.
 
@@ -30,29 +42,37 @@ Cada fonte abaixo tem instituição, conteúdo, forma da coleta, periodicidade e
 
 **Periodicidade da coleta:** semanal. O orquestrador percorre páginas novas da categoria PPI, baixa imagens ausentes e reprocessa filas de qualidade.
 
-**Recorte no snapshot:** 5 jan. 2022 a 14 ago. 2026 (1.126 datas).
+**Base de preço:** o percentual é o desvio sobre o preço Petrobras: (preço Petrobras − paridade) / preço Petrobras. Em 2026 a razão R$/% fica constante entre reajustes e confirma o divisor. Em 2022–2025 os percentuais são inteiros pequenos, e a razão não mostra o divisor. Em 2026, o preço Petrobras do PPI é o preço com desconto das tabelas da Petrobras, enquanto essa coluna existe: gasolina até 10 set. 2026; diesel de 1º jun. 2026 em diante.
+
+**Validação:** para cada par (Petrobras e independentes, gasolina e diesel), a carga ignora linhas com |%| < 10, calcula o preço de referência como mediana de R$ / % × 100 nos dez dias úteis anteriores e compara o percentual com o esperado. Divergência acima de 1,5 ponto percentual vai para conferência manual (`man_insp`).
+
+**Recorte no snapshot:** 5 jan. 2022 a 21 set. 2026 (1.151 datas).
 
 **Referência:**
 
 ASSOCIAÇÃO BRASILEIRA DOS IMPORTADORES DE COMBUSTÍVEIS. *PPI*. Rio de Janeiro: ABICOM, 2026. Disponível em: https://abicom.com.br/categoria/ppi/. Acesso em: 19 ago. 2026.
 
-### 2.2 ANP — preços semanais ao produtor e à importação (SHPC/QUS)
+### 2.2 ANP — preços médios ponderados semanais ao produtor e ao importador
 
 **Instituição:** Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP).
 
-**Conteúdo:** preço médio ponderado semanal de gasolina e diesel no levantamento SHPC, série QUS (produtor e importação). O pipeline agrega essa série nas tabelas semanais nacionais e de distribuidor ANP.
+**Conteúdo:** preço médio ponderado semanal de produtores e importadores, sem ICMS, com CIDE, PIS/Pasep e Cofins quando incidem. O arquivo traz as colunas Norte, Nordeste, Centro-Oeste, Sul, Sudeste e Brasil. A base usa só a coluna Brasil.
 
-**Forma da coleta:** download HTTP de CSV no portal de dados abertos. Sementes fixas: `ultimas-4-semanas-gasolina-etanol.csv` e `ultimas-4-semanas-diesel-gnv.csv`. Arquivos mensais e semestrais complementam o histórico. O parser lê o CSV, guarda o arquivo de origem na produção e reconstrói as séries semanais.
+**Produtos:** diesel é a média simples das linhas `Óleo Diesel S-10 (R$/litro)` e `Óleo Diesel S-500 (R$/litro)`. Gasolina é a linha `Gasolina A Comum (R$/litro)`. A linha `Óleo Diesel²` é o total do diesel automotivo (nota de rodapé da ANP) e fica fora, para não contar a mesma venda duas vezes. Biodiesel B-100, diesel marítimo, diesel não rodoviário e gasolina Premium também ficam fora.
 
-**Periodicidade da publicação:** semanal (as últimas quatro semanas saem com atualização contínua no portal).
+**Forma da coleta:** download HTTP do arquivo `precos-medios-ponderados-semanais-2013.xls`, com o histórico completo. A carga usa o arquivo mais novo.
+
+**Comportamento em 2026:** a variação semanal típica é três a quatro vezes maior que em 2022–2025, sobretudo no diesel S-10. O valor é o da coluna Brasil da ANP. Como a ANP pondera pelo volume, uma causa provável é a parcela importada de cada semana, com o preço Petrobras muito abaixo da paridade.
+
+**Periodicidade da publicação:** semanal. A ANP pondera o preço pelo volume vendido e atualiza o arquivo cerca de 12 dias após o fim da semana.
 
 **Periodicidade da coleta:** semanal, com janela recente de meses no pipeline de preços.
 
-**Recorte no snapshot:** semanas de 3 jan. 2022 a 9 ago. 2026 (240 semanas por produto).
+**Recorte no snapshot:** semanas de 3 jan. 2022 a 13 set. 2026 (245 semanas por produto).
 
 **Referência:**
 
-AGÊNCIA NACIONAL DO PETRÓLEO, GÁS NATURAL E BIOCOMBUSTÍVEIS. *Dados abertos*: Série Histórica do Levantamento de Preços e de Margens de Comercialização de Combustíveis (SHPC). Brasília: ANP, 2026. Disponível em: https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/shpc/. Acesso em: 19 ago. 2026.
+AGÊNCIA NACIONAL DO PETRÓLEO, GÁS NATURAL E BIOCOMBUSTÍVEIS. *Preços de produtores e importadores de derivados de petróleo e biodiesel*. Brasília: ANP, 2026. Disponível em: https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-de-produtores-e-importadores-de-derivados-de-petroleo-e-biodiesel. Acesso em: 27 set. 2026.
 
 ### 2.3 ANP — vendas nacionais mensais de combustíveis
 
@@ -66,7 +86,7 @@ AGÊNCIA NACIONAL DO PETRÓLEO, GÁS NATURAL E BIOCOMBUSTÍVEIS. *Dados abertos*
 
 **Periodicidade da coleta:** semanal. A maior parte das rodadas só confirma o último mês já publicado.
 
-**Recorte no snapshot:** jan. 2022 a jun. 2026 (108 linhas; 54 meses × 2 produtos).
+**Recorte no snapshot:** jan. 2022 a jul. 2026 (110 linhas; 55 meses × 2 produtos).
 
 **Referência:**
 
@@ -80,13 +100,17 @@ AGÊNCIA NACIONAL DO PETRÓLEO, GÁS NATURAL E BIOCOMBUSTÍVEIS. *Dados abertos*
 
 **Conteúdo:** preço de venda de gasolina e diesel às distribuidoras, publicado em PDF por data de vigência. O pipeline extrai as linhas e monta médias semanais.
 
+**Base de preço:** preço de lista, "sem tributos, à vista". A média usa todos os locais e modalidades de venda (EXA, LPA, LCT, LTM, ETD, ETM, LPD, LPC). A coluna "com descontos" (MP 1.358, MP 1.363 e MP 1.391) fica fora. Gasolina é a gasolina A, sem a Premium. Diesel é a média de S10 e S500; o arquivo "Outros Diesel" fica fora. Três semanas têm só S10 (19 dez. 2022, 20 jan. 2025 e 17 fev. 2025), porque a tabela S500 não tem vigência nelas.
+
+**Diferença para o PPI:** em 2026 o PPI segue a coluna com desconto, e esta série segue o preço de lista. As duas séries medem preços diferentes.
+
 **Forma da coleta:** consulta à API Liferay Headless Delivery em `precos.petrobras.com.br` (pastas Gasolina = `1296640` e Diesel = `1296637`). O coletor baixa o PDF mais novo de cada pasta. O parser lê o PDF e grava registros por produto e data de vigência. A série semanal é uma agregação posterior.
 
 **Periodicidade da publicação:** irregular. A Petrobras publica quando altera o preço. O diesel pode ficar meses sem mudança.
 
 **Periodicidade da coleta:** semanal. Sem PDF novo, a série semanal não avança.
 
-**Recorte no snapshot:** gasolina de 10 jan. 2022 a 31 maio 2026 (62 semanas); diesel de 10 jan. 2022 a 2 ago. 2026 (72 semanas).
+**Recorte no snapshot:** gasolina de 10 jan. 2022 a 13 set. 2026 (64 semanas); diesel de 10 jan. 2022 a 20 set. 2026 (72 semanas).
 
 **Referência:**
 
@@ -106,6 +130,8 @@ PETROBRAS. *Tabelas de preços de venda às distribuidoras*. Rio de Janeiro: Pet
 
 **Recorte no snapshot:** vendas trimestrais de 2022T1 a 2026T2 (36 linhas). Finanças de 2006T1 a 2026T2 (82 trimestres).
 
+**Subvenção em 2026:** a receita RT&M da nota 8 do ITR não desconta a subvenção ao diesel rodoviário. A nota 4 inclui essa subvenção na receita de vendas: R$ 672 milhões em 1T26 e R$ 9.737 milhões em 2T26. O 2T26 também tem R$ 816 milhões de subvenção à gasolina. O campo `extraction_note` registra esses valores.
+
 **Referência:**
 
 PETROBRAS. *Central de resultados*. Rio de Janeiro: Petrobras, 2026. Disponível em: https://www.investidorpetrobras.com.br/resultados-e-comunicados/central-de-resultados/. Acesso em: 19 ago. 2026.
@@ -122,7 +148,7 @@ PETROBRAS. *Central de resultados*. Rio de Janeiro: Petrobras, 2026. Disponível
 
 **Periodicidade da coleta:** semanal. Sem planilha nova, os registros não mudam.
 
-**Recorte no snapshot:** fev. 2022 a jul. 2026 (162 linhas; 54 meses × 3 classes).
+**Recorte no snapshot:** fev. 2022 a ago. 2026 (165 linhas; 55 meses × 3 classes).
 
 **Referência:**
 
@@ -146,7 +172,7 @@ ASSOCIAÇÃO BRASILEIRA DE CONCESSIONÁRIAS DE RODOVIAS. *Índice ABCR*. São Pa
 
 **Periodicidade da coleta:** semanal (três chamadas HTTP por rodada).
 
-**Recorte no snapshot:** jan. 2022 a jun. 2026 (162 linhas; 54 meses × 3 indicadores).
+**Recorte no snapshot:** jan. 2022 a jul. 2026 (165 linhas; 55 meses × 3 indicadores).
 
 **Referência:**
 
@@ -170,7 +196,7 @@ INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. *Pesquisa Industrial Mensal �
 
 **Periodicidade da coleta:** sob demanda a partir do arquivo histórico. O snapshot do curso não atualiza sozinho.
 
-**Recorte no snapshot:** 1º fev. 2022 a 18 ago. 2026 (1.134 pregões). Só o ticker PETR4. A série começa um mês depois do PPI.
+**Recorte no snapshot:** 1º fev. 2022 a 18 set. 2026 (1.156 pregões). Só o ticker PETR4. A série começa um mês depois do PPI.
 
 **Referência:**
 
@@ -199,7 +225,7 @@ O IPCA-15 é mensal, com janela de coleta deslocada. Junto com o IPCA, o calend�
 
 **Periodicidade da coleta (Gas Flare):** semanal, no passo de vendas. O Proj IV usa o estado congelado.
 
-**Recorte no snapshot:** jan. 2022 a jul. 2026 (220 linhas; 55 meses × 4 séries).
+**Recorte no snapshot:** jan. 2022 a ago. 2026 (224 linhas; 56 meses × 4 séries).
 
 **Referência:**
 
@@ -214,7 +240,7 @@ FUNDAÇÃO GETULIO VARGAS. *IGP-M*. Rio de Janeiro: FGV/IBRE, 2026.
 | Fonte | Publicação | Coleta | Tabela no snapshot |
 |---|---|---|---|
 | ABICOM PPI | diária (dias úteis) | semanal (imagem + OCR) | `ppi_reference_table`, `ppi_daily` |
-| ANP SHPC/QUS | semanal | semanal (CSV) | `anp_distributor_weekly_*`, `fuel_price_national_weekly` |
+| ANP preços médios ponderados (produtor e importador) | semanal | semanal (XLS, coluna Brasil) | `anp_distributor_weekly_*`, `fuel_price_national_weekly` |
 | ANP vendas | mensal (~2 meses de atraso) | semanal (XLS/CSV) | `anp_fuel_sales` |
 | Petrobras preços às distribuidoras | irregular (PDF) | semanal (API Liferay) | `petrobras_distributor_weekly_*` |
 | Petrobras Central de Resultados | trimestral | semanal (API mziq + PDF) | `pbr_quarterly_sales`, `pbr_quarterly_diesel_gasoline` |
@@ -238,7 +264,7 @@ Catálogo bruto das imagens PPI na ABICOM. Uma linha por data de imagem. Zona: o
 | `ppi_image_url` | TEXT | sim | URL completa da imagem. |
 | `ppi_image_file_name` | TEXT | sim | Nome do arquivo na URL. |
 
-Unicidade: `ppi_image_date`. Linhas: 1.126. Período: 5 jan. 2022 a 14 ago. 2026.
+Unicidade: `ppi_image_date`. Linhas: 1.151. Período: 5 jan. 2022 a 21 set. 2026. Só entram datas com linha final em `ppi_daily`.
 
 ### 4.2 `ppi_daily`
 
@@ -257,17 +283,17 @@ Série canônica diária do PPI. Uma linha por data de relatório. Âncora tempo
 | `ind_die_R` | REAL | sim | Diferencial independentes diesel, R$/L. |
 | `ind_die_pct` | REAL | sim | Diferencial independentes diesel, %. |
 | `source_url` | TEXT | sim | URL da imagem usada na extração. |
-| `man_insp` | INTEGER | sim | Estado da inspeção: `0` automático; `1` conferido à mão; `-1` reprovado; `-2` caso especial de layout. |
+| `man_insp` | INTEGER | sim | Estado da inspeção: `0` automático; `1` conferido na imagem; `-1` não final, aguarda revisão; `-2` só em 5 jan. 2022 e 11 jan. 2022, linhas com campos de independentes vazios e `source_url` de arquivos de 2023. |
 | `raw_ocr` | TEXT | sim | Texto bruto do OCR. |
 | `scraped_at` | DATETIME | sim | Instante da carga. |
 
-Unicidade: `report_date`. Linhas: 1.126. Período: 5 jan. 2022 a 14 ago. 2026.
+Unicidade: `report_date`. Linhas: 1.151. Período: 5 jan. 2022 a 21 set. 2026. Distribuição de `man_insp`: 862 linhas `0`, 287 linhas `1`, 2 linhas `-2`.
 
 Sinal: valor negativo indica preço Petrobras abaixo da paridade internacional.
 
 ### 4.3 `anp_distributor_weekly_gasoline`
 
-Média semanal ANP do preço de gasolina ao produtor/importação, em R$/L.
+Preço semanal ANP da gasolina A comum ao produtor e ao importador, coluna Brasil, em R$/L.
 
 | Campo | Tipo | Nulo | Descrição |
 |---|---|---|---|
@@ -275,14 +301,14 @@ Média semanal ANP do preço de gasolina ao produtor/importação, em R$/L.
 | `week_start` | DATE | não | Segunda da semana. |
 | `week_end` | DATE | não | Domingo da semana. |
 | `avg_price_rs_l` | REAL | não | Preço médio da semana, R$/L. |
-| `source_record_count` | INTEGER | não | Número de linhas-fonte na agregação. |
+| `source_record_count` | INTEGER | não | Número de linhas-fonte na agregação. Gasolina: 1 em toda semana. |
 | `computed_at` | DATETIME | não | Instante do recálculo. |
 
-Unicidade: (`week_start`, `week_end`). Linhas: 240. Período: 3–9 jan. 2022 a 3–9 ago. 2026.
+Unicidade: (`week_start`, `week_end`). Linhas: 245. Período: 3–9 jan. 2022 a 7–13 set. 2026.
 
 ### 4.4 `anp_distributor_weekly_diesel`
 
-Mesmo desenho da tabela de gasolina, para diesel.
+Mesmo desenho da tabela de gasolina, para diesel rodoviário: média simples das linhas Brasil de S-10 e S-500.
 
 | Campo | Tipo | Nulo | Descrição |
 |---|---|---|---|
@@ -290,14 +316,14 @@ Mesmo desenho da tabela de gasolina, para diesel.
 | `week_start` | DATE | não | Segunda da semana. |
 | `week_end` | DATE | não | Domingo da semana. |
 | `avg_price_rs_l` | REAL | não | Preço médio da semana, R$/L. |
-| `source_record_count` | INTEGER | não | Número de linhas-fonte na agregação. |
+| `source_record_count` | INTEGER | não | Número de linhas-fonte na agregação. Diesel: 2 em toda semana. |
 | `computed_at` | DATETIME | não | Instante do recálculo. |
 
-Unicidade: (`week_start`, `week_end`). Linhas: 240. Período: 3–9 jan. 2022 a 3–9 ago. 2026.
+Unicidade: (`week_start`, `week_end`). Linhas: 245. Período: 3–9 jan. 2022 a 7–13 set. 2026.
 
 ### 4.5 `fuel_price_national_weekly`
 
-Série semanal nacional canônica. No snapshot o método é `anp_weekly_weighted_source` (mesma origem QUS das tabelas ANP acima), com uma linha por produto.
+Série semanal nacional canônica. No snapshot o método é `anp_weekly_weighted_source`, com uma linha por produto. Os valores são os mesmos das duas tabelas ANP acima.
 
 | Campo | Tipo | Nulo | Descrição |
 |---|---|---|---|
@@ -311,11 +337,11 @@ Série semanal nacional canônica. No snapshot o método é `anp_weekly_weighted
 | `method` | TEXT | não | Método de agregação. Snapshot: `anp_weekly_weighted_source`. |
 | `computed_at` | DATETIME | não | Instante do recálculo. |
 
-Unicidade: (`week_start`, `week_end`, `product`, `method`). Linhas: 480. Período: 3–9 jan. 2022 a 3–9 ago. 2026.
+Unicidade: (`week_start`, `week_end`, `product`, `method`). Linhas: 490. Período: 3–9 jan. 2022 a 7–13 set. 2026.
 
 ### 4.6 `petrobras_distributor_weekly_gasoline`
 
-Média semanal do preço Petrobras de gasolina às distribuidoras, em R$/L. Semanas sem publicação nova não entram.
+Média semanal do preço de lista Petrobras da gasolina A às distribuidoras, sem tributos, em R$/L. Semanas sem publicação nova não entram.
 
 | Campo | Tipo | Nulo | Descrição |
 |---|---|---|---|
@@ -326,11 +352,11 @@ Média semanal do preço Petrobras de gasolina às distribuidoras, em R$/L. Sema
 | `source_record_count` | INTEGER | não | Número de linhas extraídas dos PDFs. |
 | `computed_at` | DATETIME | não | Instante do recálculo. |
 
-Unicidade: (`week_start`, `week_end`). Linhas: 62. Período: 10–16 jan. 2022 a 25–31 maio 2026.
+Unicidade: (`week_start`, `week_end`). Linhas: 64. Período: 10–16 jan. 2022 a 7–13 set. 2026. A semana de 27 abr. 2026 não existe: não há vigência de gasolina A nessa data.
 
 ### 4.7 `petrobras_distributor_weekly_diesel`
 
-Mesmo desenho da tabela de gasolina Petrobras, para diesel.
+Mesmo desenho da tabela de gasolina Petrobras, para diesel S10 e S500 juntos.
 
 | Campo | Tipo | Nulo | Descrição |
 |---|---|---|---|
@@ -341,7 +367,7 @@ Mesmo desenho da tabela de gasolina Petrobras, para diesel.
 | `source_record_count` | INTEGER | não | Número de linhas extraídas dos PDFs. |
 | `computed_at` | DATETIME | não | Instante do recálculo. |
 
-Unicidade: (`week_start`, `week_end`). Linhas: 72. Período: 10–16 jan. 2022 a 27 jul.–2 ago. 2026.
+Unicidade: (`week_start`, `week_end`). Linhas: 72. Período: 10–16 jan. 2022 a 14–20 set. 2026. Em 17 set. 2026 o preço de lista sobe R$ 1,00/L em todos os locais; a coluna com desconto não muda.
 
 ### 4.8 `anp_fuel_sales`
 
@@ -356,7 +382,7 @@ Volume nacional mensal ANP, em m³.
 | `source_url` | TEXT | sim | URL do XLS ou CSV usado. |
 | `scraped_at` | DATETIME | não | Instante da carga. |
 
-Unicidade: (`product`, `month`). Linhas: 108. Período: jan. 2022 a jun. 2026.
+Unicidade: (`product`, `month`). Linhas: 110. Período: jan. 2022 a jul. 2026.
 
 ### 4.9 `pbr_quarterly_sales`
 
@@ -398,7 +424,7 @@ Painel trimestral de volume, receita e margem RT&M. Uma linha por trimestre.
 | `extraction_note` | TEXT | sim | Nota de extração (Q4 derivado, ajuste etc.). |
 | `updated_at` | TEXT | não | Instante da última extração. |
 
-Unicidade: `quarter`. Linhas: 82. Período: 2006T1 a 2026T2. Antes de ~2019 vários campos RT&M e de linha de produto ficam vazios: a fonte ainda não publicava o detalhe.
+Unicidade: `quarter`. Linhas: 82. Período: 2006T1 a 2026T2. Antes de ~2019 vários campos RT&M e de linha de produto ficam vazios: a fonte ainda não publicava o detalhe. De 1T22 a 2T26 todos os campos estão preenchidos. A receita de 2026 inclui subvenção (seção 2.5).
 
 ### 4.11 `abcr_traffic_index`
 
@@ -413,7 +439,7 @@ Unicidade: `quarter`. Linhas: 82. Período: 2006T1 a 2026T2. Antes de ~2019 vár
 | `source_url` | TEXT | sim | URL do `.xlsx` usado. |
 | `scraped_at` | DATETIME | não | Instante da carga. |
 
-Unicidade: (`month`, `vehicle_type`). Linhas: 162. Período: fev. 2022 a jul. 2026.
+Unicidade: (`month`, `vehicle_type`). Linhas: 165. Período: fev. 2022 a ago. 2026.
 
 ### 4.12 `ibge_indicators`
 
@@ -430,7 +456,7 @@ Indicadores mensais IBGE via SIDRA.
 | `source_url` | TEXT | sim | URL da consulta SIDRA. |
 | `scraped_at` | DATETIME | não | Instante da carga. |
 
-Unicidade: (`indicator_code`, `month`). Linhas: 162. Período: jan. 2022 a jun. 2026.
+Unicidade: (`indicator_code`, `month`). Linhas: 165. Período: jan. 2022 a jul. 2026.
 
 ### 4.13 `equity_daily`
 
@@ -458,7 +484,7 @@ Barras diárias de PETR4 a partir das Cotações históricas da B3.
 | `source_db` | TEXT | sim | — | Base intermediária da carga. Snapshot: `dadodb_dev`. |
 | `ingested_at` | DATETIME | sim | — | Instante da ingestão no snapshot. |
 
-Unicidade: (`ticker`, `tradedate`). Linhas: 1.134. Período: 1º fev. 2022 a 18 ago. 2026.
+Unicidade: (`ticker`, `tradedate`). Linhas: 1.156. Período: 1º fev. 2022 a 18 set. 2026.
 
 Os preços da B3 não têm ajuste por proventos. Para retorno de longo prazo, declare o tratamento (bruto vs. ajustado) no notebook.
 
@@ -480,9 +506,24 @@ Impressões mensais de inflação (IPCA, IPCA-15, IGP-M) via SGS do Banco Centra
 | `source_url` | TEXT | sim | URL da consulta SGS. |
 | `scraped_at` | DATETIME | não | Instante da carga. |
 
-Unicidade: (`series`, `metric`, `month`). Linhas: 220. Período: jan. 2022 a jul. 2026.
+Unicidade: (`series`, `metric`, `month`). Linhas: 224. Período: jan. 2022 a ago. 2026.
 
 O código SGS `13522` é IPCA em 12 meses, não IPCA-15. O IPCA-15 mensal é `7478`.
+
+### 4.15 `export_changelog`
+
+Registro das correções feitas no pipeline de origem antes de cada export. Uma linha por correção e tabela.
+
+| Campo | Tipo | Nulo | Descrição |
+|---|---|---|---|
+| `id` | INTEGER | não | Identificador interno. |
+| `changed_at` | TEXT | não | Instante da correção, ISO 8601 UTC. |
+| `table_name` | TEXT | não | Tabela corrigida. |
+| `scope` | TEXT | não | Linhas ou semanas afetadas. |
+| `cause` | TEXT | não | Causa, filtro antigo e novo, e fonte usada. |
+| `max_abs_change` | REAL | sim | Maior alteração absoluta de valor, quando se aplica. |
+
+Linhas: 16 no export de 27 set. 2026.
 
 ## 5. Unidades e alinhamento
 
@@ -501,7 +542,7 @@ NaNs antes do início nativo de uma série são esperados. Não complete esses f
 
 ## 6. Referências
 
-AGÊNCIA NACIONAL DO PETRÓLEO, GÁS NATURAL E BIOCOMBUSTÍVEIS. *Dados abertos*: Série Histórica do Levantamento de Preços e de Margens de Comercialização de Combustíveis (SHPC). Brasília: ANP, 2026. Disponível em: https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/shpc/. Acesso em: 19 ago. 2026.
+AGÊNCIA NACIONAL DO PETRÓLEO, GÁS NATURAL E BIOCOMBUSTÍVEIS. *Preços de produtores e importadores de derivados de petróleo e biodiesel*. Brasília: ANP, 2026. Disponível em: https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/precos-de-produtores-e-importadores-de-derivados-de-petroleo-e-biodiesel. Acesso em: 27 set. 2026.
 
 AGÊNCIA NACIONAL DO PETRÓLEO, GÁS NATURAL E BIOCOMBUSTÍVEIS. *Dados abertos*: vendas de derivados de petróleo e etanol. Brasília: ANP, 2026. Disponível em: https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/vdpb/vendas-derivados-petroleo-e-etanol/. Acesso em: 19 ago. 2026.
 

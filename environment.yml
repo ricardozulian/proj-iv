@@ -1,5 +1,5 @@
 # Ambiente conda dos notebooks do Proj IV (série temporal).
-# Só o SQLite congelado. Sem pipeline Gas Flare.
+# Só o SQLite do curso. Sem pipeline Gas Flare.
 #
 # Criar:
 #   conda env create -f environment.yml
@@ -11,10 +11,21 @@
 #   conda activate proj-iv
 #   python -m ipykernel install --user --name proj-iv --display-name "Python (proj_IV)"
 #
+# Plataformas:
+#   Windows / Linux: PyTorch em CPU.
+#   Mac Apple Silicon (M4): PyTorch com backend Metal (MPS). O pacote TimesFM
+#   também instala o backend MLX, nativo do Apple Silicon.
+#
+# Escolha do dispositivo no notebook:
+#   device = "mps" if torch.backends.mps.is_available() else ("cuda" if torch.cuda.is_available() else "cpu")
+#
+# Pesos do TimesFM 3.0 (google/timesfm-3.0-pytorch): download na primeira
+# execução, para o cache do Hugging Face (~/.cache/huggingface), fora do
+# repositório. Licença não comercial dos pesos.
+#
 name: proj-iv
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - python=3.12
   - pip
@@ -22,7 +33,14 @@ dependencies:
   - numpy
   - pandas
   - scipy
-  - statsmodels
+  - statsmodels>=0.14.5
+  # SARIMAX: busca automática da ordem (auto_arima)
+  - pmdarima>=2.1
+  # Prophet: vetores de preço (semanal) e atividade (mensal)
+  - prophet>=1.1
+  - plotly
+  # Escala, métricas e busca em grade
+  - scikit-learn
   # Gráficos
   - matplotlib
   - seaborn
@@ -33,3 +51,14 @@ dependencies:
   - jupyterlab
   - ipykernel
   - ipywidgets
+  # LSTM e TimesFM: PyTorch do conda-forge, build de CPU (no Mac arm64 o
+  # build inclui o backend MPS). Não instale torch pelo pip: a roda do PyPI
+  # traz outra cópia do OpenMP (libiomp5md.dll) e derruba o kernel no Windows.
+  - pytorch>=2.5=cpu*
+  # TimesFM vem do PyPI. O pip encontra o torch do conda e não instala outro.
+  - pip:
+      - timesfm[torch]>=3.0
+      - timesfm[mlx]>=3.0; sys_platform == "darwin" and platform_machine == "arm64"
+variables:
+  # No Mac, operações sem kernel MPS caem para a CPU em vez de gerar erro.
+  PYTORCH_ENABLE_MPS_FALLBACK: "1"

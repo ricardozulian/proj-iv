@@ -1,0 +1,1 @@
+conda run -n proj-iv python -c "import torch, prophet, timesfm; print(torch.__version__, torch.backends.mps.is_available())"
