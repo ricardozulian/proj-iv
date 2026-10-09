@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="720" viewBox="0 0 1320 720">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="24" y="36" font-family="Segoe UI, Arial" font-size="20" font-weight="700" fill="#1a1a1a">Diagrama de solução — Etapa 3</text>
+  <text x="24" y="58" font-family="Segoe UI, Arial" font-size="12" fill="#555555">Cinco fases. Um corte temporal por vetor. A linha ingênua é a referência. O teste tem o tamanho do horizonte mais longo.</text>
+
+  <rect x="360" y="76" width="600" height="70" rx="8" fill="#4A4A4A"/>
+  <text x="376" y="100" font-family="Segoe UI, Arial" font-size="13" fill="#F5F5F5">1. Coleta — data/gas_flare.sqlite (base congelada)</text>
+  <text x="376" y="120" font-family="Segoe UI, Arial" font-size="12" fill="#F5F5F5">Âncora: PPI diário (ABICOM), 1.151 datas, corte em 21/09/2026</text>
+  <polygon points="660,146 652,138 668,138" fill="#4A4A4A"/>
+
+  <rect x="360" y="154" width="600" height="92" rx="8" fill="#F7F7F7" stroke="#B5B5B5"/>
+  <text x="376" y="176" font-family="Segoe UI, Arial" font-size="13" fill="#333333">2. Pré-processamento</text>
+  <text x="376" y="196" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Alinhamento ao dia útil; buraco de calendário → vizinho; OCR do PPI</text>
+  <text x="376" y="214" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Volume diário ANP (m³) ou Petrobras (mbpd × 159 L); produto = desvio × volume</text>
+  <text x="376" y="232" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Normalização 0–1 só na LSTM</text>
+  <polygon points="660,246 652,238 668,238" fill="#4A4A4A"/>
+
+  <rect x="360" y="254" width="600" height="76" rx="8" fill="#F7F7F7" stroke="#B5B5B5"/>
+  <text x="376" y="276" font-family="Segoe UI, Arial" font-size="13" fill="#333333">3. Análise exploratória e visualização</text>
+  <text x="376" y="296" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Tendência, sazonalidade, ciclo e ruído; estacionariedade; ACF e PACF</text>
+  <text x="376" y="314" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Correlação cruzada PPI × alvo → defasagem; linha, caixa e mapa de calor</text>
+  <polygon points="660,330 652,322 668,322" fill="#4A4A4A"/>
+
+  <rect x="360" y="338" width="600" height="36" rx="8" fill="#4A4A4A"/>
+  <text x="520" y="361" font-family="Segoe UI, Arial" font-size="13" font-weight="700" fill="#F5F5F5">4. Modelagem — um corte por vetor</text>
+
+  <rect x="16" y="392" width="310" height="168" rx="8" fill="#ffffff" stroke="#4A4A4A"/>
+  <text x="28" y="414" font-family="Segoe UI, Arial" font-size="13" font-weight="700" fill="#333333">Mercado — dia útil</text>
+  <text x="28" y="434" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Alvo: fechamento de PETR4</text>
+  <text x="28" y="452" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Entrada: PPI e desvio × volume (lag 0)</text>
+  <text x="28" y="470" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Horizonte: 5 e 21 dias úteis</text>
+  <text x="28" y="488" font-family="Segoe UI, Arial" font-size="12" fill="#333333">naive, SARIMAX, LSTM, TimesFM 3.0</text>
+  <text x="28" y="506" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Treino: 1º fev. 2022 a 19 ago. 2026</text>
+  <text x="28" y="524" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Teste: 20 ago. a 18 set. 2026</text>
+  <text x="28" y="542" font-family="Segoe UI, Arial" font-size="11" fill="#555555">TimesFM só neste vetor</text>
+
+  <rect x="342" y="392" width="310" height="168" rx="8" fill="#ffffff" stroke="#4A4A4A"/>
+  <text x="354" y="414" font-family="Segoe UI, Arial" font-size="13" font-weight="700" fill="#333333">Preço — semana</text>
+  <text x="354" y="434" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Alvo: preço ANP e preço Petrobras</text>
+  <text x="354" y="452" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Entrada: PPI da semana (lags 1 e 2)</text>
+  <text x="354" y="470" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Horizonte: 4 e 8 semanas</text>
+  <text x="354" y="488" font-family="Segoe UI, Arial" font-size="12" fill="#333333">naive, SARIMAX sazonal, Prophet</text>
+  <text x="354" y="506" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Treino: até 19 jul. 2026</text>
+  <text x="354" y="524" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Teste: 20 jul. a 13 set. 2026</text>
+  <text x="354" y="542" font-family="Segoe UI, Arial" font-size="11" fill="#555555">s=52 no SARIMAX</text>
+
+  <rect x="668" y="392" width="310" height="168" rx="8" fill="#ffffff" stroke="#4A4A4A"/>
+  <text x="680" y="414" font-family="Segoe UI, Arial" font-size="13" font-weight="700" fill="#333333">Atividade — mês</text>
+  <text x="680" y="434" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Alvo: tráfego, indústria, varejo, desemprego</text>
+  <text x="680" y="452" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Entrada: produto somado no mês</text>
+  <text x="680" y="470" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Horizonte: 1 e 3 meses</text>
+  <text x="680" y="488" font-family="Segoe UI, Arial" font-size="12" fill="#333333">naive, SARIMAX sazonal, Prophet</text>
+  <text x="680" y="506" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Treino: até abr. 2026</text>
+  <text x="680" y="524" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Teste: mai., jun. e jul. 2026</text>
+  <text x="680" y="542" font-family="Segoe UI, Arial" font-size="11" fill="#555555">s=12 no SARIMAX</text>
+
+  <rect x="994" y="392" width="310" height="168" rx="8" fill="#ffffff" stroke="#4A4A4A"/>
+  <text x="1006" y="414" font-family="Segoe UI, Arial" font-size="13" font-weight="700" fill="#333333">Companhia — trimestre</text>
+  <text x="1006" y="434" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Alvo: volume, receita RT&amp;M, lucro, margem</text>
+  <text x="1006" y="452" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Entrada: nenhuma exógena (d=1)</text>
+  <text x="1006" y="470" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Horizonte: 2º trimestre de 2026</text>
+  <text x="1006" y="488" font-family="Segoe UI, Arial" font-size="12" fill="#333333">naive e SARIMAX, vs ITR publicado</text>
+  <text x="1006" y="506" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Treino: 1º trim. 2022 ao 1º trim. 2026</text>
+  <text x="1006" y="524" font-family="Segoe UI, Arial" font-size="12" fill="#333333">Teste: 2º trim. 2026 (um ponto)</text>
+  <text x="1006" y="542" font-family="Segoe UI, Arial" font-size="11" fill="#555555">subvenção ITR nota 4; indicação</text>
+
+  <rect x="360" y="580" width="600" height="88" rx="8" fill="#4A4A4A"/>
+  <text x="376" y="604" font-family="Segoe UI, Arial" font-size="13" fill="#F5F5F5">5. Avaliação e validação</text>
+  <text x="376" y="624" font-family="Segoe UI, Arial" font-size="12" fill="#F5F5F5">MAE, MSE e RMSE; gráfico real × previsto</text>
+  <text x="376" y="642" font-family="Segoe UI, Arial" font-size="12" fill="#F5F5F5">Horizonte curto dentro do teste longo: 5d nos 21, 4w nas 8, 1m nos 3</text>
+  <text x="376" y="656" font-family="Segoe UI, Arial" font-size="12" fill="#F5F5F5">O 2T26 tem um ponto só. O erro desse vetor serve como indicação.</text>
+
+  <text x="24" y="696" font-family="Segoe UI, Arial" font-size="11" fill="#555555">SARIMAX, Prophet e TimesFM recebem valores originais. LSTM recebe 0–1. No teste, o último PPI conhecido se repete quando a defasagem é menor que o horizonte.</text>
+  <text x="24" y="712" font-family="Segoe UI, Arial" font-size="11" fill="#555555">Ajuste no MacBook M4 (SARIMAX, Prophet, TimesFM) e neste Windows (naive, LSTM). Métricas em results/etapa3_metrics.json.</text>
+</svg>

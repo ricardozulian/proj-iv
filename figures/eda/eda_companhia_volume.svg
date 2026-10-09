@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="340" viewBox="0 0 900 340">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="60" y="20" font-family="Segoe UI, Arial" font-size="14">Volume Petrobras</text>
+<text x="12" y="160.0" font-family="Segoe UI, Arial" font-size="11" transform="rotate(-90 12 160.0)">mbpd</text>
+<line x1="60" y1="36" x2="60" y2="284" stroke="#333" stroke-width="1"/>
+<line x1="60" y1="284" x2="880" y2="284" stroke="#333" stroke-width="1"/>
+<polyline points="60.0,96.7 108.2,79.4 156.5,62.0 204.7,69.7 252.9,97.8 301.2,94.2 349.4,53.4 397.6,80.4 445.9,109.5 494.1,96.2 542.4,74.3 590.6,89.1 638.8,87.6 687.1,94.2 735.3,49.3 783.5,60.5 831.8,85.5 880.0,83.5" fill="none" stroke="#222222" stroke-width="1.6"/>
+<circle cx="880.0" cy="83.5" r="3.2" fill="#222222"/>
+<polyline points="60.0,256.9 108.2,270.7 156.5,255.4 204.7,234.0 252.9,250.8 301.2,240.6 349.4,249.8 397.6,254.4 445.9,265.1 494.1,262.0 542.4,260.0 590.6,241.6 638.8,259.0 687.1,255.9 735.3,256.9 783.5,242.7 831.8,251.3 880.0,255.9" fill="none" stroke="#1f77b4" stroke-width="1.6"/>
+<circle cx="880.0" cy="255.9" r="3.2" fill="#1f77b4"/>
+<rect x="68" y="312" width="12" height="12" fill="#222222"/>
+<text x="84" y="322" font-family="Segoe UI, Arial" font-size="11">diesel</text>
+<rect x="144" y="312" width="12" height="12" fill="#1f77b4"/>
+<text x="160" y="322" font-family="Segoe UI, Arial" font-size="11">gasolina</text>
+<text x="60" y="336" font-family="Segoe UI, Arial" font-size="10">31/03/2022 — 30/06/2026</text>
+</svg>

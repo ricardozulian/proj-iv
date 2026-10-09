@@ -7,6 +7,8 @@ Desenvolvimento de aplicação de séries temporais.
 Documento da Etapa 1: [`notebooks/proj-iv_grupo19_etapa1.ipynb`](notebooks/proj-iv_grupo19_etapa1.ipynb).
 
 Documento da Etapa 2: [`notebooks/proj-iv_grupo19_etapa2.ipynb`](notebooks/proj-iv_grupo19_etapa2.ipynb).
+
+Documento da Etapa 3: [`notebooks/proj-iv_grupo19_etapa3.ipynb`](notebooks/proj-iv_grupo19_etapa3.ipynb).
 ## Base
 
 | Arquivo | Conteúdo |
@@ -30,16 +32,21 @@ python -m ipykernel install --user --name proj-iv --display-name "Python (proj_I
 
 5. Abra os notebooks com o kernel **Python (proj_IV)**.
 6. Use o diretório de trabalho `proj_IV/` ou `proj_IV/notebooks/`.
+7. Ajustes da Etapa 3, a partir da raiz do projeto: no MacBook, `bash run_etapa3_mac.sh` (naive; SARIMAX, LSTM e TimesFM com `prod` no dia; Prophet no preço e na atividade; companhia SARIMAX com `prod_pbr`). Neste Windows: `python src/etapa3_models.py --only naive,lstm`.
 
 ## Pastas
 
 ```
 proj_IV/
-  data/           # SQLite congelado
-  images/         # figuras do notebook de entrega
-  notebooks/      # EDA e documento oficial
-  src/            # acesso à base
-  environment.yml # ambiente conda
+  data/                 # SQLite congelado
+  images/               # assets estáticos (logo, drawio)
+  figures/eda/          # gráficos de EDA gerados
+  figures/forecasts/    # overlays real × previsto
+  results/              # JSON de métricas e previsões
+  logs/                 # stdout das rodadas
+  notebooks/            # EDA e documento oficial
+  src/                  # acesso à base e ajustes da Etapa 3
+  environment.yml       # ambiente conda
 ```
 
 ## Leitura da base
@@ -62,6 +69,9 @@ print(resolve_database_url(root))  # sqlite:/.../data/gas_flare.sqlite
 
 | Arquivo | Conteúdo |
 |---------|----------|
+| `proj-iv_grupo19_etapa1` | Documento da Etapa 1 (congelado) |
+| `proj-iv_grupo19_etapa2` | Documento da Etapa 2 (entregue) |
+| `proj-iv_grupo19_etapa3` | Documento da Etapa 3 (em curso) |
 | `cd_projeto_aplicado_IV_doc` | Documento oficial da disciplina |
 | `ppi_eda` | PPI (`ppi_daily`) |
 | `price_eda` | Preços semanais ANP e Petrobras |

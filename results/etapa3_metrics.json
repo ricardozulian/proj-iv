@@ -1,0 +1,1093 @@
+{
+  "rows": [
+    {
+      "vector": "mercado",
+      "target": "PETR4",
+      "model": "naive",
+      "horizon": "5d",
+      "MAE": 1.3639999999999985,
+      "MSE": 1.9466799999999957,
+      "RMSE": 1.3952347472737323
+    },
+    {
+      "vector": "mercado",
+      "target": "PETR4",
+      "model": "naive",
+      "horizon": "21d",
+      "MAE": 3.7442857142857147,
+      "MSE": 18.606300000000005,
+      "RMSE": 4.313502057493424
+    },
+    {
+      "vector": "preço",
+      "target": "ANP gasolina",
+      "model": "naive",
+      "horizon": "4w",
+      "MAE": 0.09438749999999996,
+      "MSE": 0.010301323424999995,
+      "RMSE": 0.10149543548849867
+    },
+    {
+      "vector": "preço",
+      "target": "ANP gasolina",
+      "model": "naive",
+      "horizon": "8w",
+      "MAE": 0.12130249999999992,
+      "MSE": 0.02214589852499997,
+      "RMSE": 0.14881498084870343
+    },
+    {
+      "vector": "preço",
+      "target": "ANP diesel",
+      "model": "naive",
+      "horizon": "4w",
+      "MAE": 0.39880000000000027,
+      "MSE": 0.29956905393750033,
+      "RMSE": 0.547329017993291
+    },
+    {
+      "vector": "preço",
+      "target": "ANP diesel",
+      "model": "naive",
+      "horizon": "8w",
+      "MAE": 0.23001937500000036,
+      "MSE": 0.15268274558437517,
+      "RMSE": 0.39074639548481466
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras gasolina",
+      "model": "naive",
+      "horizon": "4w",
+      "MAE": 0.000356573426574025,
+      "MSE": 1.6952614471832216e-07,
+      "RMSE": 0.0004117355276367612
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras gasolina",
+      "model": "naive",
+      "horizon": "8w",
+      "MAE": 0.0003676806526810017,
+      "MSE": 1.6117317010922418e-07,
+      "RMSE": 0.00040146378430591244
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras diesel",
+      "model": "naive",
+      "horizon": "4w",
+      "MAE": 0.0001301652892558014,
+      "MSE": 2.2590670036061926e-08,
+      "RMSE": 0.00015030192958196488
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras diesel",
+      "model": "naive",
+      "horizon": "8w",
+      "MAE": 0.00024660615092730875,
+      "MSE": 9.515075585449122e-08,
+      "RMSE": 0.00030846516149233324
+    },
+    {
+      "vector": "atividade",
+      "target": "tráfego pesado",
+      "model": "naive",
+      "horizon": "1m",
+      "MAE": 15.296373167883445,
+      "MSE": 233.9790320911446,
+      "RMSE": 15.296373167883445
+    },
+    {
+      "vector": "atividade",
+      "target": "tráfego pesado",
+      "model": "naive",
+      "horizon": "3m",
+      "MAE": 9.425022372706309,
+      "MSE": 106.25113349019382,
+      "RMSE": 10.307819046248039
+    },
+    {
+      "vector": "atividade",
+      "target": "indústria",
+      "model": "naive",
+      "horizon": "1m",
+      "MAE": 5.348339999999993,
+      "MSE": 28.604740755599927,
+      "RMSE": 5.348339999999993
+    },
+    {
+      "vector": "atividade",
+      "target": "indústria",
+      "model": "naive",
+      "horizon": "3m",
+      "MAE": 6.261393333333331,
+      "MSE": 45.898966922866656,
+      "RMSE": 6.774877631578792
+    },
+    {
+      "vector": "atividade",
+      "target": "varejo",
+      "model": "naive",
+      "horizon": "1m",
+      "MAE": 3.6676399999999916,
+      "MSE": 13.451583169599939,
+      "RMSE": 3.6676399999999916
+    },
+    {
+      "vector": "atividade",
+      "target": "varejo",
+      "model": "naive",
+      "horizon": "3m",
+      "MAE": 2.2772299999999936,
+      "MSE": 7.4134823790999596,
+      "RMSE": 2.7227710845937745
+    },
+    {
+      "vector": "atividade",
+      "target": "desemprego",
+      "model": "naive",
+      "horizon": "1m",
+      "MAE": 0.20000000000000018,
+      "MSE": 0.04000000000000007,
+      "RMSE": 0.20000000000000018
+    },
+    {
+      "vector": "atividade",
+      "target": "desemprego",
+      "model": "naive",
+      "horizon": "3m",
+      "MAE": 0.36666666666666653,
+      "MSE": 0.14999999999999988,
+      "RMSE": 0.38729833462074154
+    },
+    {
+      "vector": "companhia",
+      "target": "diesel mbpd",
+      "model": "naive",
+      "horizon": "2Q26",
+      "MAE": 4.0,
+      "MSE": 16.0,
+      "RMSE": 4.0,
+      "note": "subvenção ITR nota 4 no 2T26"
+    },
+    {
+      "vector": "companhia",
+      "target": "gasolina mbpd",
+      "model": "naive",
+      "horizon": "2Q26",
+      "MAE": 9.0,
+      "MSE": 81.0,
+      "RMSE": 9.0,
+      "note": "subvenção ITR nota 4 no 2T26"
+    },
+    {
+      "vector": "companhia",
+      "target": "receita RT&M",
+      "model": "naive",
+      "horizon": "2Q26",
+      "MAE": 46015.0,
+      "MSE": 2117380225.0,
+      "RMSE": 46015.0,
+      "note": "subvenção ITR nota 4 no 2T26"
+    },
+    {
+      "vector": "companhia",
+      "target": "lucro bruto RT&M",
+      "model": "naive",
+      "horizon": "2Q26",
+      "MAE": 2380.0,
+      "MSE": 5664400.0,
+      "RMSE": 2380.0,
+      "note": "subvenção ITR nota 4 no 2T26"
+    },
+    {
+      "vector": "companhia",
+      "target": "margem RT&M",
+      "model": "naive",
+      "horizon": "2Q26",
+      "MAE": 4.256593562170028,
+      "MSE": 18.118588753507332,
+      "RMSE": 4.256593562170028,
+      "note": "subvenção ITR nota 4 no 2T26"
+    },
+    {
+      "vector": "mercado",
+      "target": "PETR4",
+      "model": "sarimax",
+      "horizon": "5d",
+      "MAE": 1.3801275849558365,
+      "MSE": 2.0004479522100214,
+      "RMSE": 1.4143719285287097,
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": null,
+      "aic": 2439.138653011535
+    },
+    {
+      "vector": "mercado",
+      "target": "PETR4",
+      "model": "sarimax",
+      "horizon": "21d",
+      "MAE": 3.6617321305360546,
+      "MSE": 17.716620168142004,
+      "RMSE": 4.209111565181185,
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": null,
+      "aic": 2439.138653011535
+    },
+    {
+      "vector": "preço",
+      "target": "ANP gasolina",
+      "model": "sarimax",
+      "horizon": "4w",
+      "MAE": 3.4489415457119295,
+      "MSE": 12.623806640817087,
+      "RMSE": 3.552999668001263,
+      "order": [
+        1,
+        0,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0,
+        52
+      ],
+      "aic": 530.034676103674
+    },
+    {
+      "vector": "preço",
+      "target": "ANP gasolina",
+      "model": "sarimax",
+      "horizon": "8w",
+      "MAE": 4.675258635347801,
+      "MSE": 24.23166182219139,
+      "RMSE": 4.922566588903739,
+      "order": [
+        1,
+        0,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0,
+        52
+      ],
+      "aic": 530.034676103674
+    },
+    {
+      "vector": "preço",
+      "target": "ANP diesel",
+      "model": "sarimax",
+      "horizon": "4w",
+      "MAE": 0.35924264786480253,
+      "MSE": 0.20225886703784027,
+      "RMSE": 0.4497319946788757,
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0,
+        52
+      ],
+      "aic": -244.16032422047394
+    },
+    {
+      "vector": "preço",
+      "target": "ANP diesel",
+      "model": "sarimax",
+      "horizon": "8w",
+      "MAE": 0.25459864359619816,
+      "MSE": 0.11327745666597891,
+      "RMSE": 0.3365671651631794,
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0,
+        52
+      ],
+      "aic": -244.16032422047394
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras gasolina",
+      "model": "sarimax",
+      "horizon": "4w",
+      "MAE": 0.04140521196330749,
+      "MSE": 0.001992072511058668,
+      "RMSE": 0.04463263952600908,
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        1,
+        0,
+        0,
+        52
+      ],
+      "aic": -531.2095938747583
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras gasolina",
+      "model": "sarimax",
+      "horizon": "8w",
+      "MAE": 0.052874447198592245,
+      "MSE": 0.003117272816984775,
+      "RMSE": 0.0558325426340658,
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        1,
+        0,
+        0,
+        52
+      ],
+      "aic": -531.2095938747583
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras diesel",
+      "model": "sarimax",
+      "horizon": "4w",
+      "MAE": 0.11672242124766363,
+      "MSE": 0.015045355473937146,
+      "RMSE": 0.1226595103281321,
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0,
+        52
+      ],
+      "aic": -300.7760983695308
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras diesel",
+      "model": "sarimax",
+      "horizon": "8w",
+      "MAE": 0.15757752772486655,
+      "MSE": 0.027650839403482633,
+      "RMSE": 0.16628541548639386,
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0,
+        52
+      ],
+      "aic": -300.7760983695308
+    },
+    {
+      "vector": "atividade",
+      "target": "tráfego pesado",
+      "model": "sarimax",
+      "horizon": "1m",
+      "MAE": 3.678136507732262,
+      "MSE": 13.52868816951288,
+      "RMSE": 3.678136507732262,
+      "order": [
+        0,
+        0,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        1,
+        0,
+        12
+      ],
+      "aic": 230.83908222493534
+    },
+    {
+      "vector": "atividade",
+      "target": "tráfego pesado",
+      "model": "sarimax",
+      "horizon": "3m",
+      "MAE": 6.537728870802084,
+      "MSE": 79.00231059500872,
+      "RMSE": 8.888324397489592,
+      "order": [
+        0,
+        0,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        1,
+        0,
+        12
+      ],
+      "aic": 230.83908222493534
+    },
+    {
+      "vector": "atividade",
+      "target": "indústria",
+      "model": "sarimax",
+      "horizon": "1m",
+      "MAE": 2.238015372998916,
+      "MSE": 5.008712809779477,
+      "RMSE": 2.238015372998916,
+      "order": [
+        0,
+        0,
+        0
+      ],
+      "seasonal_order": [
+        1,
+        1,
+        0,
+        12
+      ],
+      "aic": 184.7980663241147
+    },
+    {
+      "vector": "atividade",
+      "target": "indústria",
+      "model": "sarimax",
+      "horizon": "3m",
+      "MAE": 2.1157071651697095,
+      "MSE": 5.673312054035914,
+      "RMSE": 2.381871544402828,
+      "order": [
+        0,
+        0,
+        0
+      ],
+      "seasonal_order": [
+        1,
+        1,
+        0,
+        12
+      ],
+      "aic": 184.7980663241147
+    },
+    {
+      "vector": "atividade",
+      "target": "varejo",
+      "model": "sarimax",
+      "horizon": "1m",
+      "MAE": 3.495058770272877,
+      "MSE": 12.215435807661354,
+      "RMSE": 3.495058770272877,
+      "order": [
+        0,
+        0,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        1,
+        0,
+        12
+      ],
+      "aic": 167.70764892256963
+    },
+    {
+      "vector": "atividade",
+      "target": "varejo",
+      "model": "sarimax",
+      "horizon": "3m",
+      "MAE": 2.1144263562822374,
+      "MSE": 6.17387432660657,
+      "RMSE": 2.4847282198676317,
+      "order": [
+        0,
+        0,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        1,
+        0,
+        12
+      ],
+      "aic": 167.70764892256963
+    },
+    {
+      "vector": "atividade",
+      "target": "desemprego",
+      "model": "sarimax",
+      "horizon": "1m",
+      "MAE": 0.12731093529315984,
+      "MSE": 0.016208074245219133,
+      "RMSE": 0.12731093529315984,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        1,
+        0,
+        0,
+        12
+      ],
+      "aic": -31.786331276472588
+    },
+    {
+      "vector": "atividade",
+      "target": "desemprego",
+      "model": "sarimax",
+      "horizon": "3m",
+      "MAE": 0.18850887963410567,
+      "MSE": 0.03741347926059346,
+      "RMSE": 0.19342564271728158,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        1,
+        0,
+        0,
+        12
+      ],
+      "aic": -31.786331276472588
+    },
+    {
+      "vector": "preço",
+      "target": "ANP gasolina",
+      "model": "prophet",
+      "horizon": "4w",
+      "MAE": 0.46611159829210946,
+      "MSE": 0.22170851903191496,
+      "RMSE": 0.47085934102650545
+    },
+    {
+      "vector": "preço",
+      "target": "ANP gasolina",
+      "model": "prophet",
+      "horizon": "8w",
+      "MAE": 0.5115585665853679,
+      "MSE": 0.2923904959821364,
+      "RMSE": 0.5407314453424513
+    },
+    {
+      "vector": "preço",
+      "target": "ANP diesel",
+      "model": "prophet",
+      "horizon": "4w",
+      "MAE": 0.42108085306305454,
+      "MSE": 0.30773609945173364,
+      "RMSE": 0.5547396681793485
+    },
+    {
+      "vector": "preço",
+      "target": "ANP diesel",
+      "model": "prophet",
+      "horizon": "8w",
+      "MAE": 0.7598735485577013,
+      "MSE": 0.7619418576704103,
+      "RMSE": 0.8728928099545845
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras gasolina",
+      "model": "prophet",
+      "horizon": "4w",
+      "MAE": 0.4181259483786469,
+      "MSE": 0.17562310167537248,
+      "RMSE": 0.419074100458824
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras gasolina",
+      "model": "prophet",
+      "horizon": "8w",
+      "MAE": 0.416905587961556,
+      "MSE": 0.1744262482344192,
+      "RMSE": 0.4176436857351242
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras diesel",
+      "model": "prophet",
+      "horizon": "4w",
+      "MAE": 0.5628762991378331,
+      "MSE": 0.3170330475249472,
+      "RMSE": 0.5630568776997109
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras diesel",
+      "model": "prophet",
+      "horizon": "8w",
+      "MAE": 0.45446027951315815,
+      "MSE": 0.21993368347135073,
+      "RMSE": 0.46897087699701645
+    },
+    {
+      "vector": "atividade",
+      "target": "tráfego pesado",
+      "model": "prophet",
+      "horizon": "1m",
+      "MAE": 2.342147450050419,
+      "MSE": 5.48565467777768,
+      "RMSE": 2.342147450050419
+    },
+    {
+      "vector": "atividade",
+      "target": "tráfego pesado",
+      "model": "prophet",
+      "horizon": "3m",
+      "MAE": 3.569987115821173,
+      "MSE": 19.08309821978402,
+      "RMSE": 4.368420563519957
+    },
+    {
+      "vector": "atividade",
+      "target": "indústria",
+      "model": "prophet",
+      "horizon": "1m",
+      "MAE": 2.0701623015784634,
+      "MSE": 4.285571954876641,
+      "RMSE": 2.0701623015784634
+    },
+    {
+      "vector": "atividade",
+      "target": "indústria",
+      "model": "prophet",
+      "horizon": "3m",
+      "MAE": 1.6669061914090502,
+      "MSE": 2.8678728744334925,
+      "RMSE": 1.6934795169807908
+    },
+    {
+      "vector": "atividade",
+      "target": "varejo",
+      "model": "prophet",
+      "horizon": "1m",
+      "MAE": 0.6125768985239262,
+      "MSE": 0.3752504566051925,
+      "RMSE": 0.6125768985239262
+    },
+    {
+      "vector": "atividade",
+      "target": "varejo",
+      "model": "prophet",
+      "horizon": "3m",
+      "MAE": 0.840457916648622,
+      "MSE": 0.7793350158384068,
+      "RMSE": 0.8827995332114799
+    },
+    {
+      "vector": "atividade",
+      "target": "desemprego",
+      "model": "prophet",
+      "horizon": "1m",
+      "MAE": 0.28573672350200496,
+      "MSE": 0.08164547515766124,
+      "RMSE": 0.28573672350200496
+    },
+    {
+      "vector": "atividade",
+      "target": "desemprego",
+      "model": "prophet",
+      "horizon": "3m",
+      "MAE": 0.3929994972934872,
+      "MSE": 0.160556595611783,
+      "RMSE": 0.40069514048935384
+    },
+    {
+      "vector": "companhia",
+      "target": "diesel mbpd",
+      "model": "sarimax",
+      "horizon": "2Q26",
+      "MAE": 42.90881077000836,
+      "MSE": 1841.1660416963853,
+      "RMSE": 42.90881077000836,
+      "order": [
+        2,
+        1,
+        2
+      ],
+      "seasonal_order": null,
+      "aic": 130.45764093705247,
+      "note": "prod_pbr contemporâneo (PPI × volume do próprio trimestre); d=1; subvenção ITR nota 4 no 2T26"
+    },
+    {
+      "vector": "companhia",
+      "target": "gasolina mbpd",
+      "model": "sarimax",
+      "horizon": "2Q26",
+      "MAE": 9.105877830977136,
+      "MSE": 82.91701107268086,
+      "RMSE": 9.105877830977136,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "seasonal_order": null,
+      "aic": 121.00038135845293,
+      "note": "prod_pbr contemporâneo (PPI × volume do próprio trimestre); d=1; subvenção ITR nota 4 no 2T26"
+    },
+    {
+      "vector": "companhia",
+      "target": "receita RT&M",
+      "model": "sarimax",
+      "horizon": "2Q26",
+      "MAE": 34028.267044320644,
+      "MSE": 1157922958.0395985,
+      "RMSE": 34028.267044320644,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "seasonal_order": null,
+      "aic": 300.52519884287676,
+      "note": "prod_pbr contemporâneo (PPI × volume do próprio trimestre); d=1; subvenção ITR nota 4 no 2T26"
+    },
+    {
+      "vector": "companhia",
+      "target": "lucro bruto RT&M",
+      "model": "sarimax",
+      "horizon": "2Q26",
+      "MAE": 2455.6722076287624,
+      "MSE": 6030325.9913203195,
+      "RMSE": 2455.6722076287624,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "seasonal_order": null,
+      "aic": 258.02231351735423,
+      "note": "prod_pbr contemporâneo (PPI × volume do próprio trimestre); d=1; subvenção ITR nota 4 no 2T26"
+    },
+    {
+      "vector": "companhia",
+      "target": "margem RT&M",
+      "model": "sarimax",
+      "horizon": "2Q26",
+      "MAE": 7.9769658476528456,
+      "MSE": 63.631984134619884,
+      "RMSE": 7.9769658476528456,
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "seasonal_order": null,
+      "aic": 70.6139177602776,
+      "note": "prod_pbr contemporâneo (PPI × volume do próprio trimestre); d=1; subvenção ITR nota 4 no 2T26"
+    },
+    {
+      "vector": "mercado",
+      "target": "PETR4",
+      "model": "lstm",
+      "horizon": "5d",
+      "MAE": 1.2543634924888578,
+      "MSE": 2.185181712993279,
+      "RMSE": 1.4782360139684323,
+      "window": 21
+    },
+    {
+      "vector": "mercado",
+      "target": "PETR4",
+      "model": "lstm",
+      "horizon": "21d",
+      "MAE": 4.943809562467393,
+      "MSE": 33.27907021888178,
+      "RMSE": 5.768801454278157,
+      "window": 21
+    },
+    {
+      "vector": "mercado",
+      "target": "PETR4",
+      "model": "timesfm_cov",
+      "horizon": "5d",
+      "MAE": 1.355001251220702,
+      "MSE": 1.9181224674938442,
+      "RMSE": 1.3849629841601703
+    },
+    {
+      "vector": "mercado",
+      "target": "PETR4",
+      "model": "timesfm_cov",
+      "horizon": "21d",
+      "MAE": 4.025192921956379,
+      "MSE": 21.788073946739075,
+      "RMSE": 4.667769697268608
+    }
+  ],
+  "notes": [
+    "LSTM PETR4 device=cpu window=63 val_rmse_scaled=0.0292",
+    "LSTM PETR4 device=mps window=63 val_rmse_scaled=0.0292",
+    "LSTM PETR4+prod device=mps window=21 val_rmse_scaled=0.0314"
+  ],
+  "forecasts": {},
+  "meta": {
+    "platform": "darwin",
+    "machine": "arm64",
+    "python": "3.12.14",
+    "families_this_run": [
+      "naive",
+      "lstm",
+      "sarimax",
+      "prophet",
+      "timesfm"
+    ]
+  },
+  "figures": [
+    "fc_mercado_petr4.svg",
+    "fc_preco_anp_gas.svg",
+    "fc_preco_anp_die.svg",
+    "fc_preco_pbr_gas.svg",
+    "fc_preco_pbr_die.svg",
+    "fc_atividade_abcr_heavy.svg",
+    "fc_atividade_pim.svg",
+    "fc_atividade_pmc.svg",
+    "fc_atividade_unemp.svg"
+  ],
+  "forecasts_file": "etapa3_forecasts.json",
+  "lstm": {
+    "device": "mps",
+    "torch": "2.13.0",
+    "exog": "prod",
+    "scale_y_min": 21.47,
+    "scale_y_max": 49.78,
+    "scale_x_min": -844564849.1148386,
+    "scale_x_max": 182079589.31225806,
+    "grid": [
+      {
+        "window": 21,
+        "lr": 0.001,
+        "epochs": 40,
+        "hidden": 32,
+        "val_rmse_scaled": 0.03138012930526392
+      },
+      {
+        "window": 63,
+        "lr": 0.001,
+        "epochs": 40,
+        "hidden": 32,
+        "val_rmse_scaled": 0.06274471529060607
+      }
+    ],
+    "winner": {
+      "window": 21,
+      "lr": 0.001,
+      "epochs": 40,
+      "hidden": 32,
+      "val_rmse_scaled": 0.03138012930526392
+    }
+  },
+  "sarimax_orders": {
+    "mercado:PETR4": {
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": null,
+      "aic": 2439.138653011535
+    },
+    "preço:ANP gasolina": {
+      "order": [
+        1,
+        0,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0,
+        52
+      ],
+      "aic": 530.034676103674
+    },
+    "preço:ANP diesel": {
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0,
+        52
+      ],
+      "aic": -244.16032422047394
+    },
+    "preço:Petrobras gasolina": {
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        1,
+        0,
+        0,
+        52
+      ],
+      "aic": -531.2095938747583
+    },
+    "preço:Petrobras diesel": {
+      "order": [
+        0,
+        1,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        0,
+        0,
+        52
+      ],
+      "aic": -300.7760983695308
+    },
+    "atividade:tráfego pesado": {
+      "order": [
+        0,
+        0,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        1,
+        0,
+        12
+      ],
+      "aic": 230.83908222493534
+    },
+    "atividade:indústria": {
+      "order": [
+        0,
+        0,
+        0
+      ],
+      "seasonal_order": [
+        1,
+        1,
+        0,
+        12
+      ],
+      "aic": 184.7980663241147
+    },
+    "atividade:varejo": {
+      "order": [
+        0,
+        0,
+        0
+      ],
+      "seasonal_order": [
+        0,
+        1,
+        0,
+        12
+      ],
+      "aic": 167.70764892256963
+    },
+    "atividade:desemprego": {
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "seasonal_order": [
+        1,
+        0,
+        0,
+        12
+      ],
+      "aic": -31.786331276472588
+    },
+    "companhia:diesel mbpd": {
+      "order": [
+        2,
+        1,
+        2
+      ],
+      "seasonal_order": null,
+      "aic": 130.45764093705247,
+      "note": "prod_pbr contemporâneo (PPI × volume do próprio trimestre); d=1; subvenção ITR nota 4 no 2T26"
+    },
+    "companhia:gasolina mbpd": {
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "seasonal_order": null,
+      "aic": 121.00038135845293,
+      "note": "prod_pbr contemporâneo (PPI × volume do próprio trimestre); d=1; subvenção ITR nota 4 no 2T26"
+    },
+    "companhia:receita RT&M": {
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "seasonal_order": null,
+      "aic": 300.52519884287676,
+      "note": "prod_pbr contemporâneo (PPI × volume do próprio trimestre); d=1; subvenção ITR nota 4 no 2T26"
+    },
+    "companhia:lucro bruto RT&M": {
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "seasonal_order": null,
+      "aic": 258.02231351735423,
+      "note": "prod_pbr contemporâneo (PPI × volume do próprio trimestre); d=1; subvenção ITR nota 4 no 2T26"
+    },
+    "companhia:margem RT&M": {
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "seasonal_order": null,
+      "aic": 70.6139177602776,
+      "note": "prod_pbr contemporâneo (PPI × volume do próprio trimestre); d=1; subvenção ITR nota 4 no 2T26"
+    }
+  },
+  "timesfm": {
+    "backend": "mlx",
+    "device": "mps",
+    "checkpoint": "google/timesfm-3.0-pytorch",
+    "exog": "prod",
+    "covariate_note": "past_only_covariates=prod on train; TimesFM 3.0 has no horizon regressor"
+  }
+}

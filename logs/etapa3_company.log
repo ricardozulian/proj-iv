@@ -1,0 +1,79 @@
+root=/Volumes/code/proj_IV
+platform=darwin  families=['company']
+cortes: mkt 1135 21 preço 237 8 atividade 52 3 companhia 17 1
+== company
+  SARIMAX diesel mbpd order=(0, 1, 0) aic=169.1
+  SARIMAX gasolina mbpd order=(0, 1, 0) aic=149.3
+  SARIMAX receita RT&M order=(0, 1, 1) aic=344.9
+  SARIMAX lucro bruto RT&M order=(0, 1, 0) aic=321.1
+  SARIMAX margem RT&M order=(0, 1, 0) aic=88.4
+   vector             target       model horizon          MAE          MSE         RMSE     order  window                                           note
+atividade         desemprego       naive      1m     0.200000 4.000000e-02     0.200000       NaN     NaN                                            NaN
+atividade         desemprego       naive      3m     0.366667 1.500000e-01     0.387298       NaN     NaN                                            NaN
+atividade         desemprego     prophet      1m     0.276317 7.635094e-02     0.276317       NaN     NaN                                            NaN
+atividade         desemprego     prophet      3m     0.379116 1.490293e-01     0.386043       NaN     NaN                                            NaN
+atividade         desemprego     sarimax      1m     0.114077 1.301360e-02     0.114077 [0, 1, 2]     NaN                                            NaN
+atividade         desemprego     sarimax      3m     0.169004 3.126324e-02     0.176814 [0, 1, 2]     NaN                                            NaN
+atividade          indústria       naive      1m     5.348340 2.860474e+01     5.348340       NaN     NaN                                            NaN
+atividade          indústria       naive      3m     6.261393 4.589897e+01     6.774878       NaN     NaN                                            NaN
+atividade          indústria     prophet      1m     2.197744 4.830079e+00     2.197744       NaN     NaN                                            NaN
+atividade          indústria     prophet      3m     1.854944 3.548571e+00     1.883765       NaN     NaN                                            NaN
+atividade          indústria     sarimax      1m     2.358001 5.560168e+00     2.358001 [0, 0, 0]     NaN                                            NaN
+atividade          indústria     sarimax      3m     2.292550 5.895473e+00     2.428059 [0, 0, 0]     NaN                                            NaN
+atividade     tráfego pesado       naive      1m    15.296373 2.339790e+02    15.296373       NaN     NaN                                            NaN
+atividade     tráfego pesado       naive      3m     9.425022 1.062511e+02    10.307819       NaN     NaN                                            NaN
+atividade     tráfego pesado     prophet      1m     2.249598 5.060691e+00     2.249598       NaN     NaN                                            NaN
+atividade     tráfego pesado     prophet      3m     3.355092 1.807992e+01     4.252049       NaN     NaN                                            NaN
+atividade     tráfego pesado     sarimax      1m     3.998117 1.598494e+01     3.998117 [0, 0, 0]     NaN                                            NaN
+atividade     tráfego pesado     sarimax      3m     7.009337 7.760296e+01     8.809254 [0, 0, 0]     NaN                                            NaN
+atividade             varejo       naive      1m     3.667640 1.345158e+01     3.667640       NaN     NaN                                            NaN
+atividade             varejo       naive      3m     2.277230 7.413482e+00     2.722771       NaN     NaN                                            NaN
+atividade             varejo     prophet      1m     0.665325 4.426572e-01     0.665325       NaN     NaN                                            NaN
+atividade             varejo     prophet      3m     0.918201 8.828686e-01     0.939611       NaN     NaN                                            NaN
+atividade             varejo     sarimax      1m     3.598881 1.295195e+01     3.598881 [0, 0, 0]     NaN                                            NaN
+atividade             varejo     sarimax      3m     2.267447 6.403642e+00     2.530542 [0, 0, 0]     NaN                                            NaN
+companhia        diesel mbpd       naive    2Q26     4.000000 1.600000e+01     4.000000       NaN     NaN                   subvenção ITR nota 4 no 2T26
+companhia        diesel mbpd     sarimax    2Q26     4.000000 1.600000e+01     4.000000 [0, 1, 0]     NaN sem exógena; d=1; subvenção ITR nota 4 no 2T26
+companhia      gasolina mbpd       naive    2Q26     9.000000 8.100000e+01     9.000000       NaN     NaN                   subvenção ITR nota 4 no 2T26
+companhia      gasolina mbpd     sarimax    2Q26     9.000000 8.100000e+01     9.000000 [0, 1, 0]     NaN sem exógena; d=1; subvenção ITR nota 4 no 2T26
+companhia   lucro bruto RT&M       naive    2Q26  2380.000000 5.664400e+06  2380.000000       NaN     NaN                   subvenção ITR nota 4 no 2T26
+companhia   lucro bruto RT&M     sarimax    2Q26  2380.000000 5.664400e+06  2380.000000 [0, 1, 0]     NaN sem exógena; d=1; subvenção ITR nota 4 no 2T26
+companhia        margem RT&M       naive    2Q26     4.256594 1.811859e+01     4.256594       NaN     NaN                   subvenção ITR nota 4 no 2T26
+companhia        margem RT&M     sarimax    2Q26     4.256594 1.811859e+01     4.256594 [0, 1, 0]     NaN sem exógena; d=1; subvenção ITR nota 4 no 2T26
+companhia       receita RT&M       naive    2Q26 46015.000000 2.117380e+09 46015.000000       NaN     NaN                   subvenção ITR nota 4 no 2T26
+companhia       receita RT&M     sarimax    2Q26 46623.989012 2.173796e+09 46623.989012 [0, 1, 1]     NaN sem exógena; d=1; subvenção ITR nota 4 no 2T26
+  mercado              PETR4        lstm     21d     4.638548 2.919434e+01     5.403178       NaN    63.0                                            NaN
+  mercado              PETR4        lstm      5d     1.245823 2.331328e+00     1.526869       NaN    63.0                                            NaN
+  mercado              PETR4       naive     21d     3.744286 1.860630e+01     4.313502       NaN     NaN                                            NaN
+  mercado              PETR4       naive      5d     1.364000 1.946680e+00     1.395235       NaN     NaN                                            NaN
+  mercado              PETR4     sarimax     21d     3.664452 1.774568e+01     4.212563 [0, 1, 0]     NaN                                            NaN
+  mercado              PETR4     sarimax      5d     1.379476 1.998218e+00     1.413584 [0, 1, 0]     NaN                                            NaN
+  mercado              PETR4 timesfm_cov     21d     4.122606 2.296622e+01     4.792309       NaN     NaN                                            NaN
+  mercado              PETR4 timesfm_cov      5d     1.355234 1.926023e+00     1.387812       NaN     NaN                                            NaN
+  mercado              PETR4 timesfm_uni     21d     3.823844 1.948490e+01     4.414171       NaN     NaN                                            NaN
+  mercado              PETR4 timesfm_uni      5d     1.397924 2.048041e+00     1.431098       NaN     NaN                                            NaN
+    preço         ANP diesel       naive      4w     0.398800 2.995691e-01     0.547329       NaN     NaN                                            NaN
+    preço         ANP diesel       naive      8w     0.230019 1.526827e-01     0.390746       NaN     NaN                                            NaN
+    preço         ANP diesel     prophet      4w     0.421064 1.871988e-01     0.432665       NaN     NaN                                            NaN
+    preço         ANP diesel     prophet      8w     0.518816 2.840691e-01     0.532981       NaN     NaN                                            NaN
+    preço         ANP diesel     sarimax      4w     0.398800 2.995691e-01     0.547329 [0, 1, 0]     NaN                                            NaN
+    preço         ANP diesel     sarimax      8w     0.230019 1.526827e-01     0.390746 [0, 1, 0]     NaN                                            NaN
+    preço       ANP gasolina       naive      4w     0.094387 1.030132e-02     0.101495       NaN     NaN                                            NaN
+    preço       ANP gasolina       naive      8w     0.121302 2.214590e-02     0.148815       NaN     NaN                                            NaN
+    preço       ANP gasolina     prophet      4w     0.180511 3.456427e-02     0.185915       NaN     NaN                                            NaN
+    preço       ANP gasolina     prophet      8w     0.188402 4.259285e-02     0.206380       NaN     NaN                                            NaN
+    preço       ANP gasolina     sarimax      4w     0.097850 1.129390e-02     0.106273 [1, 0, 1]     NaN                                            NaN
+    preço       ANP gasolina     sarimax      8w     0.124773 2.396746e-02     0.154814 [1, 0, 1]     NaN                                            NaN
+    preço   Petrobras diesel       naive      4w     0.000130 2.259067e-08     0.000150       NaN     NaN                                            NaN
+    preço   Petrobras diesel       naive      8w     0.000247 9.515076e-08     0.000308       NaN     NaN                                            NaN
+    preço   Petrobras diesel     prophet      4w     0.641175 4.115678e-01     0.641535       NaN     NaN                                            NaN
+    preço   Petrobras diesel     prophet      8w     0.562124 3.231242e-01     0.568440       NaN     NaN                                            NaN
+    preço   Petrobras diesel     sarimax      4w     0.000130 2.259067e-08     0.000150 [0, 1, 0]     NaN                                            NaN
+    preço   Petrobras diesel     sarimax      8w     0.000247 9.515076e-08     0.000308 [0, 1, 0]     NaN                                            NaN
+    preço Petrobras gasolina       naive      4w     0.000357 1.695261e-07     0.000412       NaN     NaN                                            NaN
+    preço Petrobras gasolina       naive      8w     0.000368 1.611732e-07     0.000401       NaN     NaN                                            NaN
+    preço Petrobras gasolina     prophet      4w     0.376444 1.420993e-01     0.376961       NaN     NaN                                            NaN
+    preço Petrobras gasolina     prophet      8w     0.364593 1.333882e-01     0.365224       NaN     NaN                                            NaN
+    preço Petrobras gasolina     sarimax      4w     0.000357 1.695261e-07     0.000412 [0, 1, 0]     NaN                                            NaN
+    preço Petrobras gasolina     sarimax      8w     0.000368 1.611732e-07     0.000401 [0, 1, 0]     NaN                                            NaN
+métricas: /Volumes/code/proj_IV/images/etapa3_metrics.json
