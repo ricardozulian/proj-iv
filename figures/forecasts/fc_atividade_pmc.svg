@@ -1,18 +1,73 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="340" viewBox="0 0 900 340">
 <rect width="100%" height="100%" fill="#fff"/>
-<text x="60" y="20" font-family="Segoe UI, Arial" font-size="14">varejo no teste (3 meses)</text>
+<text x="60" y="20" font-family="Segoe UI, Arial" font-size="14">varejo: série vista e previsão (mai.–jul. 2026)</text>
 <text x="12" y="160.0" font-family="Segoe UI, Arial" font-size="11" transform="rotate(-90 12 160.0)">índice</text>
 <line x1="60" y1="36" x2="60" y2="284" stroke="#333" stroke-width="1"/>
 <line x1="60" y1="284" x2="880" y2="284" stroke="#333" stroke-width="1"/>
-<polyline points="60.0,154.3 470.0,270.7 880.0,175.6" fill="none" stroke="#222222" stroke-width="1.6"/>
-<circle cx="880.0" cy="175.6" r="3.2" fill="#222222"/>
-<polyline points="60.0,264.5 470.0,264.5 880.0,264.5" fill="none" stroke="#1f77b4" stroke-width="1.6"/>
-<circle cx="880.0" cy="264.5" r="3.2" fill="#1f77b4"/>
-<polyline points="60.0,49.3 470.0,259.8 880.0,101.0" fill="none" stroke="#d62728" stroke-width="1.6"/>
-<circle cx="880.0" cy="101.0" r="3.2" fill="#d62728"/>
-<polyline points="60.0,135.9 470.0,250.0 880.0,139.0" fill="none" stroke="#2ca02c" stroke-width="1.6"/>
-<circle cx="880.0" cy="139.0" r="3.2" fill="#2ca02c"/>
-<rect x="68" y="312" width="12" height="12" fill="#222222"/>
+<line x1="834.4" y1="36" x2="834.4" y2="284" stroke="#999" stroke-width="1" stroke-dasharray="4 3"/>
+<polyline points="60.0,243.9 75.2,270.7 90.4,224.1 105.6,223.8 120.7,204.5 135.9,224.4 151.1,212.1 166.3,209.7 181.5,223.5 196.7,200.4 211.9,172.1 227.0,83.1 242.2,230.3 257.4,265.0 272.6,206.2 287.8,220.8 303.0,210.0 318.1,217.0 333.3,198.8 348.5,196.3 363.7,206.6 378.9,199.6 394.1,157.4 409.3,74.5 424.4,209.9 439.6,229.9 454.8,179.5 470.0,213.5 485.2,172.6 500.4,199.3 515.6,177.9 530.7,171.3 545.9,198.2 561.1,167.0 576.3,130.9 591.5,65.4 606.7,193.1 621.9,221.7 637.0,183.7 652.2,185.1 667.4,162.1 682.6,196.5 697.8,170.8 713.0,169.2 728.1,193.4 743.3,161.2 758.5,121.9 773.7,49.3 788.9,178.2 804.1,219.6 819.3,161.5 834.4,179.5 849.6,159.9 864.8,180.6 880.0,163.7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<circle cx="60.0" cy="243.9" r="2.4" fill="#000000"/>
+<circle cx="75.2" cy="270.7" r="2.4" fill="#000000"/>
+<circle cx="90.4" cy="224.1" r="2.4" fill="#000000"/>
+<circle cx="105.6" cy="223.8" r="2.4" fill="#000000"/>
+<circle cx="120.7" cy="204.5" r="2.4" fill="#000000"/>
+<circle cx="135.9" cy="224.4" r="2.4" fill="#000000"/>
+<circle cx="151.1" cy="212.1" r="2.4" fill="#000000"/>
+<circle cx="166.3" cy="209.7" r="2.4" fill="#000000"/>
+<circle cx="181.5" cy="223.5" r="2.4" fill="#000000"/>
+<circle cx="196.7" cy="200.4" r="2.4" fill="#000000"/>
+<circle cx="211.9" cy="172.1" r="2.4" fill="#000000"/>
+<circle cx="227.0" cy="83.1" r="2.4" fill="#000000"/>
+<circle cx="242.2" cy="230.3" r="2.4" fill="#000000"/>
+<circle cx="257.4" cy="265.0" r="2.4" fill="#000000"/>
+<circle cx="272.6" cy="206.2" r="2.4" fill="#000000"/>
+<circle cx="287.8" cy="220.8" r="2.4" fill="#000000"/>
+<circle cx="303.0" cy="210.0" r="2.4" fill="#000000"/>
+<circle cx="318.1" cy="217.0" r="2.4" fill="#000000"/>
+<circle cx="333.3" cy="198.8" r="2.4" fill="#000000"/>
+<circle cx="348.5" cy="196.3" r="2.4" fill="#000000"/>
+<circle cx="363.7" cy="206.6" r="2.4" fill="#000000"/>
+<circle cx="378.9" cy="199.6" r="2.4" fill="#000000"/>
+<circle cx="394.1" cy="157.4" r="2.4" fill="#000000"/>
+<circle cx="409.3" cy="74.5" r="2.4" fill="#000000"/>
+<circle cx="424.4" cy="209.9" r="2.4" fill="#000000"/>
+<circle cx="439.6" cy="229.9" r="2.4" fill="#000000"/>
+<circle cx="454.8" cy="179.5" r="2.4" fill="#000000"/>
+<circle cx="470.0" cy="213.5" r="2.4" fill="#000000"/>
+<circle cx="485.2" cy="172.6" r="2.4" fill="#000000"/>
+<circle cx="500.4" cy="199.3" r="2.4" fill="#000000"/>
+<circle cx="515.6" cy="177.9" r="2.4" fill="#000000"/>
+<circle cx="530.7" cy="171.3" r="2.4" fill="#000000"/>
+<circle cx="545.9" cy="198.2" r="2.4" fill="#000000"/>
+<circle cx="561.1" cy="167.0" r="2.4" fill="#000000"/>
+<circle cx="576.3" cy="130.9" r="2.4" fill="#000000"/>
+<circle cx="591.5" cy="65.4" r="2.4" fill="#000000"/>
+<circle cx="606.7" cy="193.1" r="2.4" fill="#000000"/>
+<circle cx="621.9" cy="221.7" r="2.4" fill="#000000"/>
+<circle cx="637.0" cy="183.7" r="2.4" fill="#000000"/>
+<circle cx="652.2" cy="185.1" r="2.4" fill="#000000"/>
+<circle cx="667.4" cy="162.1" r="2.4" fill="#000000"/>
+<circle cx="682.6" cy="196.5" r="2.4" fill="#000000"/>
+<circle cx="697.8" cy="170.8" r="2.4" fill="#000000"/>
+<circle cx="713.0" cy="169.2" r="2.4" fill="#000000"/>
+<circle cx="728.1" cy="193.4" r="2.4" fill="#000000"/>
+<circle cx="743.3" cy="161.2" r="2.4" fill="#000000"/>
+<circle cx="758.5" cy="121.9" r="2.4" fill="#000000"/>
+<circle cx="773.7" cy="49.3" r="2.4" fill="#000000"/>
+<circle cx="788.9" cy="178.2" r="2.4" fill="#000000"/>
+<circle cx="804.1" cy="219.6" r="2.4" fill="#000000"/>
+<circle cx="819.3" cy="161.5" r="2.4" fill="#000000"/>
+<circle cx="834.4" cy="179.5" r="2.4" fill="#000000"/>
+<circle cx="849.6" cy="159.9" r="2.4" fill="#000000"/>
+<circle cx="864.8" cy="180.6" r="2.4" fill="#000000"/>
+<circle cx="880.0" cy="163.7" r="2.4" fill="#000000"/>
+<polyline points="834.4,179.5 849.6,179.5 864.8,179.5 880.0,179.5" fill="none" stroke="#1f77b4" stroke-width="1.6"/>
+<circle cx="880.0" cy="179.5" r="3.2" fill="#1f77b4"/>
+<polyline points="834.4,179.5 849.6,141.2 864.8,178.7 880.0,150.4" fill="none" stroke="#d62728" stroke-width="1.6"/>
+<circle cx="880.0" cy="150.4" r="3.2" fill="#d62728"/>
+<polyline points="834.4,179.5 849.6,156.6 864.8,176.9 880.0,157.2" fill="none" stroke="#2ca02c" stroke-width="1.6"/>
+<circle cx="880.0" cy="157.2" r="3.2" fill="#2ca02c"/>
+<rect x="68" y="312" width="12" height="12" fill="#000000"/>
 <text x="84" y="322" font-family="Segoe UI, Arial" font-size="11">real</text>
 <rect x="130" y="312" width="12" height="12" fill="#1f77b4"/>
 <text x="146" y="322" font-family="Segoe UI, Arial" font-size="11">naive</text>
@@ -20,5 +75,5 @@
 <text x="215" y="322" font-family="Segoe UI, Arial" font-size="11">sarimax</text>
 <rect x="282" y="312" width="12" height="12" fill="#2ca02c"/>
 <text x="298" y="322" font-family="Segoe UI, Arial" font-size="11">prophet</text>
-<text x="60" y="336" font-family="Segoe UI, Arial" font-size="10">01/05/2026 — 01/07/2026</text>
+<text x="60" y="336" font-family="Segoe UI, Arial" font-size="10">01/01/2022 — 01/07/2026</text>
 </svg>

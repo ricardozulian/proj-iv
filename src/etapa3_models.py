@@ -283,10 +283,13 @@ def write_overlay_svg(
     index: pd.Index,
     series: dict[str, np.ndarray],
     colors: dict[str, str] | None = None,
+    origin_i: int | None = None,
+    mark_all: set[str] | None = None,
 ) -> None:
     palette = ["#222222", "#1f77b4", "#d62728", "#2ca02c", "#9467bd", "#ff7f0e", "#8c564b"]
     names = list(series.keys())
     colors = colors or {n: palette[i % len(palette)] for i, n in enumerate(names)}
+    mark_all = mark_all or set()
     n = len(index)
     if n == 0:
         return
@@ -316,6 +319,12 @@ def write_overlay_svg(
         f'<line x1="{L}" y1="{T}" x2="{L}" y2="{T + ph}" stroke="#333" stroke-width="1"/>',
         f'<line x1="{L}" y1="{T + ph}" x2="{L + pw}" y2="{T + ph}" stroke="#333" stroke-width="1"/>',
     ]
+    if origin_i is not None and 0 <= origin_i < n:
+        ox = L + (origin_i / max(n - 1, 1)) * pw
+        parts.append(
+            f'<line x1="{ox:.1f}" y1="{T}" x2="{ox:.1f}" y2="{T + ph}" '
+            'stroke="#999" stroke-width="1" stroke-dasharray="4 3"/>'
+        )
     for name in names:
         arr = np.asarray(series[name], dtype=float)
         segs: list[list[str]] = []
@@ -339,10 +348,17 @@ def write_overlay_svg(
                 parts.append(
                     f'<polyline points="{" ".join(pts)}" fill="none" stroke="{colors[name]}" stroke-width="1.6"/>'
                 )
-                cx, cy = pts[-1].split(",")
-                parts.append(
-                    f'<circle cx="{cx}" cy="{cy}" r="3.2" fill="{colors[name]}"/>'
-                )
+                if name in mark_all:
+                    for pt in pts:
+                        cx, cy = pt.split(",")
+                        parts.append(
+                            f'<circle cx="{cx}" cy="{cy}" r="2.4" fill="{colors[name]}"/>'
+                        )
+                else:
+                    cx, cy = pts[-1].split(",")
+                    parts.append(
+                        f'<circle cx="{cx}" cy="{cy}" r="3.2" fill="{colors[name]}"/>'
+                    )
     lx = L + 8
     ly = H - 18
     for name in names:
@@ -358,6 +374,36 @@ def write_overlay_svg(
     )
     parts.append("</svg>")
     path.write_text("\n".join(parts), encoding="utf-8")
+
+
+def series_history_and_fan(
+    y_tr: pd.Series,
+    y_te: pd.Series,
+    blob: dict,
+    models: tuple[str, ...] = ("naive", "sarimax", "prophet"),
+) -> tuple[pd.Index, dict[str, np.ndarray], int]:
+    """Full actual history plus model hats fanning from the last train point."""
+    y_tr = y_tr.astype(float)
+    y_te = y_te.astype(float)
+    y_all = pd.concat([y_tr, y_te])
+    idx = y_all.index
+    n_tr = len(y_tr)
+    last = float(y_tr.iloc[-1])
+    series: dict[str, np.ndarray] = {"real": y_all.to_numpy(dtype=float)}
+    n_te = len(idx) - n_tr
+    for name in models:
+        if name not in blob:
+            continue
+        hat = np.asarray(blob[name], dtype=float)
+        arr = np.full(len(idx), np.nan)
+        if n_tr:
+            arr[n_tr - 1] = last
+        take = min(len(hat), n_te)
+        if take:
+            arr[n_tr : n_tr + take] = hat[:take]
+        series[name] = arr
+    origin_i = max(n_tr - 1, 0)
+    return idx, series, origin_i
 
 
 # ---------------------------------------------------------------------------
@@ -1216,20 +1262,36 @@ def write_figures(root: Path, frames: dict, forecasts: dict) -> list[str]:
             frames["price_test"].index,
             frames["price_test"][col].to_numpy(),
         )
-    for col, lab in [
-        ("abcr_heavy", "tráfego pesado"),
-        ("pim", "indústria"),
-        ("pmc", "varejo"),
-        ("unemp", "desemprego"),
+    FAN_COLORS = {
+        "real": "#000000",
+        "naive": "#1f77b4",
+        "sarimax": "#d62728",
+        "prophet": "#2ca02c",
+    }
+    for col, lab, ylabel in [
+        ("abcr_heavy", "tráfego pesado", "índice"),
+        ("pim", "indústria", "índice"),
+        ("pmc", "varejo", "índice"),
+        ("unemp", "desemprego", "p.p."),
     ]:
-        pack(
-            f"atividade_{col}",
-            f"{lab} no teste (3 meses)",
-            "índice",
-            f"fc_atividade_{col}.svg",
-            frames["act_test"].index,
-            frames["act_test"][col].to_numpy(),
+        blob = store.get(f"atividade_{col}", {})
+        idx, series, origin_i = series_history_and_fan(
+            frames["act_train"][col],
+            frames["act_test"][col],
+            blob,
+            ("naive", "sarimax", "prophet"),
         )
+        write_overlay_svg(
+            fc_dir / f"fc_atividade_{col}.svg",
+            f"{lab}: série vista e previsão (mai.–jul. 2026)",
+            ylabel,
+            idx,
+            series,
+            colors=FAN_COLORS,
+            origin_i=origin_i,
+            mark_all={"real"},
+        )
+        written.append(f"fc_atividade_{col}.svg")
     for col, lab, ylabel in [
         ("diesel_mbpd", "diesel mbpd", "mbpd"),
         ("gasoline_mbpd", "gasolina mbpd", "mbpd"),
@@ -1237,26 +1299,22 @@ def write_figures(root: Path, frames: dict, forecasts: dict) -> list[str]:
         ("rtm_gross_profit_rsmn", "lucro bruto RT&M", "R$ milhões"),
         ("rtm_gross_margin_pct", "margem RT&M", "%"),
     ]:
-        y_tr = frames["comp_train"][col].astype(float)
-        y_te = frames["comp_test"][col].astype(float)
-        idx = y_tr.index[-1:].append(y_te.index)
-        last = float(y_tr.iloc[-1])
-        actual_te = float(y_te.iloc[0])
         blob = store.get(f"companhia_{col}", {})
-        naive_hat = float(blob["naive"][0]) if blob.get("naive") else last
-        sar_hat = float(blob["sarimax"][0]) if blob.get("sarimax") else np.nan
-        series = {
-            "real": np.array([last, actual_te], dtype=float),
-            "naive": np.array([last, naive_hat], dtype=float),
-        }
-        if np.isfinite(sar_hat):
-            series["sarimax"] = np.array([last, sar_hat], dtype=float)
+        idx, series, origin_i = series_history_and_fan(
+            frames["comp_train"][col],
+            frames["comp_test"][col],
+            blob,
+            ("naive", "sarimax"),
+        )
         write_overlay_svg(
             fc_dir / f"fc_companhia_{col}.svg",
-            f"{lab} no teste (2T26)",
+            f"{lab}: série vista e previsão (2T26)",
             ylabel,
             idx,
             series,
+            colors=FAN_COLORS,
+            origin_i=origin_i,
+            mark_all={"real"},
         )
         written.append(f"fc_companhia_{col}.svg")
     return written
@@ -1420,12 +1478,23 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--skip", default="", help="comma list to skip")
     p.add_argument("--force", action="store_true", help="refit even if JSON already has the model")
     p.add_argument("--eda", action="store_true", help="redraw EDA SVG charts from the snapshot and exit")
+    p.add_argument(
+        "--figures",
+        action="store_true",
+        help="redraw forecast overlay SVGs from JSON and exit",
+    )
     args = p.parse_args(argv)
     if args.eda:
         root = find_project_root()
         frames = load_frames(root)
         written = write_eda_figures(root, frames)
         print("EDA figures:", ", ".join(written))
+        return 0
+    if args.figures:
+        root = find_project_root()
+        frames = load_frames(root)
+        written = write_figures(root, frames, {})
+        print("forecast figures:", ", ".join(written))
         return 0
     only = [s.strip() for s in args.only.split(",") if s.strip()] or None
     skip = [s.strip() for s in args.skip.split(",") if s.strip()] or None
