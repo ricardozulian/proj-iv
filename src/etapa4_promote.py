@@ -16,8 +16,6 @@ def _method_text(facts: dict) -> str:
     mar = facts["targets"]["margem RT&M"]
     return f"""### Etapa 4 — avaliação corrigida
 
-*(Incremento da Etapa 4 — 16/10/2026.)*
-
 A hipótese continua a da etapa anterior: o desvio de paridade de combustíveis ponderado pelo volume acompanha o alvo quando se controla a história recente da própria série. Esse produto entra como `prod` no mercado e como `prod_pbr` na companhia; o nome não é produção. Para o teste, o grupo usou a regressão Ridge, uma regressão linear que penaliza coeficientes grandes e, com isso, reduz o risco de colar demais no treino. A Ridge entra com intercepto, com os valores já observados do alvo um e dois períodos antes (defasagens 1 e 2) e com padronização calculada só no treino. O parâmetro de penalização α escolhe-se em {{0,1; 1; 10; 100}} em blocos internos anteriores à avaliação; no ensaio trimestral descritivo, α = 1. Dentro de cada bloco de datas, os coeficientes ficam fixos, e as defasagens observadas se atualizam a cada nova data.
 
 A comparação ingênua desta etapa é a dummy contemporânea, a previsão que copia o último valor já conhecido: ŷ[t] = y[t−1]. Ela usa a mesma informação observada que a Ridge, e por isso serve de referência justa. A dummy fixa da Etapa 3, que não se atualizava dentro do horizonte, permanece só como referência histórica. Os rótulos 21d, 8w e 3m nomeiam blocos de avaliação, conjuntos de datas em que se mede o erro de um passo, e não previsões de 21 pregões, oito semanas ou três meses de uma só vez. Por isso os erros de um passo da Etapa 4 não se comparam diretamente aos erros de vários passos da Etapa 3.
@@ -48,8 +46,6 @@ def _discussion_text(facts: dict) -> str:
     rel_luc = 100 * (luc["rel_RMSE"] or 0)
     return f"""# **Discussão e Conclusão**
 
-*(Incremento da Etapa 4 — 16/10/2026.)*
-
 A hipótese de que o desvio de paridade ponderado pelo volume acompanha os alvos não encontra o mesmo resultado em todos eles. Uma queda do RMSE em alguns blocos de datas não basta quando a maioria dos períodos não melhora ou quando o MAE aumenta, porque o critério pedia as três condições ao mesmo tempo, como mostram a Figura 29 e a Figura 32. No diesel ANP, a extensão que separa gasolina e diesel (`y_fuels`) reduz o RMSE mediano em 16,7%, mas o RMSE é menor em apenas 1 de 4 blocos: a mediana cai porque um bloco de 2026 concentra o ganho, e os outros três não melhoram. A exposição Petrobras contemporânea (`y_pbr0`) usa um único regressor, o PPI da Petrobras vezes o volume na mesma semana, e o RMSE é menor em 3 de 4 blocos contra a história só do alvo; as duas especificações não se confundem, como mostram a Figura 30 na trajetória de `y_pbr0` e a Figura 32 na comparação por bloco. O ensaio do IPCA usa a variação do preço ANP de produtores e importadores da gasolina e, por isso, não constitui evidência sobre o produto desvio × volume, como mostra a Figura 31.
 
 Os controles sazonais, a defasagem 12 do próprio alvo, explicam parte importante da demanda e da mobilidade, como mostra a Figura 33. No varejo, a exposição reduz o RMSE mediano sobre esse controle sazonal, mas o RMSE é menor em só dois de quatro blocos, como mostra a Figura 34. Isso aproxima a análise dos Objetivos de Desenvolvimento Sustentável (ODS) 8, trabalho decente e crescimento econômico, e 11, cidades e comunidades sustentáveis, sem atribuir ao preço do combustível uma causa que o desenho não isola. Para o ODS 16, paz, justiça e instituições eficazes, o produto inclui código, hash efetivo da base, revisão de proveniência e critérios explícitos de comparação. Consistência interna do SQLite e reprodução da dummy não equivalem a auditoria independente das fontes.
@@ -73,7 +69,6 @@ def _abstract_text(facts: dict) -> str:
     ipca = by_target["IPCA mom"]
     return (
         "# **Resumo**\n\n"
-        "*(Incremento da Etapa 4 — 16/10/2026.)*\n\n"
         "O grupo analisou se o desvio de paridade de combustíveis ponderado pelo volume acompanha preços, "
         "atividade econômica, PETR4 (ação preferencial da Petrobras na B3) e as contas de RT&M "
         "(Refino, Transporte e Comercialização) da Petrobras. "
@@ -229,7 +224,6 @@ def build_official(path: Path, facts: dict) -> None:
             cell(
                 "markdown",
                 "### Revisão da base para a Etapa 4\n\n"
-                "*(Incremento da Etapa 4 — 16/10/2026.)*\n\n"
                 "A leitura preserva o SQLite. O hash SHA-256 efetivo, a impressão digital do arquivo, "
                 "é verificado antes dos experimentos. "
                 "O RT&M tem 82 trimestres no calendário, dos quais 26 trazem as contas do segmento. "
@@ -253,7 +247,6 @@ def build_official(path: Path, facts: dict) -> None:
             cell(
                 "markdown",
                 "## Resultados recalculados da Etapa 4\n\n"
-                "*(Incremento da Etapa 4 — 16/10/2026.)*\n\n"
                 "A tabela por alvo separa dois números que não são o mesmo julgamento: a menor perda observada "
                 "e a extensão escolhida depois do desempate de 2%, que fica com a especificação mais simples "
                 "quando o RMSE está perto do mínimo. "
@@ -289,7 +282,6 @@ def build_official(path: Path, facts: dict) -> None:
             ),
             *_figure_bundle(
                 "### Síntese da contribuição incremental\n\n"
-                "*(Incremento da Etapa 4 — 16/10/2026.)*\n\n"
                 "A Figura 29 reúne a redução ou o aumento percentual do RMSE mediano, as vitórias por bloco e a mudança do MAE mediano, "
                 "sempre frente ao controle correspondente. "
                 "As três medidas devem ser lidas juntas: reduzir o RMSE mediano em pelo menos 5% não basta para atender ao critério exploratório. "
@@ -306,7 +298,6 @@ def build_official(path: Path, facts: dict) -> None:
             ),
             *_figure_bundle(
                 "### Preços e inflação: observado e estimado\n\n"
-                "*(Incremento da Etapa 4 — 16/10/2026.)*\n\n"
                 "A Figura 30 mostra o preço observado do diesel ANP, a estimativa baseada na história do alvo e a estimativa "
                 "com exposição Petrobras contemporânea (`y_pbr0`). As faixas identificam os blocos de avaliação. "
                 "As Figuras 30 e 31 mostram quando as diferenças entre os modelos aparecem ao longo da avaliação. "
@@ -351,7 +342,6 @@ def build_official(path: Path, facts: dict) -> None:
             ),
             *_figure_bundle(
                 "### Demanda e mobilidade: sazonalidade e exposição\n\n"
-                "*(Incremento da Etapa 4 — 16/10/2026.)*\n\n"
                 "A Figura 33 separa a contribuição da sazonalidade da contribuição adicional da exposição. "
                 "Para cada alvo, o RMSE mediano do modelo baseado apenas na história recebe índice 100. "
                 "As outras barras representam o controle com defasagem 12 e esse mesmo controle acrescido de exposição.",
@@ -383,7 +373,6 @@ def build_official(path: Path, facts: dict) -> None:
             cell(
                 "markdown",
                 "### História financeira e correção do resíduo\n\n"
-                "*(Incremento da Etapa 4 — 16/10/2026.)*\n\n"
                 "A tabela compacta traz o método e a janela que o grupo escolheu com os trimestres de 2019 a 2021 "
                 "e não trocou depois (a trava), o RMSE agrupado dessa seleção e o da avaliação do 1º trimestre de 2022 "
                 "ao 1º trimestre de 2026, e a persistência como referência explícita. "

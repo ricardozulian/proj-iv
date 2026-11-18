@@ -323,8 +323,6 @@ def interpretation(root: Path | None = None) -> str:
     return "\n".join([
         "### Leitura dos resultados recalculados",
         "",
-        "*(Incremento da Etapa 4 — 16/10/2026.)*",
-        "",
         "Com gasolina e diesel em separado (`y_fuels`), o RMSE mediano do diesel ANP cai de "
         f"{br_num(diesel['persistence_median_RMSE'], 4)} para {br_num(diesel['median_RMSE'], 4)} "
         f"({br_num(100 * diesel['rel_RMSE_vs_pers'], 1)}%), mas o RMSE é menor em "
