@@ -1,0 +1,21 @@
+stem,alvo,grupo,controle,qkey,trimestre,legado,destaque_1t26,observado,baseline_hat,correcao_hat,metodo,status
+etapa4_company,lucro bruto RT&M,die,baseline_travado,8097,1T24,False,False,10934.0,11257.330196942312,12308.701923523771,sarima_0_1_0_1_0_0_4,fitted
+etapa4_company,lucro bruto RT&M,die,baseline_travado,8098,2T24,False,False,7825.0,12533.408185690752,12916.84337855512,sarima_0_1_0_1_0_0_4,fitted
+etapa4_company,lucro bruto RT&M,die,baseline_travado,8099,3T24,False,False,6849.0,7311.211236068222,6634.423028592959,sarima_0_1_0_1_0_0_4,fitted
+etapa4_company,lucro bruto RT&M,die,baseline_travado,8100,4T24,False,False,8709.0,6939.597608269876,5872.329687932897,sarima_0_1_0_1_0_0_4,fitted
+etapa4_company,lucro bruto RT&M,die,baseline_travado,8101,1T25,False,False,7053.0,8677.795415350422,8672.319622813635,sarima_0_1_0_1_0_0_4,fitted
+etapa4_company,lucro bruto RT&M,die,baseline_travado,8102,2T25,False,False,6814.0,7671.854112518378,4517.426188946385,sarima_0_1_0_1_0_0_4,fitted
+etapa4_company,lucro bruto RT&M,die,baseline_travado,8103,3T25,False,False,8782.0,7005.276836676936,8481.530309249527,sarima_0_1_0_1_0_0_4,fitted
+etapa4_company,lucro bruto RT&M,die,baseline_travado,8104,4T25,False,False,12993.0,8413.765430565287,8533.076480795788,sarima_0_1_0_1_0_0_4,fitted
+etapa4_company,lucro bruto RT&M,die,baseline_travado,8105,1T26,False,True,23750.0,13304.682529394348,22502.439355522583,sarima_0_1_0_1_0_0_4,fitted
+etapa4_company,lucro bruto RT&M,die,baseline_travado,8106,2T26,True,False,26130.0,23799.70627039042,42593.57554326081,sarima_0_1_0_1_0_0_4,fitted
+etapa4_company,margem RT&M,die,baseline_travado,8097,1T24,False,False,9.948591965788635,7.555804833716219,11.6155159656103,sarima_0_0_0_0_0_0_4,fitted
+etapa4_company,margem RT&M,die,baseline_travado,8098,2T24,False,False,6.8081959368338625,7.589036673783182,11.31284653491239,sarima_0_0_0_0_0_0_4,fitted
+etapa4_company,margem RT&M,die,baseline_travado,8099,3T24,False,False,5.681082964216394,7.578337800398299,10.699897404459557,sarima_0_0_0_0_0_0_4,fitted
+etapa4_company,margem RT&M,die,baseline_travado,8100,4T24,False,False,7.74987541823877,7.552696439089221,10.1057292802613,sarima_0_0_0_0_0_0_4,fitted
+etapa4_company,margem RT&M,die,baseline_travado,8101,1T25,False,False,6.037545262328902,7.55532347580098,10.140573933484598,sarima_0_0_0_0_0_0_4,fitted
+etapa4_company,margem RT&M,die,baseline_travado,8102,2T25,False,False,6.078284450153429,7.535350112626268,8.970941848136702,sarima_0_0_0_0_0_0_4,fitted
+etapa4_company,margem RT&M,die,baseline_travado,8103,3T25,False,False,7.299597699238621,7.51642463325027,10.087641633614746,sarima_0_0_0_0_0_0_4,fitted
+etapa4_company,margem RT&M,die,baseline_travado,8104,4T25,False,False,10.799421504089368,7.513642750251422,9.424322843746056,sarima_0_0_0_0_0_0_4,fitted
+etapa4_company,margem RT&M,die,baseline_travado,8105,1T26,False,True,20.268309750977146,7.55523435319268,12.178091964937536,sarima_0_0_0_0_0_0_4,fitted
+etapa4_company,margem RT&M,die,baseline_travado,8106,2T26,True,False,16.011716188807117,7.714151934510567,20.618083279495032,sarima_0_0_0_0_0_0_4,fitted

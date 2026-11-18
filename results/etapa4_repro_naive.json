@@ -1,0 +1,436 @@
+{
+  "completed_at_utc": "2026-10-18T21:18:07Z",
+  "etapa3_metrics": "results/etapa3_metrics.json",
+  "sep_export": {
+    "file": "gas_flare_export_20260927.sqlite",
+    "sha256_expected": "155f53607aae0e92e66a588288ce309a8bce05678b77b67a0b56603713db3a6d",
+    "sha256_actual": "155f53607aae0e92e66a588288ce309a8bce05678b77b67a0b56603713db3a6d"
+  },
+  "current_freeze": {
+    "file": "gas_flare.sqlite",
+    "sha256_expected": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba",
+    "sha256_actual": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba"
+  },
+  "naive_sep_vs_etapa3_json": [
+    {
+      "vector": "atividade",
+      "target": "desemprego",
+      "horizon": "1m",
+      "ref_RMSE": 0.20000000000000018,
+      "new_RMSE": 0.20000000000000018,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "desemprego",
+      "horizon": "3m",
+      "ref_RMSE": 0.38729833462074154,
+      "new_RMSE": 0.38729833462074154,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "indústria",
+      "horizon": "1m",
+      "ref_RMSE": 5.348339999999993,
+      "new_RMSE": 5.348339999999993,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "indústria",
+      "horizon": "3m",
+      "ref_RMSE": 6.774877631578792,
+      "new_RMSE": 6.774877631578792,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "tráfego pesado",
+      "horizon": "1m",
+      "ref_RMSE": 15.296373167883445,
+      "new_RMSE": 15.296373167883445,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "tráfego pesado",
+      "horizon": "3m",
+      "ref_RMSE": 10.307819046248039,
+      "new_RMSE": 10.307819046248039,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "varejo",
+      "horizon": "1m",
+      "ref_RMSE": 3.6676399999999916,
+      "new_RMSE": 3.6676399999999916,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "varejo",
+      "horizon": "3m",
+      "ref_RMSE": 2.7227710845937745,
+      "new_RMSE": 2.7227710845937745,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "companhia",
+      "target": "diesel mbpd",
+      "horizon": "2Q26",
+      "ref_RMSE": 4.0,
+      "new_RMSE": 4.0,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "companhia",
+      "target": "gasolina mbpd",
+      "horizon": "2Q26",
+      "ref_RMSE": 9.0,
+      "new_RMSE": 9.0,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "companhia",
+      "target": "lucro bruto RT&M",
+      "horizon": "2Q26",
+      "ref_RMSE": 2380.0,
+      "new_RMSE": 2380.0,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "companhia",
+      "target": "margem RT&M",
+      "horizon": "2Q26",
+      "ref_RMSE": 4.256593562170028,
+      "new_RMSE": 4.256593562170028,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "companhia",
+      "target": "receita RT&M",
+      "horizon": "2Q26",
+      "ref_RMSE": 46015.0,
+      "new_RMSE": 46015.0,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "mercado",
+      "target": "PETR4",
+      "horizon": "21d",
+      "ref_RMSE": 4.313502057493424,
+      "new_RMSE": 4.313502057493424,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "mercado",
+      "target": "PETR4",
+      "horizon": "5d",
+      "ref_RMSE": 1.3952347472737323,
+      "new_RMSE": 1.3952347472737323,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "ANP diesel",
+      "horizon": "4w",
+      "ref_RMSE": 0.547329017993291,
+      "new_RMSE": 0.547329017993291,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "ANP diesel",
+      "horizon": "8w",
+      "ref_RMSE": 0.39074639548481466,
+      "new_RMSE": 0.39074639548481466,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "ANP gasolina",
+      "horizon": "4w",
+      "ref_RMSE": 0.10149543548849867,
+      "new_RMSE": 0.10149543548849867,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "ANP gasolina",
+      "horizon": "8w",
+      "ref_RMSE": 0.14881498084870343,
+      "new_RMSE": 0.14881498084870343,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras diesel",
+      "horizon": "4w",
+      "ref_RMSE": 0.00015030192958196488,
+      "new_RMSE": 0.00015030192958196488,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras diesel",
+      "horizon": "8w",
+      "ref_RMSE": 0.00030846516149233324,
+      "new_RMSE": 0.00030846516149233324,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras gasolina",
+      "horizon": "4w",
+      "ref_RMSE": 0.0004117355276367612,
+      "new_RMSE": 0.0004117355276367612,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras gasolina",
+      "horizon": "8w",
+      "ref_RMSE": 0.00040146378430591244,
+      "new_RMSE": 0.00040146378430591244,
+      "rmse_delta": 0.0,
+      "match": true
+    }
+  ],
+  "naive_current_vs_sep": [
+    {
+      "vector": "atividade",
+      "target": "desemprego",
+      "horizon": "1m",
+      "ref_RMSE": 0.20000000000000018,
+      "new_RMSE": 0.20000000000000018,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "desemprego",
+      "horizon": "3m",
+      "ref_RMSE": 0.38729833462074154,
+      "new_RMSE": 0.38729833462074154,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "indústria",
+      "horizon": "1m",
+      "ref_RMSE": 5.348339999999993,
+      "new_RMSE": 5.348339999999993,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "indústria",
+      "horizon": "3m",
+      "ref_RMSE": 6.774877631578792,
+      "new_RMSE": 6.774877631578792,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "tráfego pesado",
+      "horizon": "1m",
+      "ref_RMSE": 15.296373167883445,
+      "new_RMSE": 15.296373167883445,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "tráfego pesado",
+      "horizon": "3m",
+      "ref_RMSE": 10.307819046248039,
+      "new_RMSE": 10.307819046248039,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "varejo",
+      "horizon": "1m",
+      "ref_RMSE": 3.6676399999999916,
+      "new_RMSE": 3.6676399999999916,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "atividade",
+      "target": "varejo",
+      "horizon": "3m",
+      "ref_RMSE": 2.7227710845937745,
+      "new_RMSE": 2.7227710845937745,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "companhia",
+      "target": "diesel mbpd",
+      "horizon": "2Q26",
+      "ref_RMSE": 4.0,
+      "new_RMSE": 4.0,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "companhia",
+      "target": "gasolina mbpd",
+      "horizon": "2Q26",
+      "ref_RMSE": 9.0,
+      "new_RMSE": 9.0,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "companhia",
+      "target": "lucro bruto RT&M",
+      "horizon": "2Q26",
+      "ref_RMSE": 2380.0,
+      "new_RMSE": 2380.0,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "companhia",
+      "target": "margem RT&M",
+      "horizon": "2Q26",
+      "ref_RMSE": 4.256593562170028,
+      "new_RMSE": 4.256593562170028,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "companhia",
+      "target": "receita RT&M",
+      "horizon": "2Q26",
+      "ref_RMSE": 46015.0,
+      "new_RMSE": 46015.0,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "mercado",
+      "target": "PETR4",
+      "horizon": "21d",
+      "ref_RMSE": 4.313502057493424,
+      "new_RMSE": 4.313502057493424,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "mercado",
+      "target": "PETR4",
+      "horizon": "5d",
+      "ref_RMSE": 1.3952347472737323,
+      "new_RMSE": 1.3952347472737323,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "ANP diesel",
+      "horizon": "4w",
+      "ref_RMSE": 0.547329017993291,
+      "new_RMSE": 0.547329017993291,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "ANP diesel",
+      "horizon": "8w",
+      "ref_RMSE": 0.39074639548481466,
+      "new_RMSE": 0.39074639548481466,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "ANP gasolina",
+      "horizon": "4w",
+      "ref_RMSE": 0.10149543548849867,
+      "new_RMSE": 0.10149543548849867,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "ANP gasolina",
+      "horizon": "8w",
+      "ref_RMSE": 0.14881498084870343,
+      "new_RMSE": 0.14881498084870343,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras diesel",
+      "horizon": "4w",
+      "ref_RMSE": 0.00015030192958196488,
+      "new_RMSE": 0.00015030192958196488,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras diesel",
+      "horizon": "8w",
+      "ref_RMSE": 0.00030846516149233324,
+      "new_RMSE": 0.00030846516149233324,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras gasolina",
+      "horizon": "4w",
+      "ref_RMSE": 0.0004117355276367612,
+      "new_RMSE": 0.0004117355276367612,
+      "rmse_delta": 0.0,
+      "match": true
+    },
+    {
+      "vector": "preço",
+      "target": "Petrobras gasolina",
+      "horizon": "8w",
+      "ref_RMSE": 0.00040146378430591244,
+      "new_RMSE": 0.00040146378430591244,
+      "rmse_delta": 0.0,
+      "match": true
+    }
+  ],
+  "all_sep_match_json": true,
+  "all_current_match_sep": true,
+  "changed_vs_sep": [],
+  "note": "SARIMAX/Prophet/TimesFM stay on the Mac JSON. This run is naive only."
+}

@@ -8,8 +8,9 @@ Este arquivo descreve as fontes, a forma e a periodicidade da coleta, e o dicion
 
 | Arquivo | Função | Tabelas |
 |---|---|---|
-| `data/gas_flare.sqlite` | Base analítica do curso. Export de 27 set. 2026, corte em 21 set. 2026. SHA-256 `155f53607aae0e92e66a588288ce309a8bce05678b77b67a0b56603713db3a6d`. | 14 tabelas de dados (PPI, preços, vendas, finanças, proxies, equity, inflação) e `export_changelog` |
-| `data/gas_flare_old.sqlite` | Export anterior, de ago. 2026, corte em 14 ago. 2026. Só para comparação. SHA-256 `61d1766c5055d8fb1f86de2e223aca0b46262bf266dca574e6deb4add85a921f`. | As mesmas 14 tabelas de dados |
+| `data/gas_flare.sqlite` | Base analítica do curso. Export de 16 out. 2026, corte em 21 set. 2026. SHA-256 `b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba`. | 14 tabelas de dados (PPI, preços, vendas, finanças, proxies, equity, inflação) e `export_changelog` |
+| `data/gas_flare_export_20260927.sqlite` | Export anterior, de 27 set. 2026, mesmo corte 21 set. 2026. SHA-256 `155f53607aae0e92e66a588288ce309a8bce05678b77b67a0b56603713db3a6d`. Só para comparação. | As mesmas 14 tabelas de dados |
+| `data/gas_flare_old.sqlite` | Export de ago. 2026, corte em 14 ago. 2026. Só para comparação. SHA-256 `61d1766c5055d8fb1f86de2e223aca0b46262bf266dca574e6deb4add85a921f`. | As mesmas 14 tabelas de dados |
 
 O arquivo é imutável para o trabalho de curso. Uma atualização exige novo export a partir do Gas Flare. Não há acesso a Postgres e não há SQLite só de PETR4.
 
@@ -25,6 +26,10 @@ A revisão da Etapa 2 conferiu a base contra as fontes e encontrou erros de orig
 | Finanças Petrobras | 1T26 vazio; 2T26 só com volume. | Volumes, receitas e RT&M de 1T26 e 2T26, do Relatório de Produção e Vendas e do ITR. |
 
 O snapshot não inclui tabelas brutas de produção (`anp_fuel_price_station`, `anp_weekly_weighted_price`, `petrobras_fuel_price_record`, `fuel_price_source_files`). Essas tabelas alimentam as séries semanais agregadas.
+
+### 1.2 Atualização da base na Etapa 4
+
+O export de 16 out. 2026 copia o Postgres do Gas Flare com o mesmo corte de PPI (21 set. 2026) e preenche RT&M nos 82 trimestres (1T06 a 2T26). O 4T19 deixa o valor −193.882,387 e passa a 72.464 / 8.010 (vendas / lucro bruto). A semana Petrobras de gasolina 27 abr. 2026 (um posto, R$ 3,6086/L, linha desalinhada) fica de fora, como no export de 27 set. A semana 25 mai. 2026 permanece a média do freeze de 27 set. (3,08728 R$/L, 65 plantas). `export_changelog` tem 19 linhas.
 
 ## 2. Fontes de dados
 
@@ -128,7 +133,7 @@ PETROBRAS. *Tabelas de preços de venda às distribuidoras*. Rio de Janeiro: Pet
 
 **Periodicidade da coleta:** semanal na operação. Na prática a tabela só muda após novo release.
 
-**Recorte no snapshot:** vendas trimestrais de 2022T1 a 2026T2 (36 linhas). Finanças de 2006T1 a 2026T2 (82 trimestres).
+**Recorte no snapshot:** vendas trimestrais de 2022T1 a 2026T2 (36 linhas). Finanças de 2006T1 a 2026T2 (82 trimestres). RT&M (receita, lucro bruto e margem) preenchido nos 82 trimestres.
 
 **Subvenção em 2026:** a receita RT&M da nota 8 do ITR não desconta a subvenção ao diesel rodoviário. A nota 4 inclui essa subvenção na receita de vendas: R$ 672 milhões em 1T26 e R$ 9.737 milhões em 2T26. O 2T26 também tem R$ 816 milhões de subvenção à gasolina. O campo `extraction_note` registra esses valores.
 
@@ -424,7 +429,7 @@ Painel trimestral de volume, receita e margem RT&M. Uma linha por trimestre.
 | `extraction_note` | TEXT | sim | Nota de extração (Q4 derivado, ajuste etc.). |
 | `updated_at` | TEXT | não | Instante da última extração. |
 
-Unicidade: `quarter`. Linhas: 82. Período: 2006T1 a 2026T2. Antes de ~2019 vários campos RT&M e de linha de produto ficam vazios: a fonte ainda não publicava o detalhe. De 1T22 a 2T26 todos os campos estão preenchidos. A receita de 2026 inclui subvenção (seção 2.5).
+Unicidade: `quarter`. Linhas: 82. Período: 2006T1 a 2026T2. RT&M (receita, lucro bruto e margem) preenchido nos 82 trimestres a partir do ITR / Supply. O 4T19 vale 72.464 / 8.010. De 1T22 a 2T26 todos os campos de volume, receita de produto e RT&M estão preenchidos. A receita de 2026 inclui subvenção (seção 2.5).
 
 ### 4.11 `abcr_traffic_index`
 
@@ -523,7 +528,7 @@ Registro das correções feitas no pipeline de origem antes de cada export. Uma 
 | `cause` | TEXT | não | Causa, filtro antigo e novo, e fonte usada. |
 | `max_abs_change` | REAL | sim | Maior alteração absoluta de valor, quando se aplica. |
 
-Linhas: 16 no export de 27 set. 2026.
+Linhas: 19 no export de 16 out. 2026 (16 do export de 27 set. 2026, mais RT&M 82/82, exclusão da semana 27 abr. 2026 e alinhamento da semana 25 mai. 2026).
 
 ## 5. Unidades e alinhamento
 

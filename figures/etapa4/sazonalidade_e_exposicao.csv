@@ -1,0 +1,13 @@
+stem,alvo,grupo,controle,bloco,rmse_mediano,indice_rmse,vitorias_exp_vs_sazonal
+etapa4_demand,tráfego pesado,y_only,y_only,3m,7.51322651780548,100.0,3/4
+etapa4_demand,tráfego pesado,y_seasonal,y_only,3m,2.5536181390312853,33.98830226906516,3/4
+etapa4_demand,tráfego pesado,y_seasonal_exp,y_only,3m,2.8476536219201196,37.901873651373464,3/4
+etapa4_demand,tráfego leve,y_only,y_only,3m,6.740544779184839,100.0,1/4
+etapa4_demand,tráfego leve,y_seasonal,y_only,3m,3.918746740947662,58.136943961101785,1/4
+etapa4_demand,tráfego leve,y_seasonal_exp,y_only,3m,4.110421787909199,60.98055754487975,1/4
+etapa4_demand,indústria,y_only,y_only,3m,5.874296584708224,100.0,1/4
+etapa4_demand,indústria,y_seasonal,y_only,3m,2.4137326493761133,41.08973073745481,1/4
+etapa4_demand,indústria,y_seasonal_exp,y_only,3m,3.579950399753747,60.94262262945586,1/4
+etapa4_demand,varejo,y_only,y_only,3m,4.282174594678072,100.0,2/4
+etapa4_demand,varejo,y_seasonal,y_only,3m,1.9071355514874548,44.53661356679995,2/4
+etapa4_demand,varejo,y_seasonal_exp,y_only,3m,1.5623975961278103,36.48607878038353,2/4

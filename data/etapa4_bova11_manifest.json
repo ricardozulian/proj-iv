@@ -1,0 +1,36 @@
+{
+  "export_file": "etapa4_bova11_20261018T152955Z.sqlite",
+  "sha256": "637b3ad353aae2fe75a477f4bd96083b9e843a9e781b1d0f727f261335d77281",
+  "extracted_at_utc": "2026-10-18T15:29:56Z",
+  "source_database": {
+    "scheme": "postgresql",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "database": "dadodb_dev",
+    "user_present": true,
+    "password_present": true
+  },
+  "gasflare_database": {
+    "scheme": "postgresql",
+    "host": "localhost",
+    "port": 5432,
+    "database": "gasflaredb",
+    "user_present": true,
+    "password_present": true
+  },
+  "query_filter": {
+    "ticker": "BOVA11",
+    "tradedate_min": "2022-02-01",
+    "tradedate_max": "2026-09-18",
+    "table": "equity_daily"
+  },
+  "row_count": 1156,
+  "date_min": "2022-02-01",
+  "date_max": "2026-09-18",
+  "price_convention": "B3 COTAHIST unadjusted closing price (price_last), BRL",
+  "export_command": "./run_equity_daily_sync.sh --tickers BOVA11 --full-refresh ; python src/etapa4_petr4_bova11.py --export-supplement",
+  "dado_rows_in_window": 1156,
+  "source_match": true,
+  "course_sqlite": "gas_flare.sqlite",
+  "course_sqlite_sha256": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba"
+}

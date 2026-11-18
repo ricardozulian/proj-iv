@@ -9,6 +9,26 @@ Documento da Etapa 1: [`notebooks/proj-iv_grupo19_etapa1.ipynb`](notebooks/proj-
 Documento da Etapa 2: [`notebooks/proj-iv_grupo19_etapa2.ipynb`](notebooks/proj-iv_grupo19_etapa2.ipynb).
 
 Documento da Etapa 3: [`notebooks/proj-iv_grupo19_etapa3.ipynb`](notebooks/proj-iv_grupo19_etapa3.ipynb).
+
+Documento da Etapa 4: [`notebooks/proj-iv_grupo19_etapa4.ipynb`](notebooks/proj-iv_grupo19_etapa4.ipynb).
+
+## Reprodução da Etapa 4
+
+1. Ative o ambiente `proj-iv` definido em `environment.yml`.
+2. Execute o notebook oficial do início ao fim em um kernel limpo.
+3. Consulte `notebooks/etapa4_experimentos.ipynb` para as grades completas e os ensaios secundários.
+
+O notebook reconstrói os experimentos desde o SQLite; não apenas apresenta JSON antigos.
+Para recalcular pela linha de comando, a partir da raiz:
+
+```bash
+python src/etapa4_run.py
+```
+
+O processo verifica os hashes efetivos dos dois SQLite e preserva a base e os resultados da Etapa 3.
+O protocolo usa uma dummy atualizada por data, semanas de segunda-feira a domingo e controles correspondentes.
+Os resultados são exploratórios e contemporâneos, sem validação ex ante.
+Detalhes: [`docs/etapa4_promocao.md`](docs/etapa4_promocao.md).
 ## Base
 
 | Arquivo | Conteúdo |

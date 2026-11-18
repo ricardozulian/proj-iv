@@ -1,0 +1,80 @@
+{
+  "completed_at_utc": "2026-10-18T21:22:24Z",
+  "price_convention": "raw unadjusted B3 COTAHIST close; target is raw price-return differential, not total investment return",
+  "corporate_actions": "source does not provide split or dividend adjustment factors; none were fabricated",
+  "quantity_field": "total_quantity is share count, not financial volume",
+  "petr4": {
+    "n": 1157,
+    "min": "2022-02-01",
+    "max": "2026-09-18",
+    "source": "gas_flare.sqlite",
+    "sha256": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba"
+  },
+  "bova11": {
+    "n": 1157,
+    "min": "2022-02-01",
+    "max": "2026-09-18",
+    "source": "etapa4_bova11_20261018T152955Z.sqlite",
+    "sha256": "637b3ad353aae2fe75a477f4bd96083b9e843a9e781b1d0f727f261335d77281"
+  },
+  "common_sessions": 1157,
+  "sessions_only_petr4": [],
+  "sessions_only_bova11": [],
+  "calendar": {
+    "source": "ANBIMA national holidays plus B3 year-end closures (Christmas Eve and New Year bridge)",
+    "n": 1157,
+    "min": "2022-02-01",
+    "max": "2026-09-18",
+    "missing_petr4": [],
+    "missing_bova11": [],
+    "extra_petr4": [],
+    "extra_bova11": []
+  },
+  "snapshots_before_overlay": {
+    "petr4_n": 1156,
+    "bova11_n": 1156,
+    "common_n": 1156,
+    "missing_vs_calendar": [
+      "2023-11-17"
+    ]
+  },
+  "overlay": {
+    "file": "etapa4_equity_overlay_2023-11-17.json",
+    "sha256": "8348b60445998a682e64bf903d44b62690837f33e42040e9d63a77d156829c75",
+    "tradedate": "2023-11-17",
+    "dates": [
+      "2023-11-17",
+      "2023-11-17"
+    ],
+    "source": {
+      "route": "Dado B3DB tbl_cotahist (COTAHIST import)",
+      "database": "b3db_dev",
+      "table": "tbl_cotahist",
+      "cotahist_file": "COTAHIST_D17112023.ZIP",
+      "cotahist_url": "https://bvmf.bmfbovespa.com.br/InstDados/SerHist/COTAHIST_D17112023.ZIP",
+      "dado_tbl_asset_n_on_date": 0,
+      "b3db_n_on_date_any_ticker": 10673
+    },
+    "reason": "B3 session present in Dado B3DB tbl_cotahist and in COTAHIST_D17112023; absent from dadodb_dev.public.tbl_asset, gasflaredb.equity_daily, course freeze equity_daily, and the original BOVA11 supplement. Matching the two incomplete equity series does not establish completeness."
+  },
+  "issues": [],
+  "missing_volume_months_2022Q2_2026Q2": {
+    "gasolina_c": [],
+    "diesel": []
+  },
+  "ppi_range": [
+    "2022-01-05",
+    "2026-09-21",
+    1151
+  ],
+  "exclude_2022Q1": true,
+  "q1_2022_base_available": false,
+  "q1_2022_petr4_before_apr": 41,
+  "accepted": true,
+  "limitations": [
+    "Preços sem ajuste por proventos; datas de distribuição podem afetar o diferencial.",
+    "A subtração do retorno do BOVA11 fixa o peso do referencial em um; não estima beta nem alfa.",
+    "A viabilidade ex ante não foi auditada contra horários de divulgação.",
+    "O pregão de 17 de novembro de 2023 entra por overlay a partir de B3DB tbl_cotahist; o freeze do curso e o suplemento original permanecem inalterados."
+  ]
+}

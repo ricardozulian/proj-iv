@@ -1,0 +1,35 @@
+{
+  "protocol": "etapa4_review_20261016",
+  "started_at_utc": "2026-10-18T21:18:06.356603+00:00",
+  "completed_at_utc": "2026-10-18T21:22:24.303186+00:00",
+  "sqlite": "gas_flare.sqlite",
+  "sha256_actual": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba",
+  "sha256_expected": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba",
+  "sqlite_unchanged": true,
+  "etapa3_unchanged": true,
+  "modules_rebuilt": [
+    "etapa4_audit",
+    "etapa4_repro",
+    "etapa4_finance_baseline",
+    "etapa4_prod_contrib",
+    "etapa4_price_transmission",
+    "etapa4_demand",
+    "etapa4_petr4_vol",
+    "etapa4_inflation",
+    "etapa4_company",
+    "etapa4_independents",
+    "etapa4_matrix"
+  ],
+  "evaluation": "one-step observed target lags and updated persistence; realized contemporaneous regressors; fixed coefficients inside each block",
+  "weekly_calendar": "Monday-Sunday; closed=left, label=left; price week_start/week_end",
+  "selection": "exploratory on shared blocks; no independent confirmation; ex ante not executed",
+  "python_version": "3.12.13",
+  "python_executable": "/home/ricardo/miniconda3/envs/gas/bin/python",
+  "packages": {
+    "numpy": "2.4.3",
+    "pandas": "2.3.3",
+    "statsmodels": "0.14.6",
+    "scikit-learn": "1.8.0",
+    "nbclient": "0.10.4"
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "completed_at_utc": "2026-10-18T21:22:42.112722+00:00",
+  "notebooks": [
+    {
+      "notebook": "notebooks/proj-iv_grupo19_etapa4.ipynb",
+      "started_at_utc": "2026-10-18T21:18:00.405913+00:00",
+      "completed_at_utc": "2026-10-18T21:22:42.112722+00:00",
+      "code_cells": 14,
+      "nonempty_code_cells": 13,
+      "error_outputs": 0,
+      "kernel": "gas (Python 3.12.13; WSL conda env gas; statsmodels 0.14.6)",
+      "python_executable": "/home/ricardo/miniconda3/envs/gas/bin/python",
+      "python_version": "3.12.13",
+      "packages": {
+        "numpy": "2.4.3",
+        "pandas": "2.3.3",
+        "statsmodels": "0.14.6",
+        "scikit-learn": "1.8.0",
+        "nbclient": "0.10.4"
+      },
+      "execution_counts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        null
+      ],
+      "full_run": true,
+      "full_clean_kernel": true,
+      "kernel_restart_first": "new jupyter kernel via nbclient NotebookClient.execute",
+      "notebook_sha256": "aaa2e1cb1b92771f611e97e693aa7d4086ca902fc69d0bf33a7647d75c30ec90",
+      "notebook_sha256_after_env_note": "dfa6c690b545669b17b7d0e39428387c5e6ffbd1413cd543a479529483daa69a",
+      "notebook_sha256_previous_kernel": "1bec771155e19f53b6925e137f437b03f210c84c24b71b7d84371dc0b284bcf2",
+      "notebook_sha256_previous_charts": "816365d44fa6a3f7352f3c201739cba103bf18ef9b0a1c303c2f3be00740fcac",
+      "notebook_sha256_previous_splice": "ba13dcc6c1ca36022f44550588497b951e8d7c2fa2d3f854680a8f23fcf631a0",
+      "execution_note": "Clean-kernel full run of the official notebook after the PETR4/BOVA11 splice. WSL conda env gas, Python 3.12.13, /home/ricardo/miniconda3/envs/gas/bin/python. 13 nonempty code cells execution_count 1–13, 1 empty code cell, 0 error outputs. Cell etapa4-rebuild reconstructed 11 modules; etapa4-bova-rebuild reconstructed the additional study. The environment sentence in the opening cell was updated after this kernel from the execution evidence."
+    },
+    {
+      "notebook": "notebooks/etapa4_experimentos.ipynb",
+      "started_at_utc": "2026-10-18T18:49:11.462970+00:00",
+      "completed_at_utc": "2026-10-18T18:51:29Z",
+      "code_cells": 15,
+      "error_outputs": 0,
+      "kernel": "Python 3 (ipykernel); Windows conda env proj-iv; Python 3.12.14",
+      "notebook_sha256": "a7998566e970854c5bd9a82b5c8ebce8a053c035a3442c499bc24bef78bb2bad",
+      "nonempty_code_cells": 15,
+      "notebook_sha256_after_charts": "a7998566e970854c5bd9a82b5c8ebce8a053c035a3442c499bc24bef78bb2bad",
+      "execution_note": "Full sequential run of all 15 nonempty code cells (execution_count 1–15, 0 error outputs) after the A2/B1/B2 wording pass. Environment: Windows proj-iv, Python 3.12.14, D:\\anaconda3\\envs\\proj-iv\\python.exe. Cell 2 rebuilt 11 Etapa 4 modules (results/etapa4_rebuild.json, 2026-10-18T18:49:11Z–18:51:10Z). e4_bova_inputs_code rebuilt PETR4 vs BOVA11 (completed 2026-10-18T18:51:29Z). Saved outputs support a full run; cell metadata does not independently establish that the kernel was restarted first. Not marked as a clean-kernel run.",
+      "notebook_sha256_previous_clean_kernel": "44db8b7a352a3e15f57d5b25b7523a8ca45c3b6db28ac90048a02c45ecfbe5d3",
+      "notebook_sha256_previous_charts": "3694be18b94bb02feebd499a1c397e0b86e585c1895b24580d39cf7fcade099b",
+      "full_clean_kernel": false,
+      "completed_at_utc_note": "Last timestamp independently recorded is etapa4_petr4_bova11.json completed_at_utc (e4_bova_inputs_code). Cells after that (inflation, company, independents, matrix) have no iopub timestamps.",
+      "execution_counts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "python_executable": "D:\\anaconda3\\envs\\proj-iv\\python.exe",
+      "notebook_sha256_previous_markdown": "56d64613fb6a652e5df9ca29396c1fc928e6004a243607c202d69776b3deb0be",
+      "notebook_sha256_previous_targeted": "1a833bb4173bcde29061f43327c247f8681856ae932fbfc845bb44076e032ff6",
+      "full_run": true,
+      "kernel_restart_first": "not independently established from saved outputs"
+    }
+  ],
+  "sqlite_sha256_before_and_after": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba",
+  "sqlite_unchanged": true,
+  "etapa3_artifacts_unchanged": true,
+  "protected_sha256": {
+    "src/etapa3_models.py": "51057ea07f120887ffce5cb2d78e08036f34cb5667fe6f11dbda4aa548089c01",
+    "results/etapa3_metrics.json": "3796ed3b3e72f4f288337c179429f5c4a06453a35612002210efb09a54e177ff",
+    "results/etapa3_forecasts.json": "2352c0959aa3c18695d1e0d67decc91216a1b8247e7ba1298cd789ef9d0d4d80"
+  },
+  "finance_lock": {
+    "receita RT&M": {
+      "method": "persistence",
+      "window": null,
+      "select_RMSE": 12929.634398027914,
+      "eval_RMSE": 12393.915326386857
+    },
+    "lucro bruto RT&M": {
+      "method": "sarima_0_1_0_1_0_0_4",
+      "window": null,
+      "select_RMSE": 3516.4626271415527,
+      "eval_RMSE": 5070.093891368774
+    },
+    "margem RT&M": {
+      "method": "sarima_0_0_0_0_0_0_4",
+      "window": null,
+      "select_RMSE": 4.788556175323675,
+      "eval_RMSE": 4.558289334677184
+    }
+  },
+  "charts_integration": {
+    "completed_at_utc": "2026-10-17T13:54:44Z",
+    "kind": "editorial_review",
+    "note": "Revisão editorial das Figuras 28–36 permanece o recorte anterior. O hash oficial corrente é o caderno após o splice PETR4/BOVA11, a execução em kernel limpo e a nota de ambiente. Figuras 28–36 SVG não mudaram neste kernel; Figuras 37–39 foram regeneradas por etapa4_petr4_bova11.rebuild().",
+    "official_notebook_sha256": "dfa6c690b545669b17b7d0e39428387c5e6ffbd1413cd543a479529483daa69a",
+    "official_notebook_sha256_previous": "816365d44fa6a3f7352f3c201739cba103bf18ef9b0a1c303c2f3be00740fcac",
+    "kernel_execution_sha256": "aaa2e1cb1b92771f611e97e693aa7d4086ca902fc69d0bf33a7647d75c30ec90",
+    "auxiliary_notebook_sha256": "a7998566e970854c5bd9a82b5c8ebce8a053c035a3442c499bc24bef78bb2bad",
+    "stems": [
+      "erros_por_bloco",
+      "contribuicao_incremental",
+      "temporal_diesel_anp",
+      "temporal_ipca",
+      "estabilidade_por_bloco",
+      "sazonalidade_e_exposicao",
+      "temporal_varejo",
+      "correcao_financeira_no_tempo",
+      "sensibilidade_1t26"
+    ],
+    "auxiliary_notebook_sha256_previous": "56d64613fb6a652e5df9ca29396c1fc928e6004a243607c202d69776b3deb0be"
+  },
+  "bova11_revision": {
+    "completed_at_utc": "2026-10-18T18:51:29Z",
+    "kind": "full_run",
+    "note": "Later full sequential execution of notebooks/etapa4_experimentos.ipynb on Windows proj-iv (Python 3.12.14). All 15 code cells have execution_count 1–15 and 0 saved errors. Eleven Etapa 4 modules rebuilt 2026-10-18T18:51:10Z. PETR4 vs BOVA11 rebuilt 2026-10-18T18:51:29Z; overlay of 17/11/2023 and conclusions unchanged. A2, B1 and B2 wording from the preceding markdown pass is present. Saved outputs support a full run; they do not independently establish a kernel restart. Not marked as a clean-kernel run. Official notebook, course SQLite, original BOVA11 supplement and Etapa 3 artifacts retain verified hashes.",
+    "auxiliary_notebook_sha256": "a7998566e970854c5bd9a82b5c8ebce8a053c035a3442c499bc24bef78bb2bad",
+    "auxiliary_notebook_sha256_previous_charts": "3694be18b94bb02feebd499a1c397e0b86e585c1895b24580d39cf7fcade099b",
+    "auxiliary_notebook_sha256_previous_clean_kernel": "44db8b7a352a3e15f57d5b25b7523a8ca45c3b6db28ac90048a02c45ecfbe5d3",
+    "cells_executed": [
+      "a8dc8c86",
+      "d8bb3010",
+      "59a7fca3",
+      "36a951b6",
+      "f5a02e06",
+      "e4_price_code",
+      "e4_demand_code",
+      "e4_vol_code",
+      "e4_bova_inputs_code",
+      "e4_bova_daily_code",
+      "e4_bova_qtd_code",
+      "e4_inf_code",
+      "e4_co_code",
+      "e4_ind_code",
+      "e4_mx_code"
+    ],
+    "error_outputs": 0,
+    "overlay_file": "data/etapa4_equity_overlay_2023-11-17.json",
+    "overlay_sha256": "8348b60445998a682e64bf903d44b62690837f33e42040e9d63a77d156829c75",
+    "bova11_supplement": "data/etapa4_bova11_20261018T152955Z.sqlite",
+    "bova11_supplement_sha256": "637b3ad353aae2fe75a477f4bd96083b9e843a9e781b1d0f727f261335d77281",
+    "course_sqlite_sha256": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba",
+    "official_notebook_sha256": "816365d44fa6a3f7352f3c201739cba103bf18ef9b0a1c303c2f3be00740fcac",
+    "official_notebook_unchanged": true,
+    "etapa3_artifacts_unchanged": true,
+    "auxiliary_notebook_sha256_previous_targeted": "1a833bb4173bcde29061f43327c247f8681856ae932fbfc845bb44076e032ff6",
+    "full_clean_kernel": false,
+    "wording_pass": "A2 amplitude; B1 three panel-pair rows; B2 illustration vs min RMSE vs simplicity",
+    "rebuild_11_modules": {
+      "started_at_utc": "2026-10-18T18:49:11.462970+00:00",
+      "completed_at_utc": "2026-10-18T18:51:10.927386+00:00",
+      "n_modules": 11,
+      "source": "results/etapa4_rebuild.json",
+      "python_version": "3.12.14",
+      "python_executable": "D:\\anaconda3\\envs\\proj-iv\\python.exe"
+    },
+    "auxiliary_notebook_sha256_previous_markdown": "56d64613fb6a652e5df9ca29396c1fc928e6004a243607c202d69776b3deb0be",
+    "kernel_restart_first": "not independently established from saved outputs",
+    "environment": {
+      "os": "windows",
+      "conda_env": "proj-iv",
+      "python_version": "3.12.14",
+      "python_executable": "D:\\anaconda3\\envs\\proj-iv\\python.exe",
+      "packages": {
+        "numpy": "2.5.3",
+        "pandas": "3.0.6",
+        "scikit-learn": "1.9.1"
+      }
+    }
+  },
+  "metrics_reproduced_across_clean_kernels": false,
+  "metrics_reproduced_across_clean_kernels_earlier_validation": {
+    "value": true,
+    "completed_at_utc": "2026-10-16T21:52:19.243961+00:00",
+    "scope": "Official Etapa 4 notebook clean-kernel (1bec7711…) and auxiliary clean-kernel before the BOVA11 overlay revision (44db8b7a…). finance_lock belongs to that pair and matched this WSL official rerun (select/eval RMSE identical for receita, lucro and margem).",
+    "does_not_cover": "notebooks/etapa4_experimentos.ipynb after the 2026-10-18 BOVA11 overlay revision (a7998566…), which remains a full sequential run without a documented kernel restart. BOVA11 daily and quarterly selection/criterion matched between this official WSL kernel and that Windows sequential run; that match is not a clean-kernel reproduction of the auxiliary notebook.",
+    "metric_diffs": []
+  },
+  "bova11_promotion": {
+    "completed_at_utc": "2026-10-18T21:22:42.112722+00:00",
+    "kind": "official_splice_clean_kernel",
+    "note": "Splice of the reviewed PETR4/BOVA11 study into notebooks/proj-iv_grupo19_etapa4.ipynb, then clean-kernel execute on WSL gas. Tables 5–6 and Figures 37–39 added. Daily unresolved_tie a_ppi_l1/l2/l3; quarterly simplicity b_history_clock; neither PPI nor PPI×volume extension meets the incremental criterion. Course SQLite, original BOVA11 supplement, overlay, Etapa 3 artifacts and the auxiliary notebook were not modified. etapa4_promote.py was not run.",
+    "official_notebook_sha256_kernel": "aaa2e1cb1b92771f611e97e693aa7d4086ca902fc69d0bf33a7647d75c30ec90",
+    "official_notebook_sha256": "dfa6c690b545669b17b7d0e39428387c5e6ffbd1413cd543a479529483daa69a",
+    "official_notebook_sha256_previous_charts": "816365d44fa6a3f7352f3c201739cba103bf18ef9b0a1c303c2f3be00740fcac",
+    "auxiliary_notebook_sha256": "a7998566e970854c5bd9a82b5c8ebce8a053c035a3442c499bc24bef78bb2bad",
+    "cells_inserted": [
+      "etapa4-bova-data",
+      "etapa4-bova-method",
+      "etapa4-bova-rebuild",
+      "etapa4-bova-results",
+      "etapa4-bova-daily-intro",
+      "etapa4-bova-daily-table",
+      "etapa4-bova-daily-reading",
+      "etapa4-bova-chart37",
+      "etapa4-bova-caption37",
+      "etapa4-bova-qtd-intro",
+      "etapa4-bova-qtd-table",
+      "etapa4-bova-qtd-reading",
+      "etapa4-bova-chart38",
+      "etapa4-bova-caption38",
+      "etapa4-bova-intro39",
+      "etapa4-bova-chart39",
+      "etapa4-bova-caption39",
+      "etapa4-bova-result-summary"
+    ],
+    "tables": [
+      "Tabela 5",
+      "Tabela 6"
+    ],
+    "figures": [
+      "Figura 37",
+      "Figura 38",
+      "Figura 39"
+    ],
+    "daily_n_scored": 126,
+    "quarterly_n_scored": 372,
+    "daily_selection": {
+      "selected": null,
+      "status": "unresolved_tie",
+      "candidates": [
+        "a_ppi_l1",
+        "a_ppi_l2",
+        "a_ppi_l3"
+      ],
+      "min_RMSE": 0.01917607279349858,
+      "min_error_group": "a_ppi_l2",
+      "within_2pct": [
+        "a_ppi_l1",
+        "a_ppi_l2",
+        "a_ppi_l3"
+      ],
+      "n_feat_selected_class": 4
+    },
+    "quarterly_selection": {
+      "selected": "b_history_clock",
+      "status": "simplicity",
+      "min_RMSE": 0.014604013328020256,
+      "min_error_group": "b_history_clock_prod",
+      "within_2pct": [
+        "b_history_clock",
+        "b_history_clock_prod",
+        "b_history_clock_fuels"
+      ],
+      "n_feat_selected_class": 4
+    },
+    "daily_criterion": {
+      "a_ppi_l1": false,
+      "a_ppi_l2": false,
+      "a_ppi_l3": false,
+      "a_ppi_l4": false,
+      "a_ppi_l5": false
+    },
+    "quarterly_criterion": {
+      "b_clock_prod": false,
+      "b_history_clock": true,
+      "b_history_clock_prod": false,
+      "b_history_clock_fuels": false
+    },
+    "verification_ok": true,
+    "overlay_sha256": "8348b60445998a682e64bf903d44b62690837f33e42040e9d63a77d156829c75",
+    "bova11_supplement_sha256": "637b3ad353aae2fe75a477f4bd96083b9e843a9e781b1d0f727f261335d77281",
+    "course_sqlite_sha256": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba",
+    "rebuild_11_modules": {
+      "started_at_utc": "2026-10-18T21:18:06.356603+00:00",
+      "completed_at_utc": "2026-10-18T21:22:24.303186+00:00",
+      "n_modules": 11,
+      "python_version": "3.12.13",
+      "python_executable": "/home/ricardo/miniconda3/envs/gas/bin/python"
+    },
+    "environment": {
+      "os": "wsl",
+      "conda_env": "gas",
+      "python_version": "3.12.13",
+      "python_executable": "/home/ricardo/miniconda3/envs/gas/bin/python",
+      "packages": {
+        "numpy": "2.4.3",
+        "pandas": "2.3.3",
+        "statsmodels": "0.14.6",
+        "scikit-learn": "1.8.0",
+        "nbclient": "0.10.4"
+      }
+    },
+    "full_clean_kernel": true,
+    "figures_28_36_svg_unchanged": true,
+    "figures_37_39_regenerated_by_rebuild": true
+  }
+}

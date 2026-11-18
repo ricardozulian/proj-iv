@@ -1,0 +1,993 @@
+{
+  "completed_at_utc": "2026-10-18T21:18:06Z",
+  "current": {
+    "file": "gas_flare.sqlite",
+    "bytes": 1880064,
+    "sha256": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba",
+    "sha256_expected": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba",
+    "sha_ok": true
+  },
+  "sep_export": {
+    "file": "gas_flare_export_20260927.sqlite",
+    "bytes": 1986560,
+    "sha256": "155f53607aae0e92e66a588288ce309a8bce05678b77b67a0b56603713db3a6d",
+    "sha256_expected": "155f53607aae0e92e66a588288ce309a8bce05678b77b67a0b56603713db3a6d",
+    "sha_ok": true
+  },
+  "integrity": {
+    "current": "ok",
+    "sep": "ok"
+  },
+  "row_counts": {
+    "abcr_traffic_index": {
+      "current": 165,
+      "sep": 165
+    },
+    "anp_distributor_weekly_diesel": {
+      "current": 245,
+      "sep": 245
+    },
+    "anp_distributor_weekly_gasoline": {
+      "current": 245,
+      "sep": 245
+    },
+    "anp_fuel_sales": {
+      "current": 110,
+      "sep": 110
+    },
+    "equity_daily": {
+      "current": 1156,
+      "sep": 1156
+    },
+    "export_changelog": {
+      "current": 19,
+      "sep": 16
+    },
+    "fuel_price_national_weekly": {
+      "current": 490,
+      "sep": 490
+    },
+    "ibge_indicators": {
+      "current": 165,
+      "sep": 165
+    },
+    "inflation_monthly": {
+      "current": 224,
+      "sep": 224
+    },
+    "pbr_quarterly_diesel_gasoline": {
+      "current": 82,
+      "sep": 82
+    },
+    "pbr_quarterly_sales": {
+      "current": 36,
+      "sep": 36
+    },
+    "petrobras_distributor_weekly_diesel": {
+      "current": 72,
+      "sep": 72
+    },
+    "petrobras_distributor_weekly_gasoline": {
+      "current": 64,
+      "sep": 64
+    },
+    "ppi_daily": {
+      "current": 1151,
+      "sep": 1151
+    },
+    "ppi_reference_table": {
+      "current": 1151,
+      "sep": 1151
+    }
+  },
+  "rtm_current": {
+    "n": 82,
+    "n_sales": 82,
+    "n_gp": 82,
+    "n_margin": 82,
+    "n_fin": 82,
+    "min_year": 2006,
+    "max_year": 2026,
+    "q419": {
+      "sales": 72464.0,
+      "gp": 8010.0,
+      "margin": 11.053764627953191
+    },
+    "derived_quarters": [
+      {
+        "quarter": "2Q06",
+        "rtm_sales_revenue_rsmn": 30487.541,
+        "rtm_gross_profit_rsmn": 3548.048,
+        "note": "RT&M source: 2Q06 Financial Statements (BR GAAP); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "3Q06",
+        "rtm_sales_revenue_rsmn": 34671.633,
+        "rtm_gross_profit_rsmn": 2628.878,
+        "note": "RT&M source: 3Q06 Financial Statements (BR GAAP); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "4Q06",
+        "rtm_sales_revenue_rsmn": 31440.35,
+        "rtm_gross_profit_rsmn": 3268.876,
+        "note": "RT&M source: 2006 Financial Statements (BR GAAP); Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "2Q07",
+        "rtm_sales_revenue_rsmn": 33211.717,
+        "rtm_gross_profit_rsmn": 4684.462,
+        "note": "RT&M source: 2Q07 Financial Statements (BR GAAP); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "3Q07",
+        "rtm_sales_revenue_rsmn": 34467.789,
+        "rtm_gross_profit_rsmn": 3235.637,
+        "note": "RT&M source: 3Q07 Financial Statements (BR GAAP); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "4Q07",
+        "rtm_sales_revenue_rsmn": 35778.965,
+        "rtm_gross_profit_rsmn": 1857.434,
+        "note": "RT&M source: 2008 Financial Statements (BR GAAP); RT&M (legacy Supply) annual values from next-year comparative statement; Q4 RT&M segment derived as FY minus J"
+      },
+      {
+        "quarter": "2Q08",
+        "rtm_sales_revenue_rsmn": 44685.515,
+        "rtm_gross_profit_rsmn": 739.962,
+        "note": "RT&M source: 2Q08 Financial Statements (BR GAAP); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "3Q08",
+        "rtm_sales_revenue_rsmn": 54340.842,
+        "rtm_gross_profit_rsmn": -794.01,
+        "note": "RT&M source: 3Q08 Financial Statements (BR GAAP); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "4Q08",
+        "rtm_sales_revenue_rsmn": 36624.848,
+        "rtm_gross_profit_rsmn": 723.891,
+        "note": "RT&M source: 2008 Financial Statements (BR GAAP); Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "2Q09",
+        "rtm_sales_revenue_rsmn": 36130.479,
+        "rtm_gross_profit_rsmn": 9403.468,
+        "note": "RT&M source: 2Q09 Financial Statements (BR GAAP); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "3Q09",
+        "rtm_sales_revenue_rsmn": 38407.033,
+        "rtm_gross_profit_rsmn": 4086.611,
+        "note": "RT&M source: 3Q09 Financial Statements (BR GAAP); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "4Q09",
+        "rtm_sales_revenue_rsmn": 37858.636,
+        "rtm_gross_profit_rsmn": 3761.351,
+        "note": "RT&M source: 2009 Financial Statements (BR GAAP); Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "2Q10",
+        "rtm_sales_revenue_rsmn": 44251.496,
+        "rtm_gross_profit_rsmn": 1996.707,
+        "note": "RT&M source: 2Q10 Financial Statements (IFRS); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "3Q10",
+        "rtm_sales_revenue_rsmn": 43799.422,
+        "rtm_gross_profit_rsmn": 3676.681,
+        "note": "RT&M source: 3Q10 Financial Statements (IFRS); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "4Q10",
+        "rtm_sales_revenue_rsmn": 43142.749,
+        "rtm_gross_profit_rsmn": 3150.282,
+        "note": "RT&M source: 2010 Financial Statements (IFRS); Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "2Q11",
+        "rtm_sales_revenue_rsmn": 50595.0,
+        "rtm_gross_profit_rsmn": -1950.0,
+        "note": "RT&M source: 2Q11 Financial Statements (IFRS); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "3Q11",
+        "rtm_sales_revenue_rsmn": 51517.0,
+        "rtm_gross_profit_rsmn": -2321.0,
+        "note": "RT&M source: 3Q11 Financial Statements (IFRS); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "4Q11",
+        "rtm_sales_revenue_rsmn": 52082.0,
+        "rtm_gross_profit_rsmn": -4317.0,
+        "note": "RT&M source: 2011 Financial Statements (Reais); Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "2Q12",
+        "rtm_sales_revenue_rsmn": 55242.0,
+        "rtm_gross_profit_rsmn": -7947.0,
+        "note": "RT&M source: 2Q12 Financial Statements (Reais); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "3Q12",
+        "rtm_sales_revenue_rsmn": 59746.0,
+        "rtm_gross_profit_rsmn": -6233.0,
+        "note": "RT&M source: 3Q12 Financial Statements (Reais); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "4Q12",
+        "rtm_sales_revenue_rsmn": 57628.0,
+        "rtm_gross_profit_rsmn": -7142.0,
+        "note": "RT&M source: 2012 Financial Statements (Reais); Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "2Q13",
+        "rtm_sales_revenue_rsmn": 57707.0,
+        "rtm_gross_profit_rsmn": -1926.0,
+        "note": "RT&M source: 2Q13 Financial Statements (Reais); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "3Q13",
+        "rtm_sales_revenue_rsmn": 60774.0,
+        "rtm_gross_profit_rsmn": -6444.0,
+        "note": "RT&M source: 3Q13 Financial Statements (Reais); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "4Q13",
+        "rtm_sales_revenue_rsmn": 64043.0,
+        "rtm_gross_profit_rsmn": -5690.0,
+        "note": "RT&M source: 4Q13 Financial Report (Reais); Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "2Q14",
+        "rtm_sales_revenue_rsmn": 64951.0,
+        "rtm_gross_profit_rsmn": -3635.0,
+        "note": "RT&M source: 2Q14 Financial Statements (Reais); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "3Q14",
+        "rtm_sales_revenue_rsmn": 69130.0,
+        "rtm_gross_profit_rsmn": -3126.0,
+        "note": "RT&M source: 3Q14 Financial Statements (Reais); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "4Q14",
+        "rtm_sales_revenue_rsmn": 65343.0,
+        "rtm_gross_profit_rsmn": 3486.0,
+        "note": "RT&M source: 2014 Financial Statements (Reais); Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "2Q15",
+        "rtm_sales_revenue_rsmn": 60181.0,
+        "rtm_gross_profit_rsmn": 10679.0,
+        "note": "RT&M source: 2Q15 Financial Statements (Reais); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "3Q15",
+        "rtm_sales_revenue_rsmn": 61995.0,
+        "rtm_gross_profit_rsmn": 10119.0,
+        "note": "RT&M source: 3Q15 Financial Statements (Reais); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "4Q15",
+        "rtm_sales_revenue_rsmn": 69172.0,
+        "rtm_gross_profit_rsmn": 13922.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; RT&M source: 2015 Financial Statements (Reais); Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "2Q16",
+        "rtm_sales_revenue_rsmn": 55947.0,
+        "rtm_gross_profit_rsmn": 14081.0,
+        "note": "RT&M source: 2Q16 Financial Statements (Reais); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "3Q16",
+        "rtm_sales_revenue_rsmn": 53984.0,
+        "rtm_gross_profit_rsmn": 11292.0,
+        "note": "RT&M source: 3Q16 Financial Statements (Reais); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "4Q16",
+        "rtm_sales_revenue_rsmn": 54165.0,
+        "rtm_gross_profit_rsmn": 10136.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; RT&M source: 2016 Financial Statements (Reais); Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "2Q17",
+        "rtm_sales_revenue_rsmn": 51301.0,
+        "rtm_gross_profit_rsmn": 6639.0,
+        "note": "RT&M source: 2Q17 Financial Statements (Reais); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "3Q17",
+        "rtm_sales_revenue_rsmn": 52616.0,
+        "rtm_gross_profit_rsmn": 6281.0,
+        "note": "RT&M source: 3Q17 Financial Statements (Reais); RT&M (legacy Supply) quarter derived from cumulative segment statements"
+      },
+      {
+        "quarter": "4Q17",
+        "rtm_sales_revenue_rsmn": 56221.0,
+        "rtm_gross_profit_rsmn": 9300.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; RT&M source: 4Q17 Financial Statements (Reais); Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "2Q18",
+        "rtm_sales_revenue_rsmn": 65431.0,
+        "rtm_gross_profit_rsmn": 9185.0,
+        "note": "RT&M source: 3Q18 Financial Statements (Reais); Q2 RT&M derived as Jan-Sep minus Q1 minus Q3; Q2 RT&M derived as Jan-Sep minus Q1 minus Q3; not a direct 2Q18 fi"
+      },
+      {
+        "quarter": "4Q18",
+        "rtm_sales_revenue_rsmn": 72089.0,
+        "rtm_gross_profit_rsmn": 157.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; RT&M source: 2018 Annual Financial Statements (IFRS in R$); Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q19",
+        "rtm_sales_revenue_rsmn": 72464.0,
+        "rtm_gross_profit_rsmn": 8010.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; Q4 RT&M segment derived as FY minus Jan-Sep; RT&M source: 4Q19 Financial Statements- R$; Q4 RT&M segment derived as FY m"
+      },
+      {
+        "quarter": "2Q20",
+        "rtm_sales_revenue_rsmn": 44326.0,
+        "rtm_gross_profit_rsmn": 4491.0,
+        "note": "RT&M source: Financial Statements 3Q20; Q2 RT&M derived as Jan-Sep minus Q1 minus Q3; Q2 RT&M derived as Jan-Sep minus Q1 minus Q3; not a direct 2Q20 file parse"
+      },
+      {
+        "quarter": "4Q20",
+        "rtm_sales_revenue_rsmn": 65163.0,
+        "rtm_gross_profit_rsmn": 6615.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; Q4 RT&M segment derived as FY minus Jan-Sep; RT&M source: Financial Statements 4Q20; Q4 RT&M segment derived as FY minus"
+      },
+      {
+        "quarter": "4Q21",
+        "rtm_sales_revenue_rsmn": 117499.0,
+        "rtm_gross_profit_rsmn": 12661.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; RT&M source: Financial Statements 2021; Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q22",
+        "rtm_sales_revenue_rsmn": 144757.0,
+        "rtm_gross_profit_rsmn": 17493.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q23",
+        "rtm_sales_revenue_rsmn": 125208.0,
+        "rtm_gross_profit_rsmn": 10777.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q24",
+        "rtm_sales_revenue_rsmn": 112376.0,
+        "rtm_gross_profit_rsmn": 8709.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q25",
+        "rtm_sales_revenue_rsmn": 120312.0,
+        "rtm_gross_profit_rsmn": 12993.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; Q4 RT&M segment derived as FY minus Jan-Sep"
+      }
+    ],
+    "negative_gp_or_sales": [
+      {
+        "quarter": "3Q08",
+        "rtm_sales_revenue_rsmn": 54340.842,
+        "rtm_gross_profit_rsmn": -794.01,
+        "rtm_gross_margin_pct": -1.4611661703732894
+      },
+      {
+        "quarter": "2Q11",
+        "rtm_sales_revenue_rsmn": 50595.0,
+        "rtm_gross_profit_rsmn": -1950.0,
+        "rtm_gross_margin_pct": -3.8541357841683963
+      },
+      {
+        "quarter": "3Q11",
+        "rtm_sales_revenue_rsmn": 51517.0,
+        "rtm_gross_profit_rsmn": -2321.0,
+        "rtm_gross_margin_pct": -4.505308927150261
+      },
+      {
+        "quarter": "4Q11",
+        "rtm_sales_revenue_rsmn": 52082.0,
+        "rtm_gross_profit_rsmn": -4317.0,
+        "rtm_gross_margin_pct": -8.288852194616183
+      },
+      {
+        "quarter": "1Q12",
+        "rtm_sales_revenue_rsmn": 55027.0,
+        "rtm_gross_profit_rsmn": -4930.0,
+        "rtm_gross_margin_pct": -8.959238192160212
+      },
+      {
+        "quarter": "2Q12",
+        "rtm_sales_revenue_rsmn": 55242.0,
+        "rtm_gross_profit_rsmn": -7947.0,
+        "rtm_gross_margin_pct": -14.385793418051483
+      },
+      {
+        "quarter": "3Q12",
+        "rtm_sales_revenue_rsmn": 59746.0,
+        "rtm_gross_profit_rsmn": -6233.0,
+        "rtm_gross_margin_pct": -10.432497573059285
+      },
+      {
+        "quarter": "4Q12",
+        "rtm_sales_revenue_rsmn": 57628.0,
+        "rtm_gross_profit_rsmn": -7142.0,
+        "rtm_gross_margin_pct": -12.393281043936975
+      },
+      {
+        "quarter": "1Q13",
+        "rtm_sales_revenue_rsmn": 56839.0,
+        "rtm_gross_profit_rsmn": -4634.0,
+        "rtm_gross_margin_pct": -8.152852794736008
+      },
+      {
+        "quarter": "2Q13",
+        "rtm_sales_revenue_rsmn": 57707.0,
+        "rtm_gross_profit_rsmn": -1926.0,
+        "rtm_gross_margin_pct": -3.3375500372571785
+      },
+      {
+        "quarter": "3Q13",
+        "rtm_sales_revenue_rsmn": 60774.0,
+        "rtm_gross_profit_rsmn": -6444.0,
+        "rtm_gross_margin_pct": -10.60321848158752
+      },
+      {
+        "quarter": "4Q13",
+        "rtm_sales_revenue_rsmn": 64043.0,
+        "rtm_gross_profit_rsmn": -5690.0,
+        "rtm_gross_margin_pct": -8.884655622003967
+      },
+      {
+        "quarter": "1Q14",
+        "rtm_sales_revenue_rsmn": 64146.0,
+        "rtm_gross_profit_rsmn": -4798.0,
+        "rtm_gross_margin_pct": -7.479811679605899
+      },
+      {
+        "quarter": "2Q14",
+        "rtm_sales_revenue_rsmn": 64951.0,
+        "rtm_gross_profit_rsmn": -3635.0,
+        "rtm_gross_margin_pct": -5.596526612369325
+      },
+      {
+        "quarter": "3Q14",
+        "rtm_sales_revenue_rsmn": 69130.0,
+        "rtm_gross_profit_rsmn": -3126.0,
+        "rtm_gross_margin_pct": -4.5219152321712714
+      },
+      {
+        "quarter": "1Q20",
+        "rtm_sales_revenue_rsmn": 68160.0,
+        "rtm_gross_profit_rsmn": -2.0,
+        "rtm_gross_margin_pct": -0.0029342723004694834
+      }
+    ],
+    "diesel_mbpd_n": 28,
+    "gasoline_mbpd_n": 28,
+    "diesel_revenue_n": 44,
+    "gasoline_revenue_n": 21,
+    "since_2022_n": 18,
+    "since_2022_rtm": 18
+  },
+  "rtm_sep": {
+    "n": 82,
+    "n_sales": 26,
+    "n_gp": 26,
+    "n_margin": 26,
+    "n_fin": 80,
+    "min_year": 2006,
+    "max_year": 2026,
+    "q419": {
+      "sales": -193882.387,
+      "gp": -15589.377,
+      "margin": 8.040635996502354
+    },
+    "derived_quarters": [
+      {
+        "quarter": "4Q15",
+        "rtm_sales_revenue_rsmn": null,
+        "rtm_gross_profit_rsmn": null,
+        "note": "Q4 revenue derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q16",
+        "rtm_sales_revenue_rsmn": null,
+        "rtm_gross_profit_rsmn": null,
+        "note": "Q4 revenue derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q17",
+        "rtm_sales_revenue_rsmn": null,
+        "rtm_gross_profit_rsmn": null,
+        "note": "Q4 revenue derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q18",
+        "rtm_sales_revenue_rsmn": null,
+        "rtm_gross_profit_rsmn": null,
+        "note": "Q4 revenue derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q19",
+        "rtm_sales_revenue_rsmn": -193882.387,
+        "rtm_gross_profit_rsmn": -15589.377,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q20",
+        "rtm_sales_revenue_rsmn": 65163.0,
+        "rtm_gross_profit_rsmn": 6615.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q21",
+        "rtm_sales_revenue_rsmn": null,
+        "rtm_gross_profit_rsmn": null,
+        "note": "Q4 revenue derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q22",
+        "rtm_sales_revenue_rsmn": 144757.0,
+        "rtm_gross_profit_rsmn": 17493.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q23",
+        "rtm_sales_revenue_rsmn": 125208.0,
+        "rtm_gross_profit_rsmn": 10777.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q24",
+        "rtm_sales_revenue_rsmn": 112376.0,
+        "rtm_gross_profit_rsmn": 8709.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; Q4 RT&M segment derived as FY minus Jan-Sep"
+      },
+      {
+        "quarter": "4Q25",
+        "rtm_sales_revenue_rsmn": 120312.0,
+        "rtm_gross_profit_rsmn": 12993.0,
+        "note": "Q4 revenue derived as FY minus Jan-Sep; Q4 RT&M segment derived as FY minus Jan-Sep"
+      }
+    ],
+    "negative_gp_or_sales": [
+      {
+        "quarter": "4Q19",
+        "rtm_sales_revenue_rsmn": -193882.387,
+        "rtm_gross_profit_rsmn": -15589.377,
+        "rtm_gross_margin_pct": 8.040635996502354
+      },
+      {
+        "quarter": "1Q20",
+        "rtm_sales_revenue_rsmn": 68160.0,
+        "rtm_gross_profit_rsmn": -2.0,
+        "rtm_gross_margin_pct": -0.0029342723004694834
+      }
+    ],
+    "diesel_mbpd_n": 28,
+    "gasoline_mbpd_n": 28,
+    "diesel_revenue_n": 44,
+    "gasoline_revenue_n": 21,
+    "since_2022_n": 18,
+    "since_2022_rtm": 18
+  },
+  "rtm_2022_match": {
+    "n_current": 18,
+    "n_sep": 18,
+    "mismatches": []
+  },
+  "gasoline_week_diffs_n": 22,
+  "gasoline_week_diffs": [
+    {
+      "week_start": "2022-01-10",
+      "week_end": "2022-01-16",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 3.265325573770491,
+      "sep_price": 3.258234999999999,
+      "delta": 0.007090573770491826,
+      "cur_n": 61,
+      "sep_n": 60,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2022-03-07",
+      "week_end": "2022-03-13",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 3.8753813114754094,
+      "sep_price": 3.8683033333333325,
+      "delta": 0.007077978142076891,
+      "cur_n": 61,
+      "sep_n": 60,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2022-06-13",
+      "week_end": "2022-06-19",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 4.076722666666667,
+      "sep_price": 4.069547457627119,
+      "delta": 0.007175209039547603,
+      "cur_n": 60,
+      "sep_n": 59,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2022-07-18",
+      "week_end": "2022-07-24",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 3.877130294117646,
+      "sep_price": 3.8708298507462686,
+      "delta": 0.006300443371377362,
+      "cur_n": 68,
+      "sep_n": 67,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2022-07-25",
+      "week_end": "2022-07-31",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 3.7271302941176465,
+      "sep_price": 3.720829850746268,
+      "delta": 0.0063004433713786945,
+      "cur_n": 68,
+      "sep_n": 67,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2022-08-15",
+      "week_end": "2022-08-21",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 3.5478729411764696,
+      "sep_price": 3.541562686567163,
+      "delta": 0.006310254609306565,
+      "cur_n": 68,
+      "sep_n": 67,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2022-08-29",
+      "week_end": "2022-09-04",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 3.418461751824817,
+      "sep_price": 3.4162397058823517,
+      "delta": 0.0022220459424651118,
+      "cur_n": 137,
+      "sep_n": 136,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2022-12-05",
+      "week_end": "2022-12-11",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 3.0996770149253736,
+      "sep_price": 3.0932984848484852,
+      "delta": 0.006378530076888378,
+      "cur_n": 67,
+      "sep_n": 66,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2023-01-23",
+      "week_end": "2023-01-29",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 3.3371124637681153,
+      "sep_price": 3.3310308823529406,
+      "delta": 0.006081581415174675,
+      "cur_n": 69,
+      "sep_n": 68,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2023-02-27",
+      "week_end": "2023-03-05",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 3.2069631884057976,
+      "sep_price": 3.2008794117647064,
+      "delta": 0.006083776641091276,
+      "cur_n": 69,
+      "sep_n": 68,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2023-03-27",
+      "week_end": "2023-04-02",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 3.208849275362319,
+      "sep_price": 3.200939705882353,
+      "delta": 0.007909569479966017,
+      "cur_n": 69,
+      "sep_n": 68,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2023-05-01",
+      "week_end": "2023-05-07",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 3.209939344262295,
+      "sep_price": 3.2009899999999996,
+      "delta": 0.008949344262295433,
+      "cur_n": 61,
+      "sep_n": 60,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2023-05-15",
+      "week_end": "2023-05-21",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 2.8099393442622937,
+      "sep_price": 2.800989999999999,
+      "delta": 0.008949344262294545,
+      "cur_n": 61,
+      "sep_n": 60,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2023-06-12",
+      "week_end": "2023-06-18",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 2.682085,
+      "sep_price": 2.6730203389830502,
+      "delta": 0.009064661016949582,
+      "cur_n": 60,
+      "sep_n": 59,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2023-06-26",
+      "week_end": "2023-07-02",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 2.543086666666667,
+      "sep_price": 2.5340389830508476,
+      "delta": 0.009047683615819313,
+      "cur_n": 60,
+      "sep_n": 59,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2023-08-14",
+      "week_end": "2023-08-20",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 2.9534350000000003,
+      "sep_price": 2.9443932203389838,
+      "delta": 0.009041779661016491,
+      "cur_n": 60,
+      "sep_n": 59,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2023-10-16",
+      "week_end": "2023-10-22",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 2.833595,
+      "sep_price": 2.8246491525423725,
+      "delta": 0.008945847457627387,
+      "cur_n": 60,
+      "sep_n": 59,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2024-04-01",
+      "week_end": "2024-04-07",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 2.8477171874999994,
+      "sep_price": 2.8395603174603177,
+      "delta": 0.008156870039681685,
+      "cur_n": 64,
+      "sep_n": 63,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2024-07-08",
+      "week_end": "2024-07-14",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 3.0492875000000006,
+      "sep_price": 3.041155555555556,
+      "delta": 0.008131944444444539,
+      "cur_n": 64,
+      "sep_n": 63,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2025-06-02",
+      "week_end": "2025-06-08",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 2.895777272727272,
+      "sep_price": 2.8881492307692302,
+      "delta": 0.007628041958041898,
+      "cur_n": 66,
+      "sep_n": 65,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2025-10-20",
+      "week_end": "2025-10-26",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 2.7557363636363634,
+      "sep_price": 2.748107692307692,
+      "delta": 0.007628671328671288,
+      "cur_n": 66,
+      "sep_n": 65,
+      "n_delta": 1
+    },
+    {
+      "week_start": "2026-01-26",
+      "week_end": "2026-02-01",
+      "in_current": true,
+      "in_sep": true,
+      "cur_price": 2.614919696969698,
+      "sep_price": 2.607278461538462,
+      "delta": 0.007641235431235849,
+      "cur_n": 66,
+      "sep_n": 65,
+      "n_delta": 1
+    }
+  ],
+  "changelog_current": [
+    {
+      "id": 1,
+      "changed_at": "2026-09-27T13:00:00+00:00",
+      "table_name": "anp_distributor_weekly_diesel",
+      "scope": "240 weeks already in the 2026-08-15 export",
+      "cause": "Same AVG(price_rs_l) and COUNT(*). The ANP weekly file now has more rows per product-week (about 18 to 22). Diesel still includes every line whose name contains diesel, including biodiesel. The 2022-01-03 price already matched this average."
+    },
+    {
+      "id": 2,
+      "changed_at": "2026-09-27T13:00:00+00:00",
+      "table_name": "anp_distributor_weekly_gasoline",
+      "scope": "240 weeks already in the 2026-08-15 export",
+      "cause": "Same AVG(price_rs_l) and COUNT(*). The ANP weekly file now has more rows per product-week (about 18 to 22)."
+    },
+    {
+      "id": 3,
+      "changed_at": "2026-09-27T13:00:00+00:00",
+      "table_name": "fuel_price_national_weekly",
+      "scope": "480 rows (240 weeks, diesel and gasoline), method anp_weekly_weighted_source",
+      "cause": "Same average as the distributor weekly tables. The source file gained the same extra rows."
+    },
+    {
+      "id": 4,
+      "changed_at": "2026-09-27T13:00:00+00:00",
+      "table_name": "petrobras_distributor_weekly_diesel",
+      "scope": "70 of 72 weeks in the frozen export, plus new weeks 2026-08-31 and 2026-09-14",
+      "cause": "PDF Tabelas de Preços - Diesel S500 e S10 17-09-2026.pdf. Mean of Diesel S10 and Diesel S500 list prices, sem tributos, all locations and sale modes. Discount columns excluded. Pages 9, 10, 19 and 20. The 17.09.2026 list price is exactly 1."
+    },
+    {
+      "id": 5,
+      "changed_at": "2026-09-27T13:00:00+00:00",
+      "table_name": "petrobras_distributor_weekly_gasoline",
+      "scope": "61 shared weeks. Week 2026-04-27 removed. Weeks 2026-07-27, 2026-08-31 and 2026-09-07 added.",
+      "cause": "PDF Tabelas de Preços - Gasolina 10-09-26.pdf, page 10, Gasolina A sem tributos list price. No Gasolina A vigência on 01.05.2026 (that date is only on page 11, Gasolina Premium). The list price changes on 29.05.2026 and is unchanged on 10.0"
+    },
+    {
+      "id": 6,
+      "changed_at": "2026-09-27T13:00:00+00:00",
+      "table_name": "ppi_daily",
+      "scope": "Rows flagged by the 1.5-point percentage rule, plus the image corrections",
+      "cause": "man_insp set to 1 where the ABICOM image or its OCR text confirms the stored percentage. Corrected values are documented in the review report, not estimated."
+    },
+    {
+      "id": 7,
+      "changed_at": "2026-09-27T15:00:00+00:00",
+      "table_name": "anp_distributor_weekly_diesel",
+      "scope": "245 weeks from 2022-01-03",
+      "cause": "Old filter: any ANP line whose name contains diesel (Óleo Diesel S-10, Óleo Diesel S-500, Óleo Diesel², Biodiesel B-100, Óleo Diesel Marítimo DMA-MGO, Óleo Diesel Não Rodoviário). New filter: exact labels Óleo Diesel S-10 (R$/litro) and Óle"
+    },
+    {
+      "id": 8,
+      "changed_at": "2026-09-27T15:00:00+00:00",
+      "table_name": "anp_distributor_weekly_gasoline",
+      "scope": "245 weeks from 2022-01-03",
+      "cause": "Old filter: any line whose name contains gasolina, so Gasolina A Premium was included. New filter: exact label Gasolina A Comum (R$/litro). 216 weeks change. Maximum absolute change R$ 0.6315/L (week 2026-07-20). Mean absolute change across"
+    },
+    {
+      "id": 9,
+      "changed_at": "2026-09-27T15:00:00+00:00",
+      "table_name": "fuel_price_national_weekly",
+      "scope": "245 diesel rows and 245 gasoline rows, method anp_weekly_weighted_source",
+      "cause": "Same averages as anp_distributor_weekly_diesel and anp_distributor_weekly_gasoline after the exact-name filter. Diesel maximum absolute change R$ 0.6257/L. Gasoline maximum absolute change R$ 0.6315/L."
+    },
+    {
+      "id": 10,
+      "changed_at": "2026-09-27T15:00:00+00:00",
+      "table_name": "petrobras_distributor_weekly_diesel",
+      "scope": "Weeks 2022-11-14 and 2025-06-30 removed. Weeks 2022-12-19, 2025-01-20 and 2025-02-17 kept as Diesel S10 only. Stray rows removed from weeks 2022-12-05 and 2024-07-01.",
+      "cause": "PDF Tabelas de Preços - Diesel S500 e S10 17-09-2026.pdf. 2022-11-14 and 2025-06-30 were an Outros Diesel text-parser subset. The S10 and S500 pages have no vigência in those weeks, so the weeks are removed. 2022-12-19 is S10 only, page 16,"
+    },
+    {
+      "id": 11,
+      "changed_at": "2026-09-27T15:00:00+00:00",
+      "table_name": "ppi_daily",
+      "scope": "2023-04-26 ind_die",
+      "cause": "ABICOM image whatsapp-image-2023-04-26-at-12-03-50 shows Importadores diesel R$ 0.41 and 12%. The stored value is confirmed. man_insp is set to 1. The 1.5-point rule does not flag the row: only 8 earlier ind_die pairs have absolute pct of a"
+    },
+    {
+      "id": 12,
+      "changed_at": "2026-09-27T15:00:00+00:00",
+      "table_name": "ppi_daily",
+      "scope": "2026 price basis",
+      "cause": "In 2026 the Petrobras price in the PPI is the discounted price (com descontos) while that column exists. Gasoline discount columns are on 29.05.2026, 01.08.2026 and 01.09.2026 in Tabelas de Preços - Gasolina 10-09-26.pdf, page 10. The 10.09"
+    },
+    {
+      "id": 13,
+      "changed_at": "2026-09-27T18:00:00+00:00",
+      "table_name": "anp_distributor_weekly_diesel",
+      "scope": "245 weeks from 2022-01-03 through 2026-09-07",
+      "cause": "The 22 rows per grade were not 22 geographic units. They were copies of the Brasil column from 22 downloads of the same ANP file. The file units are Norte, Nordeste, Centro-Oeste, Sul, Sudeste and Brasil. The week average now uses the Brasi"
+    },
+    {
+      "id": 14,
+      "changed_at": "2026-09-27T18:00:00+00:00",
+      "table_name": "anp_distributor_weekly_gasoline",
+      "scope": "245 weeks from 2022-01-03 through 2026-09-07",
+      "cause": "Same cause as diesel. The week average is the Brasil column of Gasolina A Comum from the newest file, one row. The series does not stop. Maximum absolute change R$ 0.0270/L (week 2026-04-06). Mean absolute change R$ 0.00011/L."
+    },
+    {
+      "id": 15,
+      "changed_at": "2026-09-27T18:00:00+00:00",
+      "table_name": "fuel_price_national_weekly",
+      "scope": "245 diesel rows and 245 gasoline rows, method anp_weekly_weighted_source",
+      "cause": "Same Brasil-column averages as the two ANP weekly tables. The series does not stop at March 2026."
+    },
+    {
+      "id": 16,
+      "changed_at": "2026-09-27T18:00:00+00:00",
+      "table_name": "ppi_daily",
+      "scope": "man_insp = -2 on 2022-01-05 and 2022-01-11",
+      "cause": "man_insp = 0 is an automatic row. man_insp = 1 is an image-confirmed row. man_insp = -1 is not final and needs review. man_insp = -2 is not written by the loader. It marks only these two rows. Their source_url file names are 2023-01-05 and "
+    },
+    {
+      "id": 17,
+      "changed_at": "2026-10-16T11:07:12+00:00",
+      "table_name": "pbr_quarterly_diesel_gasoline",
+      "scope": "82 quarters 1Q06-2Q26",
+      "cause": "Live SoR RT&M backfill 2026-10-15. Course cut still PPI 2026-09-21. 4Q19 sales 72464 / GP 8010 (old freeze -193882.387)."
+    },
+    {
+      "id": 18,
+      "changed_at": "2026-10-16T11:40:46+00:00",
+      "table_name": "petrobras_distributor_weekly_gasoline",
+      "scope": "excluded week_start 2026-04-27 / week_end 2026-05-03",
+      "cause": "Dropped from check2. Live SoR still has this week as 1 station at R$ 3.6086/L (old misaligned-line value). 27 Sep freeze also omitted it. 2026-05-25 remains live avg 3.10245 (66 plants) vs freeze 3.08728 (65)."
+    },
+    {
+      "id": 19,
+      "changed_at": "2026-10-16T11:45:05+00:00",
+      "table_name": "petrobras_distributor_weekly_gasoline",
+      "scope": "week_start 2026-05-25 / week_end 2026-05-31",
+      "cause": "Aligned to 27 Sep freeze: avg_price_rs_l 3.0872784615384616, source_record_count 65 (live SoR was 3.10245 / 66). Week 2026-04-27 stays excluded."
+    }
+  ],
+  "changelog_sep_n": 16,
+  "notes": [
+    "Etapa 3 metrics remain results/etapa3_metrics.json against the September export.",
+    "Do not treat current-freeze Petrobras gasoline naive RMSE as a model change until the 22 weeks are sourced."
+  ]
+}

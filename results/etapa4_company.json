@@ -1,0 +1,3532 @@
+{
+  "completed_at_utc": "2026-10-18T21:22:13Z",
+  "experiment": "matched-history Ridge (one exposure) and locked-baseline residual correction",
+  "sqlite": "gas_flare.sqlite",
+  "sha256": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba",
+  "information": "contemporaneous / realized exposure",
+  "note": "Descriptive. No promotion rule. 2Q26 is the legacy point. 1Q26 sales include ITR note-4 diesel subsidy R$ 672 million; 2Q26 includes diesel R$ 9.737 billion and a gasoline subsidy. Do not attribute residual differences to subsidies alone. Derived margin is 100 × GP hat / revenue hat; missing when revenue hat <= 0. Residual correction uses each target's locked financial-history baseline.",
+  "alpha_fixed": 1.0,
+  "matched_history": {
+    "blocks": [
+      "2025-06-30",
+      "2025-09-30",
+      "2025-12-31",
+      "2026-03-31"
+    ],
+    "blocks_no_2026": [
+      "2025-06-30",
+      "2025-09-30",
+      "2025-12-31"
+    ],
+    "groups": {
+      "y_only": [],
+      "y_prod": [
+        "prod_pbr_mn"
+      ],
+      "y_gas": [
+        "prod_pbr_gas_mn"
+      ],
+      "y_die": [
+        "prod_pbr_die_mn"
+      ]
+    },
+    "targets": {
+      "diesel mbpd": {
+        "y_only": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 41.83565179112625,
+            "MAE": 38.72902500271218,
+            "dummy_RMSE": 51.95671275205929,
+            "dummy_MAE": 43.0,
+            "rel_RMSE_vs_dummy": 0.19479794669134243
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 44.03962049987313,
+            "MAE": 40.17657628225114,
+            "dummy_RMSE": 52.905576265645195,
+            "dummy_MAE": 41.0,
+            "rel_RMSE_vs_dummy": 0.1675807427416544
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 721.0,
+              "hat": 749.6442226473077,
+              "dummy": 734.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 809.0,
+              "hat": 743.3531876042106,
+              "dummy": 721.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 787.0,
+              "hat": 760.7613061963438,
+              "dummy": 809.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 738.0,
+              "hat": 703.6136288359047,
+              "dummy": 787.0,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_prod": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 37.50568892977381,
+            "MAE": 31.58181366737861,
+            "dummy_RMSE": 51.95671275205929,
+            "dummy_MAE": 43.0,
+            "rel_RMSE_vs_dummy": 0.2781358376394341
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 42.709334103784606,
+            "MAE": 37.96655279217217,
+            "dummy_RMSE": 52.905576265645195,
+            "dummy_MAE": 41.0,
+            "rel_RMSE_vs_dummy": 0.19272528307156211
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 721.0,
+              "hat": 745.0792069854804,
+              "dummy": 734.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 809.0,
+              "hat": 743.3702580737425,
+              "dummy": 721.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 787.0,
+              "hat": 762.8092905352213,
+              "dummy": 809.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 738.0,
+              "hat": 725.5724037070021,
+              "dummy": 787.0,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_gas": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 45.78432881154942,
+            "MAE": 40.89973578841972,
+            "dummy_RMSE": 51.95671275205929,
+            "dummy_MAE": 43.0,
+            "rel_RMSE_vs_dummy": 0.11879858469809036
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 47.62392845847406,
+            "MAE": 41.28029422325426,
+            "dummy_RMSE": 52.905576265645195,
+            "dummy_MAE": 41.0,
+            "rel_RMSE_vs_dummy": 0.09983159016454808
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 721.0,
+              "hat": 745.862493976679,
+              "dummy": 734.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 809.0,
+              "hat": 734.1374794567059,
+              "dummy": 721.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 787.0,
+              "hat": 762.8841318502103,
+              "dummy": 809.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 738.0,
+              "hat": 698.2419395160839,
+              "dummy": 787.0,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_die": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 34.368351588287474,
+            "MAE": 27.04828643999946,
+            "dummy_RMSE": 51.95671275205929,
+            "dummy_MAE": 43.0,
+            "rel_RMSE_vs_dummy": 0.3385195142676671
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 39.637279527930474,
+            "MAE": 34.93928545703958,
+            "dummy_RMSE": 52.905576265645195,
+            "dummy_MAE": 41.0,
+            "rel_RMSE_vs_dummy": 0.2507920274999562
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 721.0,
+              "hat": 745.5559619247008,
+              "dummy": 734.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 809.0,
+              "hat": 747.7816078270755,
+              "dummy": 721.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 787.0,
+              "hat": 767.9564977265065,
+              "dummy": 809.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 738.0,
+              "hat": 741.3752893888791,
+              "dummy": 787.0,
+              "subsidy_quarter": true
+            }
+          ]
+        }
+      },
+      "gasolina mbpd": {
+        "y_only": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 11.373046476836146,
+            "MAE": 8.828432247527573,
+            "dummy_RMSE": 16.680827317612277,
+            "dummy_MAE": 13.25,
+            "rel_RMSE_vs_dummy": 0.3181964982739175
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 13.07921256286241,
+            "MAE": 11.089143226916804,
+            "dummy_RMSE": 16.57307052620807,
+            "dummy_MAE": 12.0,
+            "rel_RMSE_vs_dummy": 0.21081536808888837
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 404.0,
+              "hat": 407.42207891668863,
+              "dummy": 398.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 402.0,
+              "hat": 411.6257754128684,
+              "dummy": 404.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 430.0,
+              "hat": 409.7804246488066,
+              "dummy": 402.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 413.0,
+              "hat": 415.0462993093599,
+              "dummy": 430.0,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_prod": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 11.32953796232827,
+            "MAE": 9.403382216171295,
+            "dummy_RMSE": 16.680827317612277,
+            "dummy_MAE": 13.25,
+            "rel_RMSE_vs_dummy": 0.3208047930352893
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 12.861559975709188,
+            "MAE": 11.15643679798842,
+            "dummy_RMSE": 16.57307052620807,
+            "dummy_MAE": 12.0,
+            "rel_RMSE_vs_dummy": 0.22394827468027909
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 404.0,
+              "hat": 408.42177668230096,
+              "dummy": 398.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 402.0,
+              "hat": 411.2879546632007,
+              "dummy": 404.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 430.0,
+              "hat": 410.2404209515364,
+              "dummy": 402.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 413.0,
+              "hat": 408.8557815292801,
+              "dummy": 430.0,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_gas": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 11.683465631234291,
+            "MAE": 9.365972720635867,
+            "dummy_RMSE": 16.680827317612277,
+            "dummy_MAE": 13.25,
+            "rel_RMSE_vs_dummy": 0.2995871602304505
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 13.489317720615078,
+            "MAE": 12.368520976546828,
+            "dummy_RMSE": 16.57307052620807,
+            "dummy_MAE": 12.0,
+            "rel_RMSE_vs_dummy": 0.1860700948998228
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 404.0,
+              "hat": 409.638441812881,
+              "dummy": 398.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 402.0,
+              "hat": 414.6510943430377,
+              "dummy": 404.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 430.0,
+              "hat": 411.1839732262782,
+              "dummy": 402.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 413.0,
+              "hat": 412.641672047097,
+              "dummy": 430.0,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_die": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 11.614450418305864,
+            "MAE": 9.16228468157695,
+            "dummy_RMSE": 16.680827317612277,
+            "dummy_MAE": 13.25,
+            "rel_RMSE_vs_dummy": 0.30372455771166285
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 13.246562809486921,
+            "MAE": 11.006808702031512,
+            "dummy_RMSE": 16.57307052620807,
+            "dummy_MAE": 12.0,
+            "rel_RMSE_vs_dummy": 0.20071764682716622
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 404.0,
+              "hat": 407.90200979561547,
+              "dummy": 398.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 402.0,
+              "hat": 409.95437984040876,
+              "dummy": 404.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 430.0,
+              "hat": 408.8359635299297,
+              "dummy": 402.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 413.0,
+              "hat": 409.37128737978674,
+              "dummy": 430.0,
+              "subsidy_quarter": true
+            }
+          ]
+        }
+      },
+      "receita RT&M": {
+        "y_only": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 4671.496483098243,
+            "MAE": 3867.025958584756,
+            "dummy_RMSE": 4983.944547243679,
+            "dummy_MAE": 4014.25,
+            "rel_RMSE_vs_dummy": 0.06269091904688884
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 5217.820896100997,
+            "MAE": 4366.199688114444,
+            "dummy_RMSE": 5463.114404806109,
+            "dummy_MAE": 4307.666666666667,
+            "rel_RMSE_vs_dummy": 0.04489993994804829
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 112104.0,
+              "hat": 118531.35532732932,
+              "dummy": 116819.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 120308.0,
+              "hat": 113962.94947240406,
+              "dummy": 112104.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 120312.0,
+              "hat": 120638.19320941807,
+              "dummy": 120308.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 117178.0,
+              "hat": 119547.50476999569,
+              "dummy": 120312.0,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_prod": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 5871.087433584312,
+            "MAE": 5014.94827716771,
+            "dummy_RMSE": 4983.944547243679,
+            "dummy_MAE": 4014.25,
+            "rel_RMSE_vs_dummy": -0.1780001518739325
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 4834.783358975838,
+            "MAE": 3942.851678312499,
+            "dummy_RMSE": 5463.114404806109,
+            "dummy_MAE": 4307.666666666667,
+            "rel_RMSE_vs_dummy": 0.11501334207416629
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 112104.0,
+              "hat": 117045.89638089566,
+              "dummy": 116819.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 120308.0,
+              "hat": 113548.79847727138,
+              "dummy": 112104.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 120312.0,
+              "hat": 120439.45713131322,
+              "dummy": 120308.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 117178.0,
+              "hat": 125409.23807373334,
+              "dummy": 120312.0,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_gas": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 5262.397458403194,
+            "MAE": 4343.252149613101,
+            "dummy_RMSE": 4983.944547243679,
+            "dummy_MAE": 4014.25,
+            "rel_RMSE_vs_dummy": -0.05586998581545422
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 5958.128361750414,
+            "MAE": 5101.927211898466,
+            "dummy_RMSE": 5463.114404806109,
+            "dummy_MAE": 4307.666666666667,
+            "rel_RMSE_vs_dummy": -0.09061021246577279
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 112104.0,
+              "hat": 118832.88514191756,
+              "dummy": 116819.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 120308.0,
+              "hat": 112523.95389725897,
+              "dummy": 112104.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 120312.0,
+              "hat": 121104.8503910368,
+              "dummy": 120308.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 117178.0,
+              "hat": 119245.226962757,
+              "dummy": 120312.0,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_die": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 6597.175947446968,
+            "MAE": 5621.980615374068,
+            "dummy_RMSE": 4983.944547243679,
+            "dummy_MAE": 4014.25,
+            "rel_RMSE_vs_dummy": -0.32368566401796556
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 4194.169832320506,
+            "MAE": 3824.4963983764706,
+            "dummy_RMSE": 5463.114404806109,
+            "dummy_MAE": 4307.666666666667,
+            "rel_RMSE_vs_dummy": 0.23227494034707816
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 112104.0,
+              "hat": 116882.8969780035,
+              "dummy": 116819.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 120308.0,
+              "hat": 115020.78856546662,
+              "dummy": 112104.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 120312.0,
+              "hat": 121719.38078259253,
+              "dummy": 120308.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 117178.0,
+              "hat": 128192.43326636686,
+              "dummy": 120312.0,
+              "subsidy_quarter": true
+            }
+          ]
+        }
+      },
+      "lucro bruto RT&M": {
+        "y_only": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 7368.866406237481,
+            "MAE": 5402.796140700917,
+            "dummy_RMSE": 5860.369335630648,
+            "dummy_MAE": 4293.75,
+            "rel_RMSE_vs_dummy": -0.2574064848499008
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 3173.82261720361,
+            "MAE": 2645.691104778525,
+            "dummy_RMSE": 2687.1711271645254,
+            "dummy_MAE": 2139.3333333333335,
+            "rel_RMSE_vs_dummy": -0.1811017858593153
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 6814.0,
+              "hat": 8095.228888753332,
+              "dummy": 7053.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 8782.0,
+              "hat": 7246.808949746406,
+              "dummy": 6814.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 12993.0,
+              "hat": 7872.346624671351,
+              "dummy": 8782.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 23750.0,
+              "hat": 10075.888751531907,
+              "dummy": 12993.0,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_prod": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 6938.661868324893,
+            "MAE": 5096.168015577881,
+            "dummy_RMSE": 5860.369335630648,
+            "dummy_MAE": 4293.75,
+            "rel_RMSE_vs_dummy": -0.18399736790278723
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 3186.8933753134334,
+            "MAE": 2550.7935326306233,
+            "dummy_RMSE": 2687.1711271645254,
+            "dummy_MAE": 2139.3333333333335,
+            "rel_RMSE_vs_dummy": -0.1859659189908793
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 6814.0,
+              "hat": 7661.338797230146,
+              "dummy": 7053.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 8782.0,
+              "hat": 7195.599713117186,
+              "dummy": 6814.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 12993.0,
+              "hat": 7774.35848622109,
+              "dummy": 8782.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 23750.0,
+              "hat": 11017.708535580345,
+              "dummy": 12993.0,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_gas": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 7814.850093310416,
+            "MAE": 5702.861531199728,
+            "dummy_RMSE": 5860.369335630648,
+            "dummy_MAE": 4293.75,
+            "rel_RMSE_vs_dummy": -0.3335081196669053
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 3192.065092913588,
+            "MAE": 2730.763750021591,
+            "dummy_RMSE": 2687.1711271645254,
+            "dummy_MAE": 2139.3333333333335,
+            "rel_RMSE_vs_dummy": -0.18789051454338213
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 6814.0,
+              "hat": 8165.492662476566,
+              "dummy": 7053.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 8782.0,
+              "hat": 6996.079766562727,
+              "dummy": 6814.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 12993.0,
+              "hat": 7938.121645849065,
+              "dummy": 8782.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 23750.0,
+              "hat": 9130.84512526586,
+              "dummy": 12993.0,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_die": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 6005.866437799951,
+            "MAE": 4451.595122435817,
+            "dummy_RMSE": 5860.369335630648,
+            "dummy_MAE": 4293.75,
+            "rel_RMSE_vs_dummy": -0.02482729224670041
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 2986.037335294532,
+            "MAE": 2321.7137266616523,
+            "dummy_RMSE": 2687.1711271645254,
+            "dummy_MAE": 2139.3333333333335,
+            "rel_RMSE_vs_dummy": -0.11121964102277594
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 6814.0,
+              "hat": 7546.268536696231,
+              "dummy": 7053.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 8782.0,
+              "hat": 7507.938368769463,
+              "dummy": 6814.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 12993.0,
+              "hat": 8034.188987941812,
+              "dummy": 8782.0,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 23750.0,
+              "hat": 12908.760690241688,
+              "dummy": 12993.0,
+              "subsidy_quarter": true
+            }
+          ]
+        }
+      },
+      "margem RT&M": {
+        "y_only": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 6.319402963497882,
+            "MAE": 4.482372516339444,
+            "dummy_RMSE": 5.084335675161139,
+            "dummy_MAE": 3.557691122162061,
+            "rel_RMSE_vs_dummy": -0.24291615802837402
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 2.4185477953288506,
+            "MAE": 2.001696973786412,
+            "dummy_RMSE": 2.140251729650478,
+            "dummy_MAE": 1.587292080586822,
+            "rel_RMSE_vs_dummy": -0.13002959503451533
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 6.078284450153429,
+              "hat": 7.462244613010286,
+              "dummy": 6.037545262328902,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 7.299597699238621,
+              "hat": 6.56309550787205,
+              "dummy": 6.078284450153429,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 10.799421504089368,
+              "hat": 6.914792936953561,
+              "dummy": 7.299597699238621,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 20.268309750977146,
+              "hat": 8.343910606978607,
+              "dummy": 10.799421504089368,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_prod": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 5.975495869902878,
+            "MAE": 4.264441561601856,
+            "dummy_RMSE": 5.084335675161139,
+            "dummy_MAE": 3.557691122162061,
+            "rel_RMSE_vs_dummy": -0.17527564104301505
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 2.4214932347411495,
+            "MAE": 1.9556358984881432,
+            "dummy_RMSE": 2.140251729650478,
+            "dummy_MAE": 1.587292080586822,
+            "rel_RMSE_vs_dummy": -0.13140580670695257
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 6.078284450153429,
+              "hat": 7.216296608983993,
+              "dummy": 6.037545262328902,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 7.299597699238621,
+              "hat": 6.534304439693029,
+              "dummy": 6.078284450153429,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 10.799421504089368,
+              "hat": 6.835819227001094,
+              "dummy": 7.299597699238621,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 20.268309750977146,
+              "hat": 9.077451200034151,
+              "dummy": 10.799421504089368,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_gas": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 6.499907007498888,
+            "MAE": 4.666437921297408,
+            "dummy_RMSE": 5.084335675161139,
+            "dummy_MAE": 3.557691122162061,
+            "rel_RMSE_vs_dummy": -0.2784181499371371
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 2.57316597113707,
+            "MAE": 2.151268698582717,
+            "dummy_RMSE": 2.140251729650478,
+            "dummy_MAE": 1.587292080586822,
+            "rel_RMSE_vs_dummy": -0.202272581065635
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 6.078284450153429,
+              "hat": 7.185423607180619,
+              "dummy": 6.037545262328902,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 7.299597699238621,
+              "hat": 6.10009742180058,
+              "dummy": 6.078284450153429,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 10.799421504089368,
+              "hat": 6.652254842806448,
+              "dummy": 7.299597699238621,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 20.268309750977146,
+              "hat": 8.056364161535663,
+              "dummy": 10.799421504089368,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "y_die": {
+          "all_4q": {
+            "n": 4,
+            "RMSE": 5.540230333896261,
+            "MAE": 3.9731789961866837,
+            "dummy_RMSE": 5.084335675161139,
+            "dummy_MAE": 3.557691122162061,
+            "rel_RMSE_vs_dummy": -0.08966651453843545
+          },
+          "no_2026": {
+            "n": 3,
+            "RMSE": 2.325778981665908,
+            "MAE": 1.8568216730652154,
+            "dummy_RMSE": 2.140251729650478,
+            "dummy_MAE": 1.587292080586822,
+            "rel_RMSE_vs_dummy": -0.08668478078778523
+          },
+          "points": [
+            {
+              "date": "2025-06-30",
+              "qkey": 8102,
+              "actual": 6.078284450153429,
+              "hat": 7.257624263920409,
+              "dummy": 6.037545262328902,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-09-30",
+              "qkey": 8103,
+              "actual": 7.299597699238621,
+              "hat": 6.715852538647512,
+              "dummy": 6.078284450153429,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2025-12-31",
+              "qkey": 8104,
+              "actual": 10.799421504089368,
+              "hat": 6.99204145925181,
+              "dummy": 7.299597699238621,
+              "subsidy_quarter": false
+            },
+            {
+              "date": "2026-03-31",
+              "qkey": 8105,
+              "actual": 20.268309750977146,
+              "hat": 9.946058785426057,
+              "dummy": 10.799421504089368,
+              "subsidy_quarter": true
+            }
+          ]
+        }
+      }
+    },
+    "derived_margin": {
+      "y_only": {
+        "all_4q": {
+          "n": 4,
+          "RMSE": 6.322570146380419,
+          "MAE": 4.451449496477723,
+          "dummy_RMSE": 5.084335675161139,
+          "dummy_MAE": 3.557691122162061,
+          "rel_RMSE_vs_dummy": -0.24353908756821732
+        },
+        "no_2026": {
+          "n": 3,
+          "RMSE": 2.5635299562615343,
+          "MAE": 1.9886145945216012,
+          "dummy_RMSE": 2.140251729650478,
+          "dummy_MAE": 1.587292080586822,
+          "rel_RMSE_vs_dummy": -0.1977702999825079
+        },
+        "rev_hat_nonpositive_n": 0,
+        "points": [
+          {
+            "date": "2025-06-30",
+            "qkey": 8102,
+            "actual": 6.078284450153429,
+            "hat": 6.829609655941264,
+            "dummy": 6.037545262328902,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": false
+          },
+          {
+            "date": "2025-09-30",
+            "qkey": 8103,
+            "actual": 7.299597699238621,
+            "hat": 6.358916633252993,
+            "dummy": 6.078284450153429,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": false
+          },
+          {
+            "date": "2025-12-31",
+            "qkey": 8104,
+            "actual": 10.799421504089368,
+            "hat": 6.525583992298027,
+            "dummy": 7.299597699238621,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": false
+          },
+          {
+            "date": "2026-03-31",
+            "qkey": 8105,
+            "actual": 20.268309750977146,
+            "hat": 8.428355548631055,
+            "dummy": 10.799421504089368,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": true
+          }
+        ]
+      },
+      "y_prod": {
+        "all_4q": {
+          "n": 4,
+          "RMSE": 6.161901518833966,
+          "MAE": 4.314305385640456,
+          "dummy_RMSE": 5.084335675161139,
+          "dummy_MAE": 3.557691122162061,
+          "rel_RMSE_vs_dummy": -0.21193837553589062
+        },
+        "no_2026": {
+          "n": 3,
+          "RMSE": 2.5832152213435515,
+          "MAE": 1.9247720149135692,
+          "dummy_RMSE": 2.140251729650478,
+          "dummy_MAE": 1.587292080586822,
+          "rel_RMSE_vs_dummy": -0.20696794005881422
+        },
+        "rev_hat_nonpositive_n": 0,
+        "points": [
+          {
+            "date": "2025-06-30",
+            "qkey": 8102,
+            "actual": 6.078284450153429,
+            "hat": 6.545585137216855,
+            "dummy": 6.037545262328902,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": false
+          },
+          {
+            "date": "2025-09-30",
+            "qkey": 8103,
+            "actual": 7.299597699238621,
+            "hat": 6.3370108795624995,
+            "dummy": 6.078284450153429,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": false
+          },
+          {
+            "date": "2025-12-31",
+            "qkey": 8104,
+            "actual": 10.799421504089368,
+            "hat": 6.4549929660882075,
+            "dummy": 7.299597699238621,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": false
+          },
+          {
+            "date": "2026-03-31",
+            "qkey": 8105,
+            "actual": 20.268309750977146,
+            "hat": 8.785404253156033,
+            "dummy": 10.799421504089368,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": true
+          }
+        ]
+      },
+      "y_gas": {
+        "all_4q": {
+          "n": 4,
+          "RMSE": 6.686880641687573,
+          "MAE": 4.6827720322559285,
+          "dummy_RMSE": 5.084335675161139,
+          "dummy_MAE": 3.557691122162061,
+          "rel_RMSE_vs_dummy": -0.31519259720703713
+        },
+        "no_2026": {
+          "n": 3,
+          "RMSE": 2.570174662390876,
+          "MAE": 2.0399926826214965,
+          "dummy_RMSE": 2.140251729650478,
+          "dummy_MAE": 1.587292080586822,
+          "rel_RMSE_vs_dummy": -0.20087493764605363
+        },
+        "rev_hat_nonpositive_n": 0,
+        "points": [
+          {
+            "date": "2025-06-30",
+            "qkey": 8102,
+            "actual": 6.078284450153429,
+            "hat": 6.871408240845815,
+            "dummy": 6.037545262328902,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": false
+          },
+          {
+            "date": "2025-09-30",
+            "qkey": 8103,
+            "actual": 7.299597699238621,
+            "hat": 6.21741373659031,
+            "dummy": 6.078284450153429,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": false
+          },
+          {
+            "date": "2025-12-31",
+            "qkey": 8104,
+            "actual": 10.799421504089368,
+            "hat": 6.554751209565575,
+            "dummy": 7.299597699238621,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": false
+          },
+          {
+            "date": "2026-03-31",
+            "qkey": 8105,
+            "actual": 20.268309750977146,
+            "hat": 7.6571996698179206,
+            "dummy": 10.799421504089368,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": true
+          }
+        ]
+      },
+      "y_die": {
+        "all_4q": {
+          "n": 4,
+          "RMSE": 5.531235962537059,
+          "MAE": 3.886858220652331,
+          "dummy_RMSE": 5.084335675161139,
+          "dummy_MAE": 3.557691122162061,
+          "rel_RMSE_vs_dummy": -0.08789747883075326
+        },
+        "no_2026": {
+          "n": 3,
+          "RMSE": 2.4744901972648736,
+          "MAE": 1.7829845299641773,
+          "dummy_RMSE": 2.140251729650478,
+          "dummy_MAE": 1.587292080586822,
+          "rel_RMSE_vs_dummy": -0.15616782969215484
+        },
+        "rev_hat_nonpositive_n": 0,
+        "points": [
+          {
+            "date": "2025-06-30",
+            "qkey": 8102,
+            "actual": 6.078284450153429,
+            "hat": 6.456264117167103,
+            "dummy": 6.037545262328902,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": false
+          },
+          {
+            "date": "2025-09-30",
+            "qkey": 8103,
+            "actual": 7.299597699238621,
+            "hat": 6.527462089599703,
+            "dummy": 6.078284450153429,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": false
+          },
+          {
+            "date": "2025-12-31",
+            "qkey": 8104,
+            "actual": 10.799421504089368,
+            "hat": 6.600583190849428,
+            "dummy": 7.299597699238621,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": false
+          },
+          {
+            "date": "2026-03-31",
+            "qkey": 8105,
+            "actual": 20.268309750977146,
+            "hat": 10.069830458260354,
+            "dummy": 10.799421504089368,
+            "rev_hat_nonpositive": false,
+            "subsidy_quarter": true
+          }
+        ]
+      }
+    }
+  },
+  "residual_correction": {
+    "min_pairs": 8,
+    "eval": "1Q24-1Q26",
+    "legacy": "2Q26",
+    "note": "Residuals are actual minus the locked baseline forecast at each origin. Correction is OLS on earlier eligible pairs only. Fewer than eight pairs records insufficient_history and is not a fitted correction. Persistence remains a named dummy column; it is the control only when it is the locked baseline.",
+    "targets": {
+      "receita RT&M": {
+        "baseline": {
+          "method": "persistence",
+          "window": null
+        },
+        "uncorrected": {
+          "eval_1Q24_1Q26": {
+            "n": 9,
+            "RMSE": 7281.216503976363,
+            "MAE": 6070.888888888889,
+            "dummy_RMSE": 7281.216503976363,
+            "dummy_MAE": 6070.888888888889,
+            "rel_RMSE_vs_dummy": 0.0,
+            "baseline_RMSE": 7281.216503976363,
+            "baseline_MAE": 6070.888888888889,
+            "rel_RMSE_vs_baseline": 0.0
+          },
+          "eval_1Q24_4Q25": {
+            "n": 8,
+            "RMSE": 7642.9957150321625,
+            "MAE": 6438.0,
+            "dummy_RMSE": 7642.9957150321625,
+            "dummy_MAE": 6438.0,
+            "rel_RMSE_vs_dummy": 0.0,
+            "baseline_RMSE": 7642.9957150321625,
+            "baseline_MAE": 6438.0,
+            "rel_RMSE_vs_baseline": 0.0
+          },
+          "legacy_2Q26": {
+            "n": 1,
+            "RMSE": 46015.0,
+            "MAE": 46015.0,
+            "dummy_RMSE": 46015.0,
+            "dummy_MAE": 46015.0,
+            "rel_RMSE_vs_dummy": 0.0,
+            "baseline_RMSE": 46015.0,
+            "baseline_MAE": 46015.0,
+            "rel_RMSE_vs_baseline": 0.0
+          },
+          "n_fitted": 10,
+          "n_insufficient": 0,
+          "points": [
+            {
+              "qkey": 8097,
+              "actual": 109905.0,
+              "dummy": 125208.0,
+              "baseline_hat": 125208.0,
+              "hat": 125208.0,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "persistence",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8098,
+              "actual": 114935.0,
+              "dummy": 109905.0,
+              "baseline_hat": 109905.0,
+              "hat": 109905.0,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "persistence",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8099,
+              "actual": 120558.0,
+              "dummy": 114935.0,
+              "baseline_hat": 114935.0,
+              "hat": 114935.0,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "persistence",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8100,
+              "actual": 112376.0,
+              "dummy": 120558.0,
+              "baseline_hat": 120558.0,
+              "hat": 120558.0,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "persistence",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8101,
+              "actual": 116819.0,
+              "dummy": 112376.0,
+              "baseline_hat": 112376.0,
+              "hat": 112376.0,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "persistence",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8102,
+              "actual": 112104.0,
+              "dummy": 116819.0,
+              "baseline_hat": 116819.0,
+              "hat": 116819.0,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "persistence",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8103,
+              "actual": 120308.0,
+              "dummy": 112104.0,
+              "baseline_hat": 112104.0,
+              "hat": 112104.0,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "persistence",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8104,
+              "actual": 120312.0,
+              "dummy": 120308.0,
+              "baseline_hat": 120308.0,
+              "hat": 120308.0,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "persistence",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8105,
+              "actual": 117178.0,
+              "dummy": 120312.0,
+              "baseline_hat": 120312.0,
+              "hat": 120312.0,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "persistence",
+              "window": null,
+              "subsidy_quarter": true
+            },
+            {
+              "qkey": 8106,
+              "actual": 163193.0,
+              "dummy": 117178.0,
+              "baseline_hat": 117178.0,
+              "hat": 117178.0,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "persistence",
+              "window": null,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "corrected": {
+          "prod": {
+            "eval_1Q24_1Q26": {
+              "n": 9,
+              "RMSE": 11104.357693074842,
+              "MAE": 8686.047630232608,
+              "dummy_RMSE": 7281.216503976363,
+              "dummy_MAE": 6070.888888888889,
+              "rel_RMSE_vs_dummy": -0.5250690165593365,
+              "baseline_RMSE": 7281.216503976363,
+              "baseline_MAE": 6070.888888888889,
+              "rel_RMSE_vs_baseline": -0.5250690165593365
+            },
+            "eval_1Q24_4Q25": {
+              "n": 8,
+              "RMSE": 8480.06543761993,
+              "MAE": 6881.981034930965,
+              "dummy_RMSE": 7642.9957150321625,
+              "dummy_MAE": 6438.0,
+              "rel_RMSE_vs_dummy": -0.1095211555517987,
+              "baseline_RMSE": 7642.9957150321625,
+              "baseline_MAE": 6438.0,
+              "rel_RMSE_vs_baseline": -0.1095211555517987
+            },
+            "legacy_2Q26": {
+              "n": 1,
+              "RMSE": 11415.778415031295,
+              "MAE": 11415.778415031295,
+              "dummy_RMSE": 46015.0,
+              "dummy_MAE": 46015.0,
+              "rel_RMSE_vs_dummy": 0.7519118023463807,
+              "baseline_RMSE": 46015.0,
+              "baseline_MAE": 46015.0,
+              "rel_RMSE_vs_baseline": 0.7519118023463807
+            },
+            "n_fitted": 10,
+            "n_insufficient": 0,
+            "points": [
+              {
+                "qkey": 8097,
+                "actual": 109905.0,
+                "dummy": 125208.0,
+                "baseline_hat": 125208.0,
+                "hat": 128690.73804222792,
+                "n_pairs": 8,
+                "alpha": -8308.510393892413,
+                "beta": -3.958851785981799,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8098,
+                "actual": 114935.0,
+                "dummy": 109905.0,
+                "baseline_hat": 109905.0,
+                "hat": 113085.09376171818,
+                "n_pairs": 9,
+                "alpha": -10005.180864957369,
+                "beta": -3.7969532121569656,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8099,
+                "actual": 120558.0,
+                "dummy": 114935.0,
+                "baseline_hat": 114935.0,
+                "hat": 113484.00865641575,
+                "n_pairs": 10,
+                "alpha": -9886.878160108045,
+                "beta": -3.8234292119221975,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8100,
+                "actual": 112376.0,
+                "dummy": 120558.0,
+                "baseline_hat": 120558.0,
+                "hat": 119201.45437700217,
+                "n_pairs": 11,
+                "alpha": -9168.801882921185,
+                "beta": -3.7933191614505737,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8101,
+                "actual": 116819.0,
+                "dummy": 112376.0,
+                "baseline_hat": 112376.0,
+                "hat": 111782.87296195976,
+                "n_pairs": 12,
+                "alpha": -9836.507316267298,
+                "beta": -3.8336197825866067,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8102,
+                "actual": 112104.0,
+                "dummy": 116819.0,
+                "baseline_hat": 116819.0,
+                "hat": 108312.3292310834,
+                "n_pairs": 13,
+                "alpha": -9441.728608973008,
+                "beta": -3.83060719760982,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8103,
+                "actual": 120308.0,
+                "dummy": 112104.0,
+                "baseline_hat": 112104.0,
+                "hat": 111793.58182543427,
+                "n_pairs": 14,
+                "alpha": -8921.375871531873,
+                "beta": -3.721813664383407,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8104,
+                "actual": 120312.0,
+                "dummy": 120308.0,
+                "baseline_hat": 120308.0,
+                "hat": 117133.45770317102,
+                "n_pairs": 15,
+                "alpha": -8358.888917974478,
+                "beta": -3.7240538623847925,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8105,
+                "actual": 117178.0,
+                "dummy": 120312.0,
+                "baseline_hat": 120312.0,
+                "hat": 140296.58039264576,
+                "n_pairs": 16,
+                "alpha": -8076.819417965374,
+                "beta": -3.6867909057442683,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": true
+              },
+              {
+                "qkey": 8106,
+                "actual": 163193.0,
+                "dummy": 117178.0,
+                "baseline_hat": 117178.0,
+                "hat": 151777.2215849687,
+                "n_pairs": 17,
+                "alpha": -6431.131949864933,
+                "beta": -2.510192301454823,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": true
+              }
+            ],
+            "baseline": {
+              "method": "persistence",
+              "window": null
+            }
+          },
+          "gas": {
+            "eval_1Q24_1Q26": {
+              "n": 9,
+              "RMSE": 10649.115597412334,
+              "MAE": 9449.677853855072,
+              "dummy_RMSE": 7281.216503976363,
+              "dummy_MAE": 6070.888888888889,
+              "rel_RMSE_vs_dummy": -0.46254620935893326,
+              "baseline_RMSE": 7281.216503976363,
+              "baseline_MAE": 6070.888888888889,
+              "rel_RMSE_vs_baseline": -0.46254620935893326
+            },
+            "eval_1Q24_4Q25": {
+              "n": 8,
+              "RMSE": 10917.296085203465,
+              "MAE": 9606.694789348556,
+              "dummy_RMSE": 7642.9957150321625,
+              "dummy_MAE": 6438.0,
+              "rel_RMSE_vs_dummy": -0.428405365154326,
+              "baseline_RMSE": 7642.9957150321625,
+              "baseline_MAE": 6438.0,
+              "rel_RMSE_vs_baseline": -0.428405365154326
+            },
+            "legacy_2Q26": {
+              "n": 1,
+              "RMSE": 15365.008904211107,
+              "MAE": 15365.008904211107,
+              "dummy_RMSE": 46015.0,
+              "dummy_MAE": 46015.0,
+              "rel_RMSE_vs_dummy": 0.6660869519893272,
+              "baseline_RMSE": 46015.0,
+              "baseline_MAE": 46015.0,
+              "rel_RMSE_vs_baseline": 0.6660869519893272
+            },
+            "n_fitted": 10,
+            "n_insufficient": 0,
+            "points": [
+              {
+                "qkey": 8097,
+                "actual": 109905.0,
+                "dummy": 125208.0,
+                "baseline_hat": 125208.0,
+                "hat": 127503.5001026688,
+                "n_pairs": 8,
+                "alpha": -7227.740315012535,
+                "beta": -12.473258963625437,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8098,
+                "actual": 114935.0,
+                "dummy": 109905.0,
+                "baseline_hat": 109905.0,
+                "hat": 119146.17432920086,
+                "n_pairs": 9,
+                "alpha": -8939.054239893658,
+                "beta": -12.108193358979543,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8099,
+                "actual": 120558.0,
+                "dummy": 114935.0,
+                "baseline_hat": 114935.0,
+                "hat": 111795.55728500556,
+                "n_pairs": 10,
+                "alpha": -8903.721413296515,
+                "beta": -11.501105637579922,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8100,
+                "actual": 112376.0,
+                "dummy": 120558.0,
+                "baseline_hat": 120558.0,
+                "hat": 118892.45226053846,
+                "n_pairs": 11,
+                "alpha": -7830.195979820395,
+                "beta": -11.121257452405231,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8101,
+                "actual": 116819.0,
+                "dummy": 112376.0,
+                "baseline_hat": 112376.0,
+                "hat": 109541.69174654548,
+                "n_pairs": 12,
+                "alpha": -8514.375397029598,
+                "beta": -11.318792172364736,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8102,
+                "actual": 112104.0,
+                "dummy": 116819.0,
+                "baseline_hat": 116819.0,
+                "hat": 107149.29624239085,
+                "n_pairs": 13,
+                "alpha": -7767.320923737277,
+                "beta": -11.050568855423291,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8103,
+                "actual": 120308.0,
+                "dummy": 112104.0,
+                "baseline_hat": 112104.0,
+                "hat": 101527.91155404133,
+                "n_pairs": 14,
+                "alpha": -6991.098718183259,
+                "beta": -10.386541922855445,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8104,
+                "actual": 120312.0,
+                "dummy": 120308.0,
+                "baseline_hat": 120308.0,
+                "hat": 111559.11154963645,
+                "n_pairs": 15,
+                "alpha": -4322.82396348347,
+                "beta": -7.904388098158134,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8105,
+                "actual": 117178.0,
+                "dummy": 120312.0,
+                "baseline_hat": 120312.0,
+                "hat": 125371.5423699072,
+                "n_pairs": 16,
+                "alpha": -3205.0896068255984,
+                "beta": -6.762853351998823,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": true
+              },
+              {
+                "qkey": 8106,
+                "actual": 163193.0,
+                "dummy": 117178.0,
+                "baseline_hat": 117178.0,
+                "hat": 147827.9910957889,
+                "n_pairs": 17,
+                "alpha": -3336.551701556155,
+                "beta": -6.11663256145871,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": true
+              }
+            ],
+            "baseline": {
+              "method": "persistence",
+              "window": null
+            }
+          },
+          "die": {
+            "eval_1Q24_1Q26": {
+              "n": 9,
+              "RMSE": 12075.235233123487,
+              "MAE": 8512.238013985565,
+              "dummy_RMSE": 7281.216503976363,
+              "dummy_MAE": 6070.888888888889,
+              "rel_RMSE_vs_dummy": -0.6584090346069301,
+              "baseline_RMSE": 7281.216503976363,
+              "baseline_MAE": 6070.888888888889,
+              "rel_RMSE_vs_baseline": -0.6584090346069301
+            },
+            "eval_1Q24_4Q25": {
+              "n": 8,
+              "RMSE": 8018.103170323637,
+              "MAE": 6045.196031698519,
+              "dummy_RMSE": 7642.9957150321625,
+              "dummy_MAE": 6438.0,
+              "rel_RMSE_vs_dummy": -0.04907859029067842,
+              "baseline_RMSE": 7642.9957150321625,
+              "baseline_MAE": 6438.0,
+              "rel_RMSE_vs_baseline": -0.04907859029067842
+            },
+            "legacy_2Q26": {
+              "n": 1,
+              "RMSE": 17135.05291731999,
+              "MAE": 17135.05291731999,
+              "dummy_RMSE": 46015.0,
+              "dummy_MAE": 46015.0,
+              "rel_RMSE_vs_dummy": 0.6276202777937632,
+              "baseline_RMSE": 46015.0,
+              "baseline_MAE": 46015.0,
+              "rel_RMSE_vs_baseline": 0.6276202777937632
+            },
+            "n_fitted": 10,
+            "n_insufficient": 0,
+            "points": [
+              {
+                "qkey": 8097,
+                "actual": 109905.0,
+                "dummy": 125208.0,
+                "baseline_hat": 125208.0,
+                "hat": 129106.00741958742,
+                "n_pairs": 8,
+                "alpha": -8375.789866613835,
+                "beta": -5.541320207077625,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8098,
+                "actual": 114935.0,
+                "dummy": 109905.0,
+                "baseline_hat": 109905.0,
+                "hat": 110262.31239933071,
+                "n_pairs": 9,
+                "alpha": -10078.558375671599,
+                "beta": -5.294408163146167,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8099,
+                "actual": 120558.0,
+                "dummy": 114935.0,
+                "baseline_hat": 114935.0,
+                "hat": 114349.98573361333,
+                "n_pairs": 10,
+                "alpha": -9657.28421167421,
+                "beta": -5.320438846018682,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8100,
+                "actual": 112376.0,
+                "dummy": 120558.0,
+                "baseline_hat": 120558.0,
+                "hat": 119475.65801352671,
+                "n_pairs": 11,
+                "alpha": -9076.169273014537,
+                "beta": -5.310928945019536,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8101,
+                "actual": 116819.0,
+                "dummy": 112376.0,
+                "baseline_hat": 112376.0,
+                "hat": 112856.09205114981,
+                "n_pairs": 12,
+                "alpha": -9746.814115450017,
+                "beta": -5.356335696972269,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8102,
+                "actual": 112104.0,
+                "dummy": 116819.0,
+                "baseline_hat": 116819.0,
+                "hat": 109584.08519025461,
+                "n_pairs": 13,
+                "alpha": -9471.529971751184,
+                "beta": -5.373195306250437,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8103,
+                "actual": 120308.0,
+                "dummy": 112104.0,
+                "baseline_hat": 112104.0,
+                "hat": 117017.17073085037,
+                "n_pairs": 14,
+                "alpha": -9156.522278565559,
+                "beta": -5.291740014779634,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8104,
+                "actual": 120312.0,
+                "dummy": 120308.0,
+                "baseline_hat": 120308.0,
+                "hat": 121718.54892567285,
+                "n_pairs": 15,
+                "alpha": -9071.942182691679,
+                "beta": -5.369922867896518,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8105,
+                "actual": 117178.0,
+                "dummy": 120312.0,
+                "baseline_hat": 120312.0,
+                "hat": 145426.57387228194,
+                "n_pairs": 16,
+                "alpha": -9146.591666199902,
+                "beta": -5.362295747420272,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": true
+              },
+              {
+                "qkey": 8106,
+                "actual": 163193.0,
+                "dummy": 117178.0,
+                "baseline_hat": 117178.0,
+                "hat": 146057.94708268,
+                "n_pairs": 17,
+                "alpha": -6643.793995581373,
+                "beta": -3.292561961586114,
+                "status": "fitted",
+                "method": "persistence",
+                "window": null,
+                "subsidy_quarter": true
+              }
+            ],
+            "baseline": {
+              "method": "persistence",
+              "window": null
+            }
+          }
+        }
+      },
+      "lucro bruto RT&M": {
+        "baseline": {
+          "method": "sarima_0_1_0_1_0_0_4",
+          "window": null
+        },
+        "uncorrected": {
+          "eval_1Q24_1Q26": {
+            "n": 9,
+            "RMSE": 4245.582533420737,
+            "MAE": 2949.6974157404047,
+            "dummy_RMSE": 4139.521671240129,
+            "dummy_MAE": 2770.3333333333335,
+            "rel_RMSE_vs_dummy": -0.025621526012891662,
+            "baseline_RMSE": 4245.582533420737,
+            "baseline_MAE": 2949.6974157404047,
+            "rel_RMSE_vs_baseline": 0.0
+          },
+          "eval_1Q24_4Q25": {
+            "n": 8,
+            "RMSE": 2576.821743229572,
+            "MAE": 2012.7449088822484,
+            "dummy_RMSE": 2193.960687888459,
+            "dummy_MAE": 1772.0,
+            "rel_RMSE_vs_dummy": -0.1745067983463238,
+            "baseline_RMSE": 2576.821743229572,
+            "baseline_MAE": 2012.7449088822484,
+            "rel_RMSE_vs_baseline": 0.0
+          },
+          "legacy_2Q26": {
+            "n": 1,
+            "RMSE": 2330.2937296095806,
+            "MAE": 2330.2937296095806,
+            "dummy_RMSE": 2380.0,
+            "dummy_MAE": 2380.0,
+            "rel_RMSE_vs_dummy": 0.02088498755899974,
+            "baseline_RMSE": 2330.2937296095806,
+            "baseline_MAE": 2330.2937296095806,
+            "rel_RMSE_vs_baseline": 0.0
+          },
+          "n_fitted": 10,
+          "n_insufficient": 0,
+          "points": [
+            {
+              "qkey": 8097,
+              "actual": 10934.0,
+              "dummy": 10777.0,
+              "baseline_hat": 11257.330196942312,
+              "hat": 11257.330196942312,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8098,
+              "actual": 7825.0,
+              "dummy": 10934.0,
+              "baseline_hat": 12533.408185690752,
+              "hat": 12533.408185690752,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8099,
+              "actual": 6849.0,
+              "dummy": 7825.0,
+              "baseline_hat": 7311.211236068222,
+              "hat": 7311.211236068222,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8100,
+              "actual": 8709.0,
+              "dummy": 6849.0,
+              "baseline_hat": 6939.597608269876,
+              "hat": 6939.597608269876,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8101,
+              "actual": 7053.0,
+              "dummy": 8709.0,
+              "baseline_hat": 8677.795415350422,
+              "hat": 8677.795415350422,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8102,
+              "actual": 6814.0,
+              "dummy": 7053.0,
+              "baseline_hat": 7671.854112518378,
+              "hat": 7671.854112518378,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8103,
+              "actual": 8782.0,
+              "dummy": 6814.0,
+              "baseline_hat": 7005.276836676936,
+              "hat": 7005.276836676936,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8104,
+              "actual": 12993.0,
+              "dummy": 8782.0,
+              "baseline_hat": 8413.765430565287,
+              "hat": 8413.765430565287,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8105,
+              "actual": 23750.0,
+              "dummy": 12993.0,
+              "baseline_hat": 13304.682529394348,
+              "hat": 13304.682529394348,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null,
+              "subsidy_quarter": true
+            },
+            {
+              "qkey": 8106,
+              "actual": 26130.0,
+              "dummy": 23750.0,
+              "baseline_hat": 23799.70627039042,
+              "hat": 23799.70627039042,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "corrected": {
+          "prod": {
+            "eval_1Q24_1Q26": {
+              "n": 9,
+              "RMSE": 3560.689158405771,
+              "MAE": 2988.1292995413714,
+              "dummy_RMSE": 4139.521671240129,
+              "dummy_MAE": 2770.3333333333335,
+              "rel_RMSE_vs_dummy": 0.1398307724430754,
+              "baseline_RMSE": 4245.582533420737,
+              "baseline_MAE": 2949.6974157404047,
+              "rel_RMSE_vs_baseline": 0.16131905801466906
+            },
+            "eval_1Q24_4Q25": {
+              "n": 8,
+              "RMSE": 3578.021132987358,
+              "MAE": 2934.286499133021,
+              "dummy_RMSE": 2193.960687888459,
+              "dummy_MAE": 1772.0,
+              "rel_RMSE_vs_dummy": -0.6308501573157017,
+              "baseline_RMSE": 2576.821743229572,
+              "baseline_MAE": 2012.7449088822484,
+              "rel_RMSE_vs_baseline": -0.38854041510180953
+            },
+            "legacy_2Q26": {
+              "n": 1,
+              "RMSE": 18751.68091922326,
+              "MAE": 18751.68091922326,
+              "dummy_RMSE": 2380.0,
+              "dummy_MAE": 2380.0,
+              "rel_RMSE_vs_dummy": -6.878857529085404,
+              "baseline_RMSE": 2330.2937296095806,
+              "baseline_MAE": 2330.2937296095806,
+              "rel_RMSE_vs_baseline": -7.046917296715609
+            },
+            "n_fitted": 10,
+            "n_insufficient": 0,
+            "points": [
+              {
+                "qkey": 8097,
+                "actual": 10934.0,
+                "dummy": 10777.0,
+                "baseline_hat": 11257.330196942312,
+                "hat": 12206.536250117944,
+                "n_pairs": 8,
+                "alpha": -3768.631861539533,
+                "beta": -1.5839901224902113,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8098,
+                "actual": 7825.0,
+                "dummy": 10934.0,
+                "baseline_hat": 12533.408185690752,
+                "hat": 14112.314691047177,
+                "n_pairs": 9,
+                "alpha": -3883.563448154949,
+                "beta": -1.5730231962203252,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8099,
+                "actual": 6849.0,
+                "dummy": 7825.0,
+                "baseline_hat": 7311.211236068222,
+                "hat": 6297.6970314851715,
+                "n_pairs": 10,
+                "alpha": -4285.641304209198,
+                "beta": -1.4830386668213045,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8100,
+                "actual": 8709.0,
+                "dummy": 6849.0,
+                "baseline_hat": 6939.597608269876,
+                "hat": 5759.37103789268,
+                "n_pairs": 11,
+                "alpha": -4229.678897131582,
+                "beta": -1.480692076416979,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8101,
+                "actual": 7053.0,
+                "dummy": 8709.0,
+                "baseline_hat": 8677.795415350422,
+                "hat": 8264.824610373227,
+                "n_pairs": 12,
+                "alpha": -3941.1291280509854,
+                "beta": -1.463276110720351,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8102,
+                "actual": 6814.0,
+                "dummy": 7053.0,
+                "baseline_hat": 7671.854112518378,
+                "hat": 3993.096024939374,
+                "n_pairs": 13,
+                "alpha": -4036.123267304614,
+                "beta": -1.464001017893688,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8103,
+                "actual": 8782.0,
+                "dummy": 6814.0,
+                "baseline_hat": 7005.276836676936,
+                "hat": 6556.196456775779,
+                "n_pairs": 14,
+                "alpha": -3648.994427555484,
+                "beta": -1.3830614719670855,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8104,
+                "actual": 12993.0,
+                "dummy": 8782.0,
+                "baseline_hat": 8413.765430565287,
+                "hat": 6838.0230073811745,
+                "n_pairs": 15,
+                "alpha": -3501.9514436924915,
+                "beta": -1.3836470951472934,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8105,
+                "actual": 23750.0,
+                "dummy": 12993.0,
+                "baseline_hat": 13304.682529394348,
+                "hat": 20331.128297191826,
+                "n_pairs": 16,
+                "alpha": -2955.7478318646545,
+                "beta": -1.3114905468363902,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": true
+              },
+              {
+                "qkey": 8106,
+                "actual": 26130.0,
+                "dummy": 23750.0,
+                "baseline_hat": 23799.70627039042,
+                "hat": 44881.68091922326,
+                "n_pairs": 17,
+                "alpha": -3199.118930816059,
+                "beta": -1.485490836017139,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": true
+              }
+            ],
+            "baseline": {
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null
+            }
+          },
+          "gas": {
+            "eval_1Q24_1Q26": {
+              "n": 9,
+              "RMSE": 5825.815099326107,
+              "MAE": 4684.4841146606905,
+              "dummy_RMSE": 4139.521671240129,
+              "dummy_MAE": 2770.3333333333335,
+              "rel_RMSE_vs_dummy": -0.4073643193612739,
+              "baseline_RMSE": 4245.582533420737,
+              "baseline_MAE": 2949.6974157404047,
+              "rel_RMSE_vs_baseline": -0.37220629995199994
+            },
+            "eval_1Q24_4Q25": {
+              "n": 8,
+              "RMSE": 5299.322669534507,
+              "MAE": 4146.4446105183015,
+              "dummy_RMSE": 2193.960687888459,
+              "dummy_MAE": 1772.0,
+              "rel_RMSE_vs_dummy": -1.4154136848435297,
+              "baseline_RMSE": 2576.821743229572,
+              "baseline_MAE": 2012.7449088822484,
+              "rel_RMSE_vs_baseline": -1.0565344434313806
+            },
+            "legacy_2Q26": {
+              "n": 1,
+              "RMSE": 12072.201188808991,
+              "MAE": 12072.201188808991,
+              "dummy_RMSE": 2380.0,
+              "dummy_MAE": 2380.0,
+              "rel_RMSE_vs_dummy": -4.072353440676046,
+              "baseline_RMSE": 2330.2937296095806,
+              "baseline_MAE": 2330.2937296095806,
+              "rel_RMSE_vs_baseline": -4.180549145120679
+            },
+            "n_fitted": 10,
+            "n_insufficient": 0,
+            "points": [
+              {
+                "qkey": 8097,
+                "actual": 10934.0,
+                "dummy": 10777.0,
+                "baseline_hat": 11257.330196942312,
+                "hat": 11834.2557157275,
+                "n_pairs": 8,
+                "alpha": -3968.135775599191,
+                "beta": -5.952987013238713,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8098,
+                "actual": 7825.0,
+                "dummy": 10934.0,
+                "baseline_hat": 12533.408185690752,
+                "hat": 17387.989501220898,
+                "n_pairs": 9,
+                "alpha": -4055.678471470453,
+                "beta": -5.934311990067383,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8099,
+                "actual": 6849.0,
+                "dummy": 7825.0,
+                "baseline_hat": 7311.211236068222,
+                "hat": 5619.055868053576,
+                "n_pairs": 10,
+                "alpha": -3975.442550707462,
+                "beta": -4.555700455083402,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8100,
+                "actual": 8709.0,
+                "dummy": 6849.0,
+                "baseline_hat": 6939.597608269876,
+                "hat": 5610.566516880383,
+                "n_pairs": 11,
+                "alpha": -3824.7566803006025,
+                "beta": -4.502382897230882,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8101,
+                "actual": 7053.0,
+                "dummy": 8709.0,
+                "baseline_hat": 8677.795415350422,
+                "hat": 7390.632071763239,
+                "n_pairs": 12,
+                "alpha": -3499.44402089855,
+                "beta": -4.4084593686097024,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8102,
+                "actual": 6814.0,
+                "dummy": 7053.0,
+                "baseline_hat": 7671.854112518378,
+                "hat": 3376.68083484234,
+                "n_pairs": 13,
+                "alpha": -3534.103752320257,
+                "beta": -4.4209036393537895,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8103,
+                "actual": 8782.0,
+                "dummy": 6814.0,
+                "baseline_hat": 7005.276836676936,
+                "hat": 2642.7722985683404,
+                "n_pairs": 14,
+                "alpha": -2995.6006259781,
+                "beta": -3.9602358349485254,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8104,
+                "actual": 12993.0,
+                "dummy": 8782.0,
+                "baseline_hat": 8413.765430565287,
+                "hat": 4527.244886220589,
+                "n_pairs": 15,
+                "alpha": -2123.339223364269,
+                "beta": -3.148817530735189,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8105,
+                "actual": 23750.0,
+                "dummy": 12993.0,
+                "baseline_hat": 13304.682529394348,
+                "hat": 14761.199852200196,
+                "n_pairs": 16,
+                "alpha": -1042.2714821970305,
+                "beta": -2.044730157788755,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": true
+              },
+              {
+                "qkey": 8106,
+                "actual": 26130.0,
+                "dummy": 23750.0,
+                "baseline_hat": 23799.70627039042,
+                "hat": 38202.20118880899,
+                "n_pairs": 17,
+                "alpha": -898.0497959964248,
+                "beta": -2.753672551112102,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": true
+              }
+            ],
+            "baseline": {
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null
+            }
+          },
+          "die": {
+            "eval_1Q24_1Q26": {
+              "n": 9,
+              "RMSE": 2694.5102793685032,
+              "MAE": 2160.1822082058206,
+              "dummy_RMSE": 4139.521671240129,
+              "dummy_MAE": 2770.3333333333335,
+              "rel_RMSE_vs_dummy": 0.3490768998531962,
+              "baseline_RMSE": 4245.582533420737,
+              "baseline_MAE": 2949.6974157404047,
+              "rel_RMSE_vs_baseline": 0.3653379110740096
+            },
+            "eval_1Q24_4Q25": {
+              "n": 8,
+              "RMSE": 2823.717922548078,
+              "MAE": 2274.259903671871,
+              "dummy_RMSE": 2193.960687888459,
+              "dummy_MAE": 1772.0,
+              "rel_RMSE_vs_dummy": -0.2870412574555831,
+              "baseline_RMSE": 2576.821743229572,
+              "baseline_MAE": 2012.7449088822484,
+              "rel_RMSE_vs_baseline": -0.09581422539886959
+            },
+            "legacy_2Q26": {
+              "n": 1,
+              "RMSE": 16463.575543260813,
+              "MAE": 16463.575543260813,
+              "dummy_RMSE": 2380.0,
+              "dummy_MAE": 2380.0,
+              "rel_RMSE_vs_dummy": -5.9174687156558035,
+              "baseline_RMSE": 2330.2937296095806,
+              "baseline_MAE": 2330.2937296095806,
+              "rel_RMSE_vs_baseline": -6.0650216039585425
+            },
+            "n_fitted": 10,
+            "n_insufficient": 0,
+            "points": [
+              {
+                "qkey": 8097,
+                "actual": 10934.0,
+                "dummy": 10777.0,
+                "baseline_hat": 11257.330196942312,
+                "hat": 12308.701923523771,
+                "n_pairs": 8,
+                "alpha": -3591.889400851026,
+                "beta": -2.096319184047974,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8098,
+                "actual": 7825.0,
+                "dummy": 10934.0,
+                "baseline_hat": 12533.408185690752,
+                "hat": 12916.84337855512,
+                "n_pairs": 9,
+                "alpha": -3713.799626370207,
+                "beta": -2.078641441713084,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8099,
+                "actual": 6849.0,
+                "dummy": 7825.0,
+                "baseline_hat": 7311.211236068222,
+                "hat": 6634.423028592959,
+                "n_pairs": 10,
+                "alpha": -4172.863498348129,
+                "beta": -2.050275719124507,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8100,
+                "actual": 8709.0,
+                "dummy": 6849.0,
+                "baseline_hat": 6939.597608269876,
+                "hat": 5872.329687932897,
+                "n_pairs": 11,
+                "alpha": -4152.777545219422,
+                "beta": -2.049947014055991,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8101,
+                "actual": 7053.0,
+                "dummy": 8709.0,
+                "baseline_hat": 8677.795415350422,
+                "hat": 8672.319622813635,
+                "n_pairs": 12,
+                "alpha": -3884.8212139633097,
+                "beta": -2.031804733824138,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8102,
+                "actual": 6814.0,
+                "dummy": 7053.0,
+                "baseline_hat": 7671.854112518378,
+                "hat": 4517.426188946385,
+                "n_pairs": 13,
+                "alpha": -3997.3075551790644,
+                "beta": -2.0249155765463285,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8103,
+                "actual": 8782.0,
+                "dummy": 6814.0,
+                "baseline_hat": 7005.276836676936,
+                "hat": 8481.530309249527,
+                "n_pairs": 14,
+                "alpha": -3710.219112485394,
+                "beta": -1.95067969823801,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8104,
+                "actual": 12993.0,
+                "dummy": 8782.0,
+                "baseline_hat": 8413.765430565287,
+                "hat": 8533.076480795788,
+                "n_pairs": 15,
+                "alpha": -3702.496513355407,
+                "beta": -1.9578181960987904,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8105,
+                "actual": 23750.0,
+                "dummy": 12993.0,
+                "baseline_hat": 13304.682529394348,
+                "hat": 22502.439355522583,
+                "n_pairs": 16,
+                "alpha": -3465.7959044267122,
+                "beta": -1.9820024767696847,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": true
+              },
+              {
+                "qkey": 8106,
+                "actual": 26130.0,
+                "dummy": 23750.0,
+                "baseline_hat": 23799.70627039042,
+                "hat": 42593.57554326081,
+                "n_pairs": 17,
+                "alpha": -3576.3286303997265,
+                "beta": -2.0734095130125145,
+                "status": "fitted",
+                "method": "sarima_0_1_0_1_0_0_4",
+                "window": null,
+                "subsidy_quarter": true
+              }
+            ],
+            "baseline": {
+              "method": "sarima_0_1_0_1_0_0_4",
+              "window": null
+            }
+          }
+        }
+      },
+      "margem RT&M": {
+        "baseline": {
+          "method": "sarima_0_0_0_0_0_0_4",
+          "window": null
+        },
+        "uncorrected": {
+          "eval_1Q24_1Q26": {
+            "n": 9,
+            "RMSE": 4.556630468490837,
+            "MAE": 2.7176207384369073,
+            "dummy_RMSE": 3.705033351259602,
+            "dummy_MAE": 2.62452339729835,
+            "rel_RMSE_vs_dummy": -0.2298487048549016,
+            "baseline_RMSE": 4.556630468490837,
+            "baseline_MAE": 2.7176207384369073,
+            "rel_RMSE_vs_baseline": 0.0
+          },
+          "eval_1Q24_4Q25": {
+            "n": 8,
+            "RMSE": 1.7763602171173865,
+            "MAE": 1.4681889060184627,
+            "dummy_RMSE": 2.058081769921452,
+            "dummy_MAE": 1.7689777910996716,
+            "rel_RMSE_vs_dummy": 0.13688550033404048,
+            "baseline_RMSE": 1.7763602171173865,
+            "baseline_MAE": 1.4681889060184627,
+            "rel_RMSE_vs_baseline": 0.0
+          },
+          "legacy_2Q26": {
+            "n": 1,
+            "RMSE": 8.29756425429655,
+            "MAE": 8.29756425429655,
+            "dummy_RMSE": 4.256593562170028,
+            "dummy_MAE": 4.256593562170028,
+            "rel_RMSE_vs_dummy": -0.9493437964197874,
+            "baseline_RMSE": 8.29756425429655,
+            "baseline_MAE": 8.29756425429655,
+            "rel_RMSE_vs_baseline": 0.0
+          },
+          "n_fitted": 10,
+          "n_insufficient": 0,
+          "points": [
+            {
+              "qkey": 8097,
+              "actual": 9.948591965788635,
+              "dummy": 8.607277490256214,
+              "baseline_hat": 7.555804833716219,
+              "hat": 7.555804833716219,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8098,
+              "actual": 6.8081959368338625,
+              "dummy": 9.948591965788635,
+              "baseline_hat": 7.589036673783182,
+              "hat": 7.589036673783182,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8099,
+              "actual": 5.681082964216394,
+              "dummy": 6.8081959368338625,
+              "baseline_hat": 7.578337800398299,
+              "hat": 7.578337800398299,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8100,
+              "actual": 7.74987541823877,
+              "dummy": 5.681082964216394,
+              "baseline_hat": 7.552696439089221,
+              "hat": 7.552696439089221,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8101,
+              "actual": 6.037545262328902,
+              "dummy": 7.74987541823877,
+              "baseline_hat": 7.55532347580098,
+              "hat": 7.55532347580098,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8102,
+              "actual": 6.078284450153429,
+              "dummy": 6.037545262328902,
+              "baseline_hat": 7.535350112626268,
+              "hat": 7.535350112626268,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8103,
+              "actual": 7.299597699238621,
+              "dummy": 6.078284450153429,
+              "baseline_hat": 7.51642463325027,
+              "hat": 7.51642463325027,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8104,
+              "actual": 10.799421504089368,
+              "dummy": 7.299597699238621,
+              "baseline_hat": 7.513642750251422,
+              "hat": 7.513642750251422,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null,
+              "subsidy_quarter": false
+            },
+            {
+              "qkey": 8105,
+              "actual": 20.268309750977146,
+              "dummy": 10.799421504089368,
+              "baseline_hat": 7.55523435319268,
+              "hat": 7.55523435319268,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null,
+              "subsidy_quarter": true
+            },
+            {
+              "qkey": 8106,
+              "actual": 16.011716188807117,
+              "dummy": 20.268309750977146,
+              "baseline_hat": 7.714151934510567,
+              "hat": 7.714151934510567,
+              "n_pairs": 0,
+              "alpha": NaN,
+              "beta": NaN,
+              "status": "fitted",
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null,
+              "subsidy_quarter": true
+            }
+          ]
+        },
+        "corrected": {
+          "prod": {
+            "eval_1Q24_1Q26": {
+              "n": 9,
+              "RMSE": 4.167060485712968,
+              "MAE": 3.649013717922815,
+              "dummy_RMSE": 3.705033351259602,
+              "dummy_MAE": 2.62452339729835,
+              "rel_RMSE_vs_dummy": -0.12470255748070126,
+              "baseline_RMSE": 4.556630468490837,
+              "baseline_MAE": 2.7176207384369073,
+              "rel_RMSE_vs_baseline": 0.0854951889278166
+            },
+            "eval_1Q24_4Q25": {
+              "n": 8,
+              "RMSE": 3.310800762757425,
+              "MAE": 3.069914579445375,
+              "dummy_RMSE": 2.058081769921452,
+              "dummy_MAE": 1.7689777910996716,
+              "rel_RMSE_vs_dummy": -0.6086828089846906,
+              "baseline_RMSE": 1.7763602171173865,
+              "baseline_MAE": 1.4681889060184627,
+              "rel_RMSE_vs_baseline": -0.8638115911704405
+            },
+            "legacy_2Q26": {
+              "n": 1,
+              "RMSE": 6.594225593689778,
+              "MAE": 6.594225593689778,
+              "dummy_RMSE": 4.256593562170028,
+              "dummy_MAE": 4.256593562170028,
+              "rel_RMSE_vs_dummy": -0.5491790553590029,
+              "baseline_RMSE": 8.29756425429655,
+              "baseline_MAE": 8.29756425429655,
+              "rel_RMSE_vs_baseline": 0.20528176804714326
+            },
+            "n_fitted": 10,
+            "n_insufficient": 0,
+            "points": [
+              {
+                "qkey": 8097,
+                "actual": 9.948591965788635,
+                "dummy": 8.607277490256214,
+                "baseline_hat": 7.555804833716219,
+                "hat": 11.597189280973971,
+                "n_pairs": 8,
+                "alpha": 2.644891520823305,
+                "beta": -0.00046886540860172017,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8098,
+                "actual": 6.8081959368338625,
+                "dummy": 9.948591965788635,
+                "baseline_hat": 7.589036673783182,
+                "hat": 11.663872642142561,
+                "n_pairs": 9,
+                "alpha": 2.4959952476471146,
+                "beta": -0.0004546575263487055,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8099,
+                "actual": 5.681082964216394,
+                "dummy": 6.8081959368338625,
+                "baseline_hat": 7.578337800398299,
+                "hat": 10.61361953906968,
+                "n_pairs": 10,
+                "alpha": 2.1854715701631258,
+                "beta": -0.0003851627094496616,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8100,
+                "actual": 7.74987541823877,
+                "dummy": 5.681082964216394,
+                "baseline_hat": 7.552696439089221,
+                "hat": 10.073942306146446,
+                "n_pairs": 11,
+                "alpha": 1.6847729788408352,
+                "beta": -0.0004061577768745992,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8101,
+                "actual": 6.037545262328902,
+                "dummy": 7.74987541823877,
+                "baseline_hat": 7.55532347580098,
+                "hat": 10.025131075621724,
+                "n_pairs": 12,
+                "alpha": 1.4574193108206681,
+                "beta": -0.0004198801364379357,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8102,
+                "actual": 6.078284450153429,
+                "dummy": 6.037545262328902,
+                "baseline_hat": 7.535350112626268,
+                "hat": 8.783260913603348,
+                "n_pairs": 13,
+                "alpha": 1.1448350648900147,
+                "beta": -0.0004222654895126364,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8103,
+                "actual": 7.299597699238621,
+                "dummy": 6.078284450153429,
+                "baseline_hat": 7.51642463325027,
+                "hat": 9.446582521082853,
+                "n_pairs": 14,
+                "alpha": 0.7736156227884557,
+                "beta": -0.0004998787541361086,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8104,
+                "actual": 10.799421504089368,
+                "dummy": 7.299597699238621,
+                "baseline_hat": 7.513642750251422,
+                "hat": 8.840529450368336,
+                "n_pairs": 15,
+                "alpha": 0.6317796303561569,
+                "beta": -0.0004993138686667447,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8105,
+                "actual": 20.268309750977146,
+                "dummy": 10.799421504089368,
+                "baseline_hat": 7.55523435319268,
+                "hat": 11.98650292523481,
+                "n_pairs": 16,
+                "alpha": 0.8056151972813294,
+                "beta": -0.0004763492192001955,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": true
+              },
+              {
+                "qkey": 8106,
+                "actual": 16.011716188807117,
+                "dummy": 20.268309750977146,
+                "baseline_hat": 7.714151934510567,
+                "hat": 22.605941782496895,
+                "n_pairs": 17,
+                "alpha": 0.21607788682049892,
+                "beta": -0.0008978440595695026,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": true
+              }
+            ],
+            "baseline": {
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null
+            }
+          },
+          "gas": {
+            "eval_1Q24_1Q26": {
+              "n": 9,
+              "RMSE": 4.662823607930231,
+              "MAE": 3.8336497242001224,
+              "dummy_RMSE": 3.705033351259602,
+              "dummy_MAE": 2.62452339729835,
+              "rel_RMSE_vs_dummy": -0.2585105627578247,
+              "baseline_RMSE": 4.556630468490837,
+              "baseline_MAE": 2.7176207384369073,
+              "rel_RMSE_vs_baseline": -0.023305190134183713
+            },
+            "eval_1Q24_4Q25": {
+              "n": 8,
+              "RMSE": 3.5097135728585744,
+              "MAE": 3.080907526894991,
+              "dummy_RMSE": 2.058081769921452,
+              "dummy_MAE": 1.7689777910996716,
+              "rel_RMSE_vs_dummy": -0.7053324236930222,
+              "baseline_RMSE": 1.7763602171173865,
+              "baseline_MAE": 1.4681889060184627,
+              "rel_RMSE_vs_baseline": -0.9757893354277049
+            },
+            "legacy_2Q26": {
+              "n": 1,
+              "RMSE": 4.952727174382748,
+              "MAE": 4.952727174382748,
+              "dummy_RMSE": 4.256593562170028,
+              "dummy_MAE": 4.256593562170028,
+              "rel_RMSE_vs_dummy": -0.16354242002326094,
+              "baseline_RMSE": 8.29756425429655,
+              "baseline_MAE": 8.29756425429655,
+              "rel_RMSE_vs_baseline": 0.4031107174833647
+            },
+            "n_fitted": 10,
+            "n_insufficient": 0,
+            "points": [
+              {
+                "qkey": 8097,
+                "actual": 9.948591965788635,
+                "dummy": 8.607277490256214,
+                "baseline_hat": 7.555804833716219,
+                "hat": 11.50612491153386,
+                "n_pairs": 8,
+                "alpha": 2.468173152213577,
+                "beta": -0.0019412722575896,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8098,
+                "actual": 6.8081959368338625,
+                "dummy": 9.948591965788635,
+                "baseline_hat": 7.589036673783182,
+                "hat": 12.772024205843925,
+                "n_pairs": 9,
+                "alpha": 2.3167154823573415,
+                "beta": -0.0019089625889657305,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8099,
+                "actual": 5.681082964216394,
+                "dummy": 6.8081959368338625,
+                "baseline_hat": 7.578337800398299,
+                "hat": 10.47094862506442,
+                "n_pairs": 10,
+                "alpha": 2.3667535224885463,
+                "beta": -0.0010492102653569726,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8100,
+                "actual": 7.74987541823877,
+                "dummy": 5.681082964216394,
+                "baseline_hat": 7.552696439089221,
+                "hat": 10.029309069409399,
+                "n_pairs": 11,
+                "alpha": 1.7799259930993843,
+                "beta": -0.0012568489156377038,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8101,
+                "actual": 6.037545262328902,
+                "dummy": 7.74987541823877,
+                "baseline_hat": 7.55532347580098,
+                "hat": 9.76132022904411,
+                "n_pairs": 12,
+                "alpha": 1.5406022745065135,
+                "beta": -0.001325945913505234,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8102,
+                "actual": 6.078284450153429,
+                "dummy": 6.037545262328902,
+                "baseline_hat": 7.535350112626268,
+                "hat": 8.441794409740249,
+                "n_pairs": 13,
+                "alpha": 1.1583369300231259,
+                "beta": -0.001463194912493532,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8103,
+                "actual": 7.299597699238621,
+                "dummy": 6.078284450153429,
+                "baseline_hat": 7.51642463325027,
+                "hat": 7.690122335239221,
+                "n_pairs": 14,
+                "alpha": 0.7880607231233945,
+                "beta": -0.0017799513414016679,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8104,
+                "actual": 10.799421504089368,
+                "dummy": 7.299597699238621,
+                "baseline_hat": 7.513642750251422,
+                "hat": 7.220631378006009,
+                "n_pairs": 15,
+                "alpha": 0.7325749872426905,
+                "beta": -0.0018315667649219988,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8105,
+                "actual": 20.268309750977146,
+                "dummy": 10.799421504089368,
+                "baseline_hat": 7.55523435319268,
+                "hat": 10.412722448335973,
+                "n_pairs": 16,
+                "alpha": 1.189582602714494,
+                "beta": -0.001364827893370821,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": true
+              },
+              {
+                "qkey": 8106,
+                "actual": 16.011716188807117,
+                "dummy": 20.268309750977146,
+                "baseline_hat": 7.714151934510567,
+                "hat": 20.964443363189865,
+                "n_pairs": 17,
+                "alpha": 1.3477115404940379,
+                "beta": -0.0021421333774238674,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": true
+              }
+            ],
+            "baseline": {
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null
+            }
+          },
+          "die": {
+            "eval_1Q24_1Q26": {
+              "n": 9,
+              "RMSE": 4.138264245180106,
+              "MAE": 3.6439210388959884,
+              "dummy_RMSE": 3.705033351259602,
+              "dummy_MAE": 2.62452339729835,
+              "rel_RMSE_vs_dummy": -0.11693036279233981,
+              "baseline_RMSE": 4.556630468490837,
+              "baseline_MAE": 2.7176207384369073,
+              "rel_RMSE_vs_baseline": 0.09181482373954607
+            },
+            "eval_1Q24_4Q25": {
+              "n": 8,
+              "RMSE": 3.329329039778003,
+              "MAE": 3.0881339455030363,
+              "dummy_RMSE": 2.058081769921452,
+              "dummy_MAE": 1.7689777910996716,
+              "rel_RMSE_vs_dummy": -0.6176855013418971,
+              "baseline_RMSE": 1.7763602171173865,
+              "baseline_MAE": 1.4681889060184627,
+              "rel_RMSE_vs_baseline": -0.874242064022757
+            },
+            "legacy_2Q26": {
+              "n": 1,
+              "RMSE": 4.606367090687915,
+              "MAE": 4.606367090687915,
+              "dummy_RMSE": 4.256593562170028,
+              "dummy_MAE": 4.256593562170028,
+              "rel_RMSE_vs_dummy": -0.08217216969608211,
+              "baseline_RMSE": 8.29756425429655,
+              "baseline_MAE": 8.29756425429655,
+              "rel_RMSE_vs_baseline": 0.44485309790729266
+            },
+            "n_fitted": 10,
+            "n_insufficient": 0,
+            "points": [
+              {
+                "qkey": 8097,
+                "actual": 9.948591965788635,
+                "dummy": 8.607277490256214,
+                "baseline_hat": 7.555804833716219,
+                "hat": 11.6155159656103,
+                "n_pairs": 8,
+                "alpha": 2.735129111787885,
+                "beta": -0.0005980164852647544,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8098,
+                "actual": 6.8081959368338625,
+                "dummy": 9.948591965788635,
+                "baseline_hat": 7.589036673783182,
+                "hat": 11.31284653491239,
+                "n_pairs": 9,
+                "alpha": 2.587304279899458,
+                "beta": -0.0005765809635298631,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8099,
+                "actual": 5.681082964216394,
+                "dummy": 6.8081959368338625,
+                "baseline_hat": 7.578337800398299,
+                "hat": 10.699897404459557,
+                "n_pairs": 10,
+                "alpha": 2.1811797800433035,
+                "beta": -0.0005514863838808272,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8100,
+                "actual": 7.74987541823877,
+                "dummy": 5.681082964216394,
+                "baseline_hat": 7.552696439089221,
+                "hat": 10.1057292802613,
+                "n_pairs": 11,
+                "alpha": 1.7113825275824592,
+                "beta": -0.000559174579560115,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8101,
+                "actual": 6.037545262328902,
+                "dummy": 7.74987541823877,
+                "baseline_hat": 7.55532347580098,
+                "hat": 10.140573933484598,
+                "n_pairs": 12,
+                "alpha": 1.488844873080379,
+                "beta": -0.000574241737970555,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8102,
+                "actual": 6.078284450153429,
+                "dummy": 6.037545262328902,
+                "baseline_hat": 7.535350112626268,
+                "hat": 8.970941848136702,
+                "n_pairs": 13,
+                "alpha": 1.2038272171344202,
+                "beta": -0.0005567860056785962,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8103,
+                "actual": 7.299597699238621,
+                "dummy": 6.078284450153429,
+                "baseline_hat": 7.51642463325027,
+                "hat": 10.087641633614746,
+                "n_pairs": 14,
+                "alpha": 0.8422239872986005,
+                "beta": -0.000650290060088164,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8104,
+                "actual": 10.799421504089368,
+                "dummy": 7.299597699238621,
+                "baseline_hat": 7.513642750251422,
+                "hat": 9.424322843746056,
+                "n_pairs": 15,
+                "alpha": 0.7705663581773334,
+                "beta": -0.0005840522787944915,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": false
+              },
+              {
+                "qkey": 8105,
+                "actual": 20.268309750977146,
+                "dummy": 10.799421504089368,
+                "baseline_hat": 7.55523435319268,
+                "hat": 12.178091964937536,
+                "n_pairs": 16,
+                "alpha": 0.8435466881849608,
+                "beta": -0.000591508857771399,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": true
+              },
+              {
+                "qkey": 8106,
+                "actual": 16.011716188807117,
+                "dummy": 20.268309750977146,
+                "baseline_hat": 7.714151934510567,
+                "hat": 20.618083279495032,
+                "n_pairs": 17,
+                "alpha": 0.12676083126903193,
+                "beta": -0.0011842678820757273,
+                "status": "fitted",
+                "method": "sarima_0_0_0_0_0_0_4",
+                "window": null,
+                "subsidy_quarter": true
+              }
+            ],
+            "baseline": {
+              "method": "sarima_0_0_0_0_0_0_4",
+              "window": null
+            }
+          }
+        }
+      }
+    }
+  }
+}

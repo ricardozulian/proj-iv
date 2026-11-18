@@ -1,0 +1,7 @@
+stem,alvo,grupo,controle,janela,n,rmse_controle,rmse_correcao,ganho_rmse_pct
+etapa4_company,receita RT&M,die,baseline_travado,eval_1Q24_1Q26,9,7281.216503976363,12075.235233123487,-65.84090346069301
+etapa4_company,receita RT&M,die,baseline_travado,eval_1Q24_4Q25,8,7642.9957150321625,8018.103170323637,-4.907859029067842
+etapa4_company,lucro bruto RT&M,die,baseline_travado,eval_1Q24_1Q26,9,4245.582533420737,2694.5102793685032,36.53379110740096
+etapa4_company,lucro bruto RT&M,die,baseline_travado,eval_1Q24_4Q25,8,2576.821743229572,2823.717922548078,-9.581422539886958
+etapa4_company,margem RT&M,die,baseline_travado,eval_1Q24_1Q26,9,4.556630468490837,4.138264245180106,9.181482373954607
+etapa4_company,margem RT&M,die,baseline_travado,eval_1Q24_4Q25,8,1.7763602171173865,3.329329039778003,-87.4242064022757

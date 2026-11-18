@@ -1,0 +1,63 @@
+{
+  "overlay_id": "2023-11-17",
+  "tradedate": "2023-11-17",
+  "reason": "B3 session present in Dado B3DB tbl_cotahist and in COTAHIST_D17112023; absent from dadodb_dev.public.tbl_asset, gasflaredb.equity_daily, course freeze equity_daily, and the original BOVA11 supplement. Matching the two incomplete equity series does not establish completeness.",
+  "source": {
+    "route": "Dado B3DB tbl_cotahist (COTAHIST import)",
+    "database": "b3db_dev",
+    "table": "tbl_cotahist",
+    "cotahist_file": "COTAHIST_D17112023.ZIP",
+    "cotahist_url": "https://bvmf.bmfbovespa.com.br/InstDados/SerHist/COTAHIST_D17112023.ZIP",
+    "dado_tbl_asset_n_on_date": 0,
+    "b3db_n_on_date_any_ticker": 10673
+  },
+  "preserved_inputs": {
+    "course_sqlite": "gas_flare.sqlite",
+    "course_sqlite_sha256": "b314283c8e711becd802d5162be38b1c47052e9603d8bbf81345916fc2bf35ba",
+    "bova11_supplement": "etapa4_bova11_20261018T152955Z.sqlite",
+    "bova11_supplement_sha256": "637b3ad353aae2fe75a477f4bd96083b9e843a9e781b1d0f727f261335d77281"
+  },
+  "price_convention": "B3 COTAHIST unadjusted closing price (preult/price_last), BRL",
+  "rows": [
+    {
+      "ticker": "PETR4",
+      "tradedate": "2023-11-17",
+      "price_open": 35.83,
+      "price_max": 36.92,
+      "price_min": 35.82,
+      "price_med": 36.53,
+      "price_last": 36.71,
+      "offer_buy": 36.7,
+      "offer_sell": 36.71,
+      "total_transactions": 15625,
+      "total_quantity": 85895400,
+      "total_cash": 3138326394.0,
+      "vol_hist": null,
+      "vol_hist_021": null,
+      "vol_hist_126": null,
+      "vol_hist_252": null,
+      "source_db": "b3db_dev.tbl_cotahist",
+      "ingested_at": "2026-10-18T00:00:00Z"
+    },
+    {
+      "ticker": "BOVA11",
+      "tradedate": "2023-11-17",
+      "price_open": 121.2,
+      "price_max": 121.6,
+      "price_min": 120.72,
+      "price_med": 121.18,
+      "price_last": 121.1,
+      "offer_buy": 120.99,
+      "offer_sell": 121.1,
+      "total_transactions": 61205,
+      "total_quantity": 7388143,
+      "total_cash": 895295962.0,
+      "vol_hist": null,
+      "vol_hist_021": null,
+      "vol_hist_126": null,
+      "vol_hist_252": null,
+      "source_db": "b3db_dev.tbl_cotahist",
+      "ingested_at": "2026-10-18T00:00:00Z"
+    }
+  ]
+}
